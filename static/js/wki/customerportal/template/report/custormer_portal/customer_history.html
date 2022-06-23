@@ -1,0 +1,243 @@
+
+{% extends 'report/custormer_portal/base.html' %}
+
+
+
+{% block content %}
+<script>
+// document. getElementById("id"). style. display = "none"; //hide.
+// document. getElementById("id"). style. display = "block"; //show.
+// document. getElementById("id"). style. display = ""; //show.
+
+</script>
+<style type="text/css">
+  .layout-warning.bordered {
+    border: 2px solid #571fbd;
+}
+.btn-secondary {
+    color: #fff;
+    background-color: #571fbd;
+    border-color: #6c757d;
+}
+.buttons-copy{
+    visibility: hidden;
+    display:  none;
+}
+.buttons-csv{
+    visibility: hidden;
+    display:  none;
+}
+.buttons-excel{
+    visibility: hidden;
+    display:  none;
+}
+.buttons-print{
+    visibility: hidden;
+    display:  none;
+}
+</style>
+<div class="wrapper-content">
+ <div class="container">
+
+        <!-- START: Main Content-->
+                <!-- START: Breadcrumbs-->
+                <div class="row ">
+                    <div class="col-12  align-self-center">
+                        <div class="sub-header mt-3 py-3 px-3 align-self-center d-sm-flex w-100 rounded">
+                            <div class="w-sm-100 mr-auto"><h4 class="mb-0">Customer History</h4></div>
+
+                            <ol class="breadcrumb bg-transparent align-self-center m-0 p-0">
+                                <li class="breadcrumb-item"><a href="">Home</a></li>
+                                <li class="breadcrumb-item"><a href="">Table</a></li>
+                                <li class="breadcrumb-item active"><a href="">Customer History</a></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <!-- END: Breadcrumbs-->
+
+                <!-- START: Card Data-->
+                <div class="row">
+                    <div class="col-12 mt-3">
+                        <div class="card">
+                            <div class="card-header  justify-content-between align-items-center">                               
+                                <h4 class="card-title">Customer History</h4>
+                               
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table id="payments" datas='[
+            { "data": "date" },                        
+            { "data": "e_month" },
+            { "data": "e_year" },
+            { "data": "billamount" },
+            { "data": "last_pay" },
+            { "data": "b_prev_bal" },
+            { "data": "b_arrears" },
+            { "data": "b_outstand" }
+                  
+
+        ]' class="table layout-warning bordered" query="select date(create_date) as date,e_month,e_year,concat('₦',ROUND(cast(b_amount as numeric) ,2)) as billamount,concat('₦',last_pay) as last_pay,concat('₦',ROUND(cast(b_prev_bal as numeric) ,2)) as b_prev_bal,concat('₦',ROUND(cast(b_arrears as numeric) ,2)) as b_arrears,concat('₦',ROUND(cast(b_outstand as numeric) ,2)) as b_outstand  from feeder_customer_details where customer_ids = {{request.session.acc_id}} order by id desc">
+                                        <thead style="color: #fff; background:#571fbd;">
+                                           <tr>
+                                <th style="color: #fff; background:#571fbd;">Date </th>
+                                <th style="color: #fff; background:#571fbd;">Month </th>
+                                <th style="color: #fff; background:#571fbd;">Year</th>
+                                <th style="color: #fff; background:#571fbd;">Billed Amount</th>
+                                <th style="color: #fff; background:#571fbd;">Last Payment</th>
+                                <th style="color: #fff; background:#571fbd;">Previous Bal.</th> 
+                                <th style="color: #fff; background:#571fbd;">Arrears</th>                                                               
+                                <th style="color: #fff; background:#571fbd;">Outstanding Total</th>                               
+                              </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div> 
+
+                    </div>                  
+                </div>
+                <!-- END: Card DATA-->
+            
+      <!--  select e_month,e_year,concat('₦',ROUND(cast(b_amount as numeric) ,2)) as billamount,concat('₦',last_pay) as last_pay,concat('₦',ROUND(cast(b_prev_bal as numeric) ,2)) as b_prev_bal,concat('₦',ROUND(cast(b_arrears as numeric) ,2)) as b_arrears,concat('₦',ROUND(cast(b_outstand as numeric) ,2)) as b_outstand  from feeder_customer_details where customer_ids = {{request.session.acc_id}} -->
+        <!-- END: Content-->
+<!-- <div class="col-sm-16">
+        <div class="card">
+          <div class="card-header">
+            <h6 class="card-title">Custormer Payment chart</h6>
+          </div>
+        
+
+
+
+<script src="https://www.amcharts.com/lib/4/core.js"></script>
+<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
+
+
+
+
+        </div>
+      </div> -->
+</div>
+{% endblock %}
+
+
+
+<script>
+      "use strict";
+    $(document).on('ready', function() {
+                $('#dataTables-example').DataTable({
+                        responsive: true,
+                        pageLength:10,
+                        sPaginationType: "full_numbers",
+                        oLanguage: {
+                            oPaginate: {
+                                sFirst: "<<",
+                                sPrevious: "<",
+                                sNext: ">", 
+                                sLast: ">>" 
+                            }
+                        }
+                    });
+            });
+
+
+  /**
+ * ---------------------------------------
+ * This demo was created using amCharts 4.
+ * 
+ * For more information visit:
+ * https://www.amcharts.com/
+ * 
+ * Documentation is available at:
+ * https://www.amcharts.com/docs/v4/
+ * ---------------------------------------
+ */
+
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+// Create chart instance
+var chart = am4core.create("payments", am4charts.XYChart3D);
+
+// Add data
+chart.data = [{
+  "payment_date": "NIGERIA",
+  "amount": 4025,
+  "color": chart.colors.next()
+}, {
+  "payment_date": "China",
+  "amount": 1882,
+  "color": chart.colors.next()
+}];
+
+// Create axes
+var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+categoryAxis.dataFields.category = "Payment Date";
+categoryAxis.renderer.labels.template.rotation = 270;
+categoryAxis.renderer.labels.template.hideOversized = false;
+categoryAxis.renderer.minGridDistance = 20;
+categoryAxis.renderer.labels.template.horizontalCenter = "right";
+categoryAxis.renderer.labels.template.verticalCenter = "middle";
+categoryAxis.tooltip.label.rotation = 270;
+categoryAxis.tooltip.label.horizontalCenter = "right";
+categoryAxis.tooltip.label.verticalCenter = "middle";
+
+var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+valueAxis.title.text = "Customer Payment Chart";
+valueAxis.title.fontWeight = "bold";
+
+// Create series
+var series = chart.series.push(new am4charts.ColumnSeries3D());
+series.dataFields.valueY = "amount";
+series.dataFields.categoryX = "payment_date";
+series.name = "Amount";
+series.tooltipText = "{categoryX}: [bold]{valueY}[/]";
+series.columns.template.fillOpacity = .8;
+series.columns.template.propertyFields.fill = "color";
+
+var columnTemplate = series.columns.template;
+columnTemplate.strokeWidth = 2;
+columnTemplate.strokeOpacity = 1;
+columnTemplate.stroke = am4core.color("#FFFFFF");
+
+chart.cursor = new am4charts.XYCursor();
+chart.cursor.lineX.strokeOpacity = 0;
+chart.cursor.lineY.strokeOpacity = 0;
+
+// Enable export
+chart.exporting.menu = new am4core.ExportMenu();  
+        </script>
+
+
+
+<script>
+// document. getElementById("id"). style. display = "none"; //hide.
+// document. getElementById("id"). style. display = "block"; //show.
+// document. getElementById("id"). style. display = ""; //show.
+document.getElementsByClassName("buttons-copy").style.display="none";
+document.getElementsByClassName("buttons-copy").style.visibility='hidden';
+
+
+document.getElementsByClassName("buttons-csv").style.display="none";
+document.getElementsByClassName("buttons-csv").style.visibility='hidden';
+
+
+
+document.getElementsByClassName("buttons-excel").style.display="none";
+document.getElementsByClassName("buttons-excel").style.visibility='hidden';
+
+
+
+document.getElementsByClassName("buttons-print").style.display="none";
+document.getElementsByClassName(".buttons-print").style.visibility='hidden';
+
+</script>
+</body>
+
+</html>

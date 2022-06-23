@@ -1,0 +1,248 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>EEDC COnnection form</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Include Bootstrap CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+      {% load static %}
+      <!-- Include SmartWizard CSS -->
+      <link href="{% static 'dist/css/smart_wizard.css' %}" rel="stylesheet" type="text/css" />
+      <link href="{% static 'dist/css/smart_wizard_theme_dots.css' %}" rel="stylesheet" type="text/css" />
+   </head>
+   <body>
+      <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+         <a class="navbar-brand" href="#">EEDC</a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+               <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+               </li>
+            </ul>
+         </div>
+      </nav>
+      <div class="jumbotron text-left text-white" style="background: url('{% static 'img/bgImg.svg' %}'); background-size: cover; background-repeat: no-repeat;">
+         <h3 style="font-weight: bold;">Customer Profile</h3>
+      </div>
+                <div id="step-2" class="col-md-12">
+                    <h3 class="border-bottom border-gray pb-2">Declaration</h3>
+                    <div>
+                            <div class="row">
+                                    <div class="pl-4 pr-4">
+         <div class="Appliance">
+                                                   <div class="row app">
+                                                        <div class="col-md-6 form-group"><label>Appliance</label>
+                                                            <select class="custom-select form-control appli">
+                                                                <option>Light Point</option>
+                                                                <option>Ceiling fan</option>
+                                                                <option>Sockets outlets</option><option>Cooker</option>
+                                                                <option>Water Heater</option>
+                                                                <option>Air Condition</option>
+                                                                <option>Freezer</option>
+                                                                <option>Dispenser</option>
+                                                                <option>Pressing Iron</option>
+                                                                <option>TV</option>
+                                                                <option>Pumping machine</option>
+                                                                <option>Refrigerator</option>
+                                                                <option>Washing Machine</option>
+                                                                <option>Microwave</option>
+                                                                <option>Toaster</option>
+                                                                <option>Electric Kettle</option>
+                                                                <option>Machinery</option>
+                                                                <option>Single Phase Motor</option>
+                                                                <option>Three Phase Motor</option>
+                                                               </select>
+                                                           </div>
+                                                           
+                                                           <div class="col-md-3 form-group">
+                                                               <label for="form-subcomponent-shorthand-input-last-name">Number</label>
+                                                               <div class="ui fluid input">
+                                                                   <input class="form-control number" id="form-subcomponent-shorthand-input-last-name" placeholder="Number" type="text"></div>
+                                                               </div>
+                                                               
+                                                               <div class="col-md-2 form-group">
+                                                                   <label for="form-subcomponent-shorthand-input-last-name">Watts</label>
+                                                                   <div class="ui fluid input">
+                                                                       <input class="form-control watt" id="form-subcomponent-shorthand-input-last-name" placeholder="Watts" type="text">
+                                                                   </div>
+                                                               </div>
+                                                               
+                                                           </div>
+            </div>
+            
+                                                           <div class="col-md-12">
+                                                               <button class="btn btn-danger add_app"> Add More Application's</button>
+                                                               <button class="readvalue btn btn-success"> Read</button>
+                                                           </div>
+            <div class="row mt-2">
+                <div class="col-md-6 form-group"><label for="form-subcomponent-shorthand-input-first-name">Total installed load</label>
+                  <div class="ui fluid input">
+                     <input class="form-control" id="form-subcomponent-shorthand-input-first-name" placeholder="Total installed load" type="text">
+                  </div></div>
+                  <div class="col-md-6 form-group"><label for="form-subcomponent-shorthand-input-last-name">Watts</label><div class="ui fluid input">
+                     <input class="form-control " id="form-subcomponent-shorthand-input-last-name" placeholder="Watts" type="text">
+                </div>
+             </div>
+             </div>
+                <div class="row mt-2"><div class="col-md-6 form-group"><label>Requested Voltage</label><select class="custom-select form-control"><option>33KV</option><option>11KV</option><option>0.4KV</option></select></div><div class="col-md-6 form-group"><label>Type of supply</label><select class="custom-select form-control"><option>1 Phase</option><option>3 Phase </option></select></div></div><div class="row mt-2"><div class="col-md-6 form-group"><label for="form-subcomponent-shorthand-input-first-name">Name of Registered engineer/ Contractor</label><div class="ui fluid input"><input class="form-control" id="form-subcomponent-shorthand-input-first-name" placeholder="Name of Registered engineer/ Contractor" type="text"></div></div><div class="col-md-6 form-group"><label for="form-subcomponent-shorthand-input-last-name">Address</label><div class="ui fluid input"><input class="form-control" id="form-subcomponent-shorthand-input-last-name" placeholder="Address" type="text"></div></div></div><div class="row mt-2"><div class="col-md-6 form-group"><label for="form-subcomponent-shorthand-input-first-name">License</label><div class="ui fluid input"><input class="form-control" id="form-subcomponent-shorthand-input-first-name" placeholder="License" type="text"></div></div><div class="col-md-6 form-group"><label for="form-subcomponent-shorthand-input-last-name">Category</label><div class="ui fluid input"><input class="form-control" id="form-subcomponent-shorthand-input-last-name" placeholder="Category" type="text"></div></div><div class="col-md-6 form-group"><label for="form-subcomponent-shorthand-input-last-name">Date</label><div class="ui fluid input"><input class="form-control" id="form-subcomponent-shorthand-input-last-name" placeholder="Date" type="text"></div></div></div><div class="row mt-2"><div class="col-md-6 form-group"><label>Nature Of the property</label><select class="custom-select form-control"><option>Old</option><option>New</option></select></div><div class="col-md-6 form-group"><label>Type of Property</label><select class="custom-select form-control"><option>Single House</option><option>Apartment </option><option>Terrace </option><option>Pump House </option></select></div></div><div class="row mt-2"><div class="col-md-6 form-group"><label>Does the property have planning permission</label><select class="custom-select form-control"><option>Yes</option><option>No</option></select></div><div class="col-md-6 form-group"><label>Does Property have a meter</label><select class="custom-select form-control"><option>Yes</option><option>No </option></select></div></div><div class="row mt-2"><div class="col-md-6 form-group"><label for="form-subcomponent-shorthand-input-first-name">Meter No.</label><div class="ui fluid input"><input class="form-control" id="form-subcomponent-shorthand-input-first-name" placeholder="Meter No." type="text"></div></div><div class="col-md-6 form-group"><label for="form-subcomponent-shorthand-input-last-name">Customer Account No.</label><div class="ui fluid input"><input class="form-control" id="form-subcomponent-shorthand-input-last-name" placeholder="Customer Account No." type="text"></div></div><div class="col-md-6 form-group"><label>Meter Type at Property</label><select class="custom-select form-control"><option>Pre-payment</option><option>Post Paid Meter </option><option>maximum Demand</option></select></div></div><div class="row mt-2"><div class="col-md-6 form-group"><label>Estimated Maximum Load For</label><div class="ui right labeled input"><input class="form-control" placeholder="Estimated Maximum Load For" type="text"><div class="ui tag label label">Amperes per phase</div></div></div></div><div class="row mt-2"><div class="col-md-6 form-group"><label for="form-subcomponent-shorthand-input-first-name">Meter No.</label><div class="ui fluid input"><input class="form-control" id="form-subcomponent-shorthand-input-first-name" placeholder="Meter No." type="text"></div></div><div class="col-md-6 form-group"><label for="form-subcomponent-shorthand-input-first-name">Account No.</label><div class="ui fluid input"><input class="form-control" id="form-subcomponent-shorthand-input-first-name" placeholder="Account No." type="text"></div></div></div><hr>
+         <p class="text-capitalize text-darken">I/WE HEREBY REQUEST THE ENUGU ELECTRICITY DISTRIBUTION COMPANY TO SUPPLY US WITH ELECTRICITY AT THE ADDRESS STATED AT THE 1.2 ABOVE FOR THE PURPOSE STATED IN 1.4 ABOVE AND AGREE TO PAY ALL CHARGES MADE BY EEDC IN ACCORDANCE WITH THE PREVAILING EEDC TARIFF OF SUPPLY AS APPROVED BY NIGERIAN ELECTRICITY REGULATORY COMMISSION (NERC).<br><br>I/WE CONFIRM THAT THE INFORMATION GIVEN IN PART 1 ABOVE IS TRUE IN ITS ENTIRETY AND AGREE THAT IF ANY PART OF IT IS FOUND TO BE UNTRUE THE ELECTRICITY SUPPLY MAY BE DISCONTINUED.</p><div class="row mt-2"><div class="col-md-6 form-group"><label for="form-subcomponent-shorthand-input-first-name">Applicant's signature title</label><div class="ui fluid input"><input class="form-control" id="form-subcomponent-shorthand-input-first-name" placeholder="Applicant's signature title" type="text"></div></div><div class="col-md-6 form-group"><label for="form-subcomponent-shorthand-input-first-name">Date</label><div class="ui fluid input"><input class="form-control" id="form-subcomponent-shorthand-input-first-name" placeholder="Date" type="text"></div></div></div></div>
+    
+ 
+                                 </div>
+                    </div>
+                </div>
+
+      </div>
+      <!-- Include jQuery -->
+      <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+      <script
+         src="https://code.jquery.com/jquery-3.3.1.min.js"
+         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+         crossorigin="anonymous"></script>
+      <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+      <!-- Include SmartWizard JavaScript source -->
+      <script type="text/javascript" src="{% static 'dist/js/jquery.smartWizard.min.js' %}"></script>
+      <script type="text/javascript" src="{% static 'ajaxsend.js' %}"></script>
+      <script type="text/javascript">
+         $(document).ready(function(){
+// alert("camed");(
+
+$('.readvalue').on('click',function(e){
+   let val = []
+   $('.app').each(function(e){
+      let appli =$(this).find('.appli').val()
+      let number =$(this).find('.number').val()
+      let watt =$(this).find('.watt').val()
+      let inputs = {'appli':appli,'number':number,'watt':watt}
+      val.push(inputs);
+
+
+   })
+   console.log(val)
+})
+
+$('.add_app').on('click',function(e){
+
+$('.Appliance').append('<div class="row app app'+$('.app').length +'">\
+                                                        <div class="col-md-6 form-group"><label>Appliance</label>\
+                                                            <select class="custom-select form-control appli">\
+                                                                <option>Light Point</option>\
+                                                                <option>Ceiling fan</option>\
+                                                                <option>Sockets outlets</option><option>Cooker</option>\
+                                                                <option>Water Heater</option>\
+                                                                <option>Air Condition</option>\
+                                                                <option>Freezer</option>\
+                                                                <option>Dispenser</option>\
+                                                                <option>Pressing Iron</option>\
+                                                                <option>TV</option>\
+                                                                <option>Pumping machine</option>\
+                                                                <option>Refrigerator</option>\
+                                                                <option>Washing Machine</option>\
+                                                                <option>Microwave</option>\
+                                                                <option>Toaster</option>\
+                                                                <option>Electric Kettle</option>\
+                                                                <option>Machinery</option>\
+                                                                <option>Single Phase Motor</option>\
+                                                                <option>Three Phase Motor</option>\
+                                                               </select>\
+                                                           </div>\
+                                                           \
+                                                           <div class="col-md-3 form-group">\
+                                                               <label for="form-subcomponent-shorthand-input-last-name">Number</label>\
+                                                               <div class="ui fluid input">\
+                                                                   <input class="form-control number" id="form-subcomponent-shorthand-input-last-name" placeholder="Number" type="text"></div>\
+                                                               </div>\
+                                                               \
+                                                               <div class="col-md-2 form-group">\
+                                                                   <label for="form-subcomponent-shorthand-input-last-name">Watts</label>\
+                                                                   <div class="ui fluid input">\
+                                                                       <input class="form-control watt" id="form-subcomponent-shorthand-input-last-name" placeholder="Watts" type="text">\
+                                                                   </div>\
+                                                               </div>\
+                                                               \
+                                                               <div class="col-md-1 close_app"><span onclick="close_app(\'app'+$('.app').length + '\')" class="fa fa-close" style="cursor: pointer;"></span></div>\
+                                                           </div>\
+                                                   ')         
+    
+})          // Step show event
+             $("#smartwizard").on("showStep", function(e, anchorObject, stepNumber, stepDirection, stepPosition) {
+                //alert("You are on step "+stepNumber+" now");
+                if(stepPosition === 'first'){
+                    $("#prev-btn").addClass('disabled');
+                }else if(stepPosition === 'final'){
+                    $("#next-btn").addClass('disabled');
+                }else{
+                    $("#prev-btn").removeClass('disabled');
+                    $("#next-btn").removeClass('disabled');
+                }
+             });
+         
+             // Toolbar extra buttons
+             var btnFinish = $('<button></button>').text('Finish')
+                                              .addClass('btn btn-info')
+                                              .on('click', function(){ ajax_submit(); });
+             var btnCancel = $('<button></button>').text('Cancel')
+                                              .addClass('btn btn-danger')
+                                              .on('click', function(){ $('#smartwizard').smartWizard("reset"); });
+         
+         
+             // Smart Wizard
+             $('#smartwizard').smartWizard({
+                     selected: 0,
+                     theme: 'dots',
+                     transitionEffect:'fade',
+                     showStepURLhash: true,
+                     toolbarSettings: {toolbarPosition: 'end',
+                                       toolbarButtonPosition: 'end',
+                                       toolbarExtraButtons: []
+                                     }
+             });
+         
+         
+             // External Button Events
+             $("#reset-btn").on("click", function() {
+                 // Reset wizard
+                 $('#smartwizard').smartWizard("reset");
+                 return true;
+             });
+         
+             $("#prev-btn").on("click", function() {
+                 // Navigate previous
+                 $('#smartwizard').smartWizard("prev");
+                 return true;
+             });
+         
+             $("#next-btn").on("click", function() {
+                 // Navigate next
+                 $('#smartwizard').smartWizard("next");
+                 return true;
+             });
+         
+             $("#theme_selector").on("change", function() {
+                 // Change theme
+                 $('#smartwizard').smartWizard("theme", $(this).val());
+                 return true;
+             });
+         
+             // Set selected theme on page refresh
+             $("#theme_selector").change();
+         });
+
+function close_app(clas){
+   //alert("Camed");
+   $('.'+clas).remove();
+}
+      </script>
+   </body>
+</html>
+

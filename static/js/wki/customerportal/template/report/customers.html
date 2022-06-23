@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Table bills</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+
+  
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.19/js/jquery.dataTables.min.js"></script>
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  //   $(document).ready(function() {
+   
+// } );
+</script>
+
+<link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+
+<style type="text/css">
+  body {
+  font-family: Montserrat !important;
+  font-weight: 300 !important;
+}
+
+body p span {
+  font-weight: 500;
+  font-size: 15;
+}
+
+.btn-go {
+  background-color: #368E23 !important;
+  margin: 4px;
+  color: #fff !important;
+}
+
+.btn-stop {
+  background-color: #D86D6D !important;
+  color: #fff !important;
+}
+
+.page-heading{
+  font-weight:300;
+  color: #787878
+}
+
+.status-pend {
+  color: #b3b300 !important;
+  font-weight: 500;
+}
+
+.status-declined {
+  color: #D86D6D !important;
+  font-weight: 500;
+}
+
+.status-approved {
+  color: #368E23 !important;
+  font-weight: 500;
+}
+
+input {
+  border: 2px solid #f2f2f2;
+  padding: 5px;
+  border-radius: 4px;
+  outline: none
+}
+
+input:focus {
+  border: 2px solid #ccc
+}
+</style>
+</head>
+  
+<!--===============================================================================================-->
+  
+
+<body class= "container mt-5 mb-5">
+  
+  <h2 class="page-heading"> Customers Bill</h2>
+
+
+  
+  <section class="mt-5 mb-5">
+    <div class="table-responsive">
+      <table id="eedc" class="table table-hover table-striped">
+        <thead>
+
+          <tr>
+            <th>S/NO</th>
+            <th>CUSTOMER NAME</th>
+            <th>OLD-ACCCOUNT-NUMBER</th>
+            <th>ACCOUNT-NUMBER</th>
+            <th>CONSUMPTION</th>
+            <th>ADJUSTMENT</th>
+            <th>AMOUNT</th>
+            <th>MONTH</th>
+            <th>YEAR</th>
+            <!-- <th>TOTAL BILLS</th> -->
+            <th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for data in bills %}
+          <tr>
+            <td>{{data.sn}}</td>
+            <td>{{data.name}}</td>
+            <td>{{data.old_acc_no}}</td>
+            <td>{{data.acc_no}}</td>
+            <td>{{data.e_consumed}}</td>
+            <td>{{data.adjust}}</td>
+            <td>{{data.amount}}</td>
+            <td>{{data.month}}</td>
+            <td>{{data.year}}</td>
+            <td><a href="/download_now_real/?type=customers&id={{data.id}}&month={{data.month}}&year={{data.year}}&category={{data.category}}&name_of_file={{data.name}}.pdf" class="btn btn-go btn-sm">Download</a>
+          <a href="/download_now_real/?type=customers&id={{data.id}}&month={{data.month}}&year={{data.year}}&category={{data.category}}&name_of_file={{data.name}}.pdf&send=email" class="btn btn-go btn-sm">Send Email</a>
+          </td>
+          </tr>
+          {% endfor %}
+          
+          <!-- <tr>
+            <td>2</td>
+            <td>Library</td>
+            <td class="status-declined">#33,000</td>
+            <td><a href="#"class="btn btn-go btn-sm">approve</a></td>
+          </tr>
+          
+          <tr>
+            <td>3</td>
+            <td>Student Affairs</td>
+            <td class="status-approved">#55,000</td>
+            <td>--</td>
+          </tr>
+           -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+    
+  </body>
+    <script type="text/javascript">
+      window.addEventListener('load',function()
+  {
+ // console.log("Camed");
+ // alert("Camed")
+    $('#eedc').DataTable();
+  });
+
+    </script>
+</html>

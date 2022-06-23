@@ -1,0 +1,654 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-31277724-33"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-31277724-33');
+</script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEOMETRIC</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <!-- Theme color css -->
+    <link href="{% static 'css/rgen_min.css'%}" rel="stylesheet">
+    <link href="{% static 'css/default.css'%}" rel="stylesheet">
+    
+<style type="text/css">
+input[type=checkbox]:checked + span{
+  color:blue !important;
+  font-weight:normal !important;
+}
+
+</style>
+ 
+<!-- <script>
+
+  var xEnabled = false;
+  $('#click').click(function () {
+      xEnabled = $(this).is(':checked');
+  });
+
+  $('#btncheck').click(function () {
+
+      if (!xEnabled) {
+          alert("please che");
+          return false;
+      }
+  })
+</script> -->  
+</head>
+
+<body>
+<style type="text/css">
+  input[type=checkbox]:checked + span{
+  color:blue !important;
+  font-weight:normal !important;
+}
+
+.you{
+  color:#ff0000;
+  text-decoration: underline;
+  cursor: pointer;
+}
+span.you:hover{
+  color:#ffcc00;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  /*cursor: progress;*/
+}
+</style>
+ 
+<div class="page-loader"><b class="spinner"></b></div>
+<div id="page" style="overflow: hidden;">
+
+
+<header class="main-head" style="height:5px">
+		<div class="container">
+			
+			<div class="row gt0 min-px-h80 align-items-center head-row" style="margin-left: -40px;">
+				
+				<!--=================================
+				= Logo section
+				==================================https://www.disco.com/templates/kdsg2/images/s5_logo.png-->
+				
+					<div class="header-logo-wrp">
+					<a class="header-logo pd-tb-small" href="#">
+						<img src="{% static 'img/geom2.png' %}" style="max-height: 90px; max-width: 100px;"></a>
+					</div>
+		
+			
+			</div><!-- // END : row //  -->
+
+		</div><!-- // END : container //  -->
+	</header>
+	
+		<div class="container small pd-t-small" data-rgen-sm="pd-0" style="padding-top: 9.25rem;">
+
+<center>
+			<div class="row gt20 mb20" style="margin-right: -80px;
+    margin-left: -80px;">
+	<!-- 			<div class="col-md-6">
+					
+
+			<div class="wrapper" id="wrapper">
+  <p class="">Stay away from those people who try to disparage your ambitions. Small minds will always do that, but great minds will give you a feeling that you can become great too.</p>
+
+
+  <p class="">It is only when we take chances, when our lives improve. The initial and the most difficult risk that we need to take is to become honest.</p>
+
+
+  <p class="">Nature has given us all the pieces required to achieve exceptional wellness and health, but has left it to us to put these pieces together.</p>
+
+  <ul class="dots-wrap">
+    <li class="dot"></li>
+    <li class="dot"></li>
+    <li class="dot"></li>
+  </ul>
+</div>
+
+
+
+
+
+				</div>
+ -->
+<!--  <div id="popup1" class="overlay">
+  <div class="popup">
+    <h2>GEOMETRIC</h2>
+    <a class="close" href="#">&times;</a>
+    <div class="content">
+      Thank to pop me out of that button, but now i'm done so you can close this window.
+    </div>
+  </div>
+</div> -->
+
+				<!-- // END : column //  -->
+				<div class="col-md-6 align-c animated fadeInRight" data-animate-in="fadeInRight" style="animation-delay: 0s; margin-left: 24%;">
+					<!-- form-block -->
+					<div class="form-block mr-auto" data-rgen-sm="pd-20">
+			<div class="bg-dark pd-mini rd-6 mr-b-micro" style="background-color:#0094fa;" data-rgen-sm="pd-30">
+							<h3 class="title txt-white f-1" data-rgen-sm="small">CUSTOMER PORTAL </h3>
+							<p class="txt-white op-08" data-rgen-sm="small mr-0"></p>
+						</div>
+						<div class="pos-rel -mr-t-40 mr-b-micro"><span class="sq60 iconbox rd txt-white fs20 bg-default bdr-5 shadow-mini bdr-white"><i class="fa fa-arrow-down"></i></span></div>
+						<div class="pd-mini bg-white shadow-medium rd-6 bdr-3 bdr-default" data-rgen-sm="pd-30">
+							<h3 class="title small"></h3>
+							<form class="form-widget" >
+								<div class="field-wrp">
+							
+									<div class="form-group" id="btncheck">
+										<a href="/Login" class="btn btn-default solid txt-upper block" id="btncheck"> Login</a>
+									</div>
+
+                 <!--  <div class="form-group" id="low">
+                    <a class="btn low btn-default solid txt-upper block" id="low"> Login</a>
+                  </div> -->
+
+									<div class="form-group" id="btnchecked">
+                  <a href="/signup" class="btn btn-default solid txt-upper block" id="btnchecked">Sign Up</a>
+									</div>
+									
+                  <label style="color: #FF0000; font-weight: bold;">
+<img src="{% static 'img/unchecked.png'%}" id="checkhid" hidden style="width: 16px; display: initial;">
+
+                   <input id="click" value="click" class="click" disabled type="checkbox" name="termsChkbx" />
+                      <span id="application" class="you">Click here to read and agree the terms and conditions to continue</span>
+                      <span id="application" class="me" style="color:blue;">I have read and agree the terms and conditions</span>
+                   
+                   </label>
+
+ 
+
+								</div>
+							</form><!-- / form -->
+						</div>
+					</div><!-- / form block -->
+				</div><!-- // END : column //  -->
+
+
+      <!--     <a class="button" href="#popup1"><span id="application">I have read and agree to the terms and conditions</span></a> -->
+
+
+				
+			</div><!-- // END : row //  -->
+		</center>
+		</div><!-- // END : container //  -->
+
+		<!--
+		=================================
+		= Background holder
+		=================================
+		{% static 'img/edc.png'%}-->
+		<div class="bg-holder full-wh z0">
+			<!-- Overlay -->
+		
+			<!-- Parallax image -->
+			<div data-bgholder="parallax" class="full-wh z2" data-parallax-img="material-parallax parallax"><img src="https://cdn.hswstatic.com/gif/amps-watts-1.jpg"><div class="material-parallax parallax"><img src="https://cdn.hswstatic.com/gif/amps-watts-1.jpg" alt="" style="display: block; transform: translate3d(-50%, -5px, 0px);"></div></div>
+			<!-- Background image -->
+			<b data-bgholder="bg-img" class="full-wh bg-cover bg-cc z1"></b>
+		</div>
+
+
+<!------============================teams and codition starts here========---------------->
+
+
+ <div id="applicationMgnt" class="modal fade" role="dialog">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" style="margin:0;">&times;</button>
+                <h4 class="modal-title"><a class="header-logo pd-tb-small" href="#">
+            <img src="http://188.166.99.136:8080/static/img/geom2.png" style="max-height: 55px;"></a></h4>
+              </div>
+              <div class="modal-bodys">
+                <div class="element  clearfix col4-3 applicationMgnt grey auto skb-text-center skb-black-text">
+              <div class="row">
+                <div class="col-md-12 animated fadeInLeft delay-1s skb-text-center">
+                  <h3 class="skbss-whiteFont skbss-pTopBtm">Data Protection Policy</h3>
+                  <!-- <h2 class="accent-color">Application Management </h2> --> 
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 skb-mTopBtm"> 
+                  
+                  <!-- Classic Heading -->
+                  
+                  <div class="row" style="padding:32px;"> 
+                    <h4><b>1.0 Introduction</b></h4>
+                    <p style="color:#000;">
+Electricity Distribution Company (GEOMETRIC) is an electricity distribution company 
+licensed by the Nigerian Electricity Regulatory Commission to distribute electricity in the 
+South Eastern States of Nigeria.
+</p>
+<br>
+<p style="color:#000;">
+<b>GEOMETRIC</b> collects a lot of information about our customers, vendors and employees (data 
+subjects). Some of this information is processed, stored electronically and/or transmitted 
+across networks to other computers. We understand that the personal data used for
+business activities should be secured and it is our responsibility to keep it confidential for 
+the company to be trusted. Employees/third parties may have access, handle or process 
+personal data concerning colleagues, customers, and vendors. It is essential that GEOMETRIC 
+protects personal data and ensure that the requirements stipulated by the Nigeria Data 
+Protection Regulation 2019 (NDPR) are complied with. Breach of data security could lead 
+to business losses, lawsuits and financial loss.
+</p>
+<h4><b>2.0 Definitions</b></h4>
+<p>
+  <ul style="text-align: unset; color: #000;padding-left:30px;">
+    <li style="list-style: disc;">GEOMETRIC - Electricity distribution Company</li>
+    <li style="list-style: disc;">NDPR – Nigeria Data Protection Regulation 2019</li>
+    <li style="list-style: disc;">Personal Data – Any data relating to an identified or identifiable natural person 
+(data subject); it can be anything from name, address, a photo, an email address,
+bank details, etc.</li>
+    <li style="list-style: disc;">Data Subject – Any person who can be identified, directly or indirectly.</li>
+    <li style="list-style: disc;">Data Subject Access Request – The process for an individual to request a copy of 
+their data under a formal process.</li>
+
+   <li style="list-style: disc;">DPO – Data Protection Officer</li>
+    <li style="list-style: disc;">DPO – Data Protection Officer</li>
+    <li style="list-style: disc;">Processing – Any operation or set of operations which is performed on data or sets 
+of personal data.</li>
+    <li style="list-style: disc;"> Personal Data Breach – Breach of security leading to the accidental or unlawful 
+destruction, loss, alteration, unauthorized disclosure of, or access to personal data 
+transmitted, stored or otherwise processed.</li>
+    <li style="list-style: disc;">Responsible Person – The person responsible for handling data within the 
+department or company.</li>
+  </ul>
+</p>
+<h4><b>3.0 General Provisions</b></h4> 
+
+<p>
+  <ul style="text-align: unset; color: #000;padding-left:30px;">
+    <li style="list-style: disc;">This policy applies to all personal data collected, stored, transmitted and 
+processed by GEOMETRIC.</li>
+    <li style="list-style: disc;"> Our partners and vendors who process personal data on our behalf are mandated 
+to observe the principles in this policy</li>
+
+
+    <li style="list-style: disc;"> Where applicable, GEOMETRIC shall register with relevant agencies as an organization 
+that processes personal data.</li>
+
+
+    <li style="list-style: disc;"> Personal data shall not be shared without proper authorization. • Personal data shall always be captured with consent from the data subject; Data 
+shall be encrypted when stored or transmitted electronically.</li>
+
+    <li style="list-style: disc;"> Personal data captured shall be processed in a secured environment and by 
+authorized persons.</li>
+  
+  </ul>
+</p>
+
+
+<h4><b>4.0 Policy Principles</b></h4> 
+<p style="color:#000">
+<b>GEOMETRIC</b> is committed to processing data in accordance with its responsibilities under the 
+Nigerian Data Protection Regulation (NDPR) and Global Data Regulations. This policy 
+therefore highlights GEOMETRIC’s resolve to always ensure that data storage and handling is 
+carried out in a fair and transparent manner and also takes cognizance of the rights of 
+data subjects.
+In consonance with the Nigerian Data Protection Regulations, GEOMETRIC takes the following 
+considerations and principles in the collection and processing of personal data:
+
+ <ul style="text-align: unset; color: #000;padding-left:30px;">
+    <li style="list-style: disc;"> GEOMETRIC processes the personal data of data subjects upon such subjects’ consent and 
+upon contract, legal obligation, vital interests, public task or lawful and legitimate 
+interest. Such consent of the Data subject is obtained in a manner devoid of fraud, 
+coercion or undue influence. </li>
+
+
+
+
+    <li style="list-style: disc;"> Personal Data of Data Subjects collected by GEOMETRIC are for specified, explicit and 
+legitimate purposes with such purposes duly communicated to the data subjects.</li>
+
+
+
+
+    <li style="list-style: disc;"> GEOMETRIC maintains data that is accurate and up to date without prejudice to the dignity 
+of the data subjects. GEOMETRIC further ensures that personal data that are inaccurate 
+with regards to the purposes for which they are processed are erased or rectified 
+without delay.</li>
+
+
+    <li style="list-style: disc;"> GEOMETRIC keeps the Personal Data of its data subjects in a form and manner that permits 
+identification of data subjects for only necessary periods and for the particular 
+purposes for which the personal data are being processed. Where necessary, 
+personal data may be stored for longer periods insofar as the personal data will be 
+processed for archiving purposes in the public interest, scientific or historical or 
+statistical purposes subject however to requisite technical and organizational 
+measures.</li>
+
+    <li style="list-style: disc;"> When data is stored on paper, it shall be kept in a secured storage where it cannot 
+be illegally accessed and discarded printouts shall be shredded and disposed-off 
+securely.</li>
+
+
+    <li style="list-style: disc;"> When data is stored electronically, it shall be protected from unauthorized access, 
+accidental deletion and malicious hacking attempts.
+4.1Individual Rights</li>
+  
+
+
+    <li style="list-style: disc;"> Data subjects also have the right to object to the use of their personal data 
+for non-essential purposes. Any such requests should be made via email to 
+<a href="mailto:dataprotection@disco.com"style="color:blue;"> dataprotection@disco.com</a></li>
+
+
+<li style="list-style: disc;"> Data subject(s) may ask GEOMETRIC to access, amend, obtain a copy or delete 
+personal data (subject to terms and condition) that are handled and 
+processed on their behalf. Any such requests shall be made via email to  
+<a href="mailto:dataprotection@disco.com"style="color:blue;"> dataprotection@disco.com</a></li>
+  </ul>
+
+</p>
+
+<h4><b>5.0 Lawful, Fair and Transparent Processing</b></h4> 
+<p>
+  <ul style="text-align: unset; color: #000;padding-left:30px;">
+<li style="list-style: disc;"> All data processed by GEOMETRIC must be done on one of the following lawful bases: 
+consent, contract, legal obligation, vital interests, public task or legitimate 
+interests.</li> 
+<li style="list-style: disc;"> To ensure its processing of data is lawful, fair and transparent, GEOMETRIC shall 
+maintain a Register of Systems.</li> 
+<li style="list-style: disc;"> The Register of Systems shall be reviewed at least annually.</li> 
+<li style="list-style: disc;"> Individuals have the right to access their personal data and any such requests 
+made to GEOMETRIC shall be dealt with in a timely manner.</li>
+<li style="list-style: disc;"> Where consent is relied upon as a lawful basis for processing data, evidence of 
+opt-in consent shall be kept with the personal data.</li> 
+<li style="list-style: disc;"> Where communications are sent to individuals based on their consent, the option 
+for the individual to revoke their consent should be clearly available and systems 
+should be in place to ensure such revocation is reflected accurately in GEOMETRIC’s 
+systems.</li>
+</ul>
+</p>
+
+<h4><b>6.0 Monitoring</b></h4>
+<p style="color:#000">
+GEOMETRIC shall monitor how personal data is collected, stored, processed and transmitted 
+and this shall be done in compliance with applicable regulations. In the event of a breach 
+of security leading to the accidental or unlawful destruction, loss, alteration, unauthorized 
+disclosure of, or access to, personal data, GEOMETRIC shall promptly assess the risk to people’s 
+rights and freedoms and if appropriate report to relevant supervisory authority within 72 
+hours of becoming aware of the breach.
+</p>
+<h4><b>7.0 Confidentiality</b></h4>
+
+<p style="color:#000">
+GEOMETRIC hereby undertakes to treat as strictly confidential any information received in 
+whatever form whether or not it is expressly designated as being confidential, and which 
+comes to our knowledge;, and hereby undertakes to make use of such information only 
+for the purpose for which it is given. GEOMETRIC shall take all necessary actions to ensure that 
+this obligation of confidentiality is respected by its employees and subcontractors. 
+Provided however that such information may be provided by GEOMETRIC if required under any 
+order of a competent court or the relevant government authority. GEOMETRIC shall ensure 
+compliance with this confidentiality clause from all the employees/workers/third-party 
+agents associated with GEOMETRIC’s operation.
+</p>
+<h3><b>PRIVACY NOTICE</b></h3>
+
+<p style="color:#000">
+The Electricity Distribution PLC (GEOMETRIC), (together “GEOMETRIC” or “disco”, “we” 
+or “us”) respect your concerns about privacy. This Privacy Notice applies to the personal 
+data that we collect and handle for the purposes of maintaining and providing electricity 
+supply service-related information to visitors of this website. For the purposes of this 
+Privacy Notice, “personal data” means any information relating to an identified or 
+identifiable individual.
+</p>
+
+<b style="color:#000">What data do we collect</b>
+<p style="color:#000">
+GEOMETRIC collects the following personal data to effectively carry out everyday business 
+functions and activities and to provide the products and services defined by our business 
+type. Such data is collected from employees, customers, and vendors and includes (but is 
+not limited to), name, address, email address, and mobile telephone number
+</p>
+<b style="color:#000"> Data You Provide to Us</b>
+<p style="color:#000">
+Any data that you voluntarily provide to GEOMETRIC, including your name and email address, 
+will be used for the sole purpose for which the information was provided to us. In addition, 
+communication exchanges on GEOMETRIC’s website are public (not private) communications. 
+Therefore, any message that you post on this website will be considered and treated as 
+available for public use and distribution.
+</p>
+
+
+<b style="color:#000"> Data We Collect by Automated Means</b>
+
+<p style="color:#000">
+Like many websites, the GEOMETRIC website use “cookies” and “web beacons”. This site uses 
+cookies to optimize functionality and give you the best possible experience. We obtain 
+certain information by automated means when you visit this site, such as the IP address 
+of the device you use to connect to the Internet and the pages accessed. By collecting this 
+information, we learn how to best tailor the website to GEOMETRIC visitors. We collect this 
+information through various means, including “cookies” and “web beacons”. 
+</p>
+<p style="color:#000">
+<b style="color:#000"> Data We Collect from Third Parties</b><br/>
+
+This website does not collect any data on you from other sources.
+</p>
+
+
+<p style="color:#000">
+  <b style="color:#000"> Data We Share</b><br/>
+GEOMETRIC does not sell or otherwise disclose personal data collected as set out above, except 
+as described in this Privacy Notice. The data may also be shared with third-party service 
+providers who perform services for GEOMETRIC. These service providers are not authorized by 
+GEOMETRIC to use or disclose the personal data, except as necessary to perform specific services 
+for us. disco requires its partners and service providers to appropriately safeguard 
+the privacy and security of personal data they process on our behalf.
+</p>
+<b style="color:#000"> Specific Purpose of Processing</b>
+
+<p style="color:#000">
+The purpose of data collection on this website is to process your orders and manage your 
+account. To email you on additional services or products we think you may like. We may 
+also collect and process personal data of visitors and subscribers to this website who 
+request email subscription services from us.
+</p>
+
+<b style="color:#000"> Types of Processing</b>
+
+<p style="color:#000">
+Any personal data collected on this website is done through manual and automated 
+processes to enroll visitors to the subscription service that they requested. The data 
+collected on this site also undergoes automated processing for the sole purpose of website 
+functionality and user experience. Manual processing may be applied if problems are 
+discovered on the site.
+</p>
+
+
+<b style="color:#000"> How We Protect the Data</b>
+
+<p style="color:#000">
+GEOMETRIC maintains appropriate technical and organizational safeguards against 
+unauthorized processing of personal data and against accidental loss, destruction or 
+damage.
+</p>
+<b style="color:#000"> How Long We Keep the Data</b>
+<p style="color:#000">
+Your personal data will be kept only as long as necessary for the purposes set out in this 
+Notice and in accordance with GEOMETRIC’s applicable records retention and disposition 
+schedules.</p>
+
+<b style="color:#000"> Questions or concerns </b>
+<p style="color:#000">
+  Please contact GEOMETRIC’s Data Protection Office at <a href="mailto:dataprotection@disco.com"style="color:blue;"> Dataprotection@disco.com</a></p>
+
+   <a href="#" class="btn btn-default solid txt-upper block" id="acceptbutton" data-dismiss="modal">i accept the terms</a>
+  <!-- <button type="button" id="acceptbutton" class="acceptbutton"></button> -->
+                    <!-- Start Service Icon 1 -->
+                  
+                    <!-- End Service Icon 2 --> 
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!---teams and condition ---------------------end here ----------->
+
+</div>
+
+<script src="{% static 'all/js/jquery-2.1.1.min.js'%}" type="text/javascript"></script>
+
+<script src="../../../../cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script> 
+
+<script src="{% static 'all/vendor/bootstrap4beta/js/bootstrap.min.js'%}" type="text/javascript"></script> 
+
+<!--Cookie js for theme chooser and applying it --> 
+<script src="{% static 'all/vendor/cookie/jquery.cookie.js'%}"  type="text/javascript"></script> 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script type="text/javascript" src="{% static 'aj.js' %}"></script>
+
+
+<!-- /#page --> 
+
+<script src="{% static 'js/rgen_min.js'%}"></script>
+<script>
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+</script>
+<script>
+var commentSlider = {
+  
+  'config' : {
+    'container' : $('#wrapper')
+  },
+    
+  'init' : function(config) {
+      if(config && typeof(config) == 'object') {
+        $.extend(commentSlider.config, config);
+      }
+    
+      //caching dom elements
+      //wrapper
+      commentSlider.$container = commentSlider.config.container;
+
+      //all paragraph tags
+      commentSlider.$paragraphs = commentSlider.$container.
+        find('p');
+    
+      //all li tags
+      commentSlider.$dots = commentSlider.$container.
+        find('ul.dots-wrap > li');
+    
+      //first li within ul.dots-wrap
+      commentSlider.$firstDot = commentSlider.$container.
+        find('ul.dots-wrap > li:first-child');
+    
+      //first p tag within module wrapper
+      commentSlider.$firstParagraph = commentSlider.$container.
+        find('p:first-child');
+      
+      //setting first dot with .active class
+      commentSlider.$firstDot.addClass('active');
+
+      //setting first paragraph tag with .active class
+      commentSlider.$firstParagraph.addClass('activeText');
+    
+      //initializing functions and defining their parameters
+      commentSlider.currentItem(commentSlider.$paragraphs, commentSlider.$dots);
+      commentSlider.setActiveDot(commentSlider.$dots);
+      commentSlider.timer();
+  },
+  
+  //timer function runs necesary functions every five seconds
+  'timer' : function() {
+    setInterval(function(){ 
+      
+    }, 5000);
+  }, //timer function end
+  
+  //grabs current numerical class of dot clicked
+  'dotNumber' : function($dot) {
+    var dotClassArray = [];
+    var dotClassList = dotClassArray.push($dot.attr('class'));
+    var splitArray = dotClassArray.toString().split(' ');
+    
+    for(i = 0; i < splitArray.length; i++) {
+      if (splitArray[i] === "dot") { 
+        splitArray.splice(i, 1);
+        var dotClickedNumber = splitArray[i];
+        commentSlider.paragraphNumber(dotClickedNumber, commentSlider.$paragraphs);
+      }
+    }
+  },//end dotNumber
+  
+  'paragraphNumber' : function(dotClickedNumber, $paragraphs) {
+    $paragraphs.each(function() {
+        var $paragraph = $(this);
+        var paragraphClass = $paragraph.attr('class');    
+       
+        if(paragraphClass === dotClickedNumber) {          
+          $paragraph.addClass('activeText');
+          $paragraph.siblings().removeClass('activeText').addClass('slideLeft');
+          setTimeout(function () { 
+             $paragraph.siblings().removeClass('slideLeft');    
+          }, 400);          
+        }
+    });
+  },//end paragraphNumber
+  
+  //currentItem function gives every paragraph and dot a numerical class
+  //based on their array position
+  'currentItem' : function($paragraphs, $dots) {
+    $paragraphs.each(function(i) {
+      var $paragraph = $(this);
+      $paragraph.addClass([] + i);
+    });
+    
+    $dots.each(function(i) {
+      var $dot = $(this);
+      $dot.addClass([] + i);
+    });
+  },//end currentItem
+  
+  //setActiveDot adds class active to whichever dot is clicked
+  'setActiveDot' : function($dots) {
+    $dots.each( function() {
+      var $dot = $(this);
+      $dot.on('click', function() {
+        if($dot.hasClass('active')) {
+          return false;
+        } else {
+          $dot.addClass('active');
+          $dot.siblings().removeClass('active');
+        }
+        commentSlider.dotNumber($dot);      
+      });
+    });
+  }//end setActiveDot
+};
+  
+//initializes the entire thing by calling the init function  
+$(document).ready(commentSlider.init);
+</script><script src="https://use.fontawesome.com/5bd42dc115.js"></script>
+</body>
+
+</html>

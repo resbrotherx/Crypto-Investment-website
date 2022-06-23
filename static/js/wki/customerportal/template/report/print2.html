@@ -1,0 +1,190 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+<!-- <link rel="stylesheet" href="{% static 'bootstrap.css' %}"> -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="{% static 'print.css' %}"> -->
+    <style>@page { size: A5, margin: 0px }
+    body {margin: 0px}
+    .article {
+    /* A5 dimensions */
+    height: 210mm;
+    width: 148.5mm;
+
+    margin: 0;
+}</style>
+    <style type="text/css">
+
+        
+    </style>
+</head>
+<body class="A">
+    <div class="header">        
+        </div>
+        {% for rec in bill%}
+        <div class =" col-lg-12" style="page-break-inside: avoid;">
+        <center><h5>{{ rec.district }} {{rec.month}} {{rec.year}} BILL</h4>
+            <h6>This bill is for energy used in {{rec.bill_month}} {{rec.bill_year}}</h5></center>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="float: right !important; max-width: 50% !important; overflow: hidden;">           
+            <table class="table table-striped" style="border: 1px solid #000">
+                <tr style="font-size: 0.74em">
+                    <th style="padding: 2px;" colspan="4">Your Account Summary</th> 
+                </tr>
+                <tr style="font-size: 0.74em">
+                    <th style="padding: 2px;" colspan="2">Previous Bal:</th> <td style="padding: 2px;" colspan="2">₦{{rec.net_arrears}}</td>
+                </tr>
+                <tr style="font-size: 0.74em">
+                    <th style="padding: 2px;" colspan="2">Last Payment Date #:</th> <td style="padding: 2px;" colspan="2">{{rec.payment_date}}</td>
+                </tr>
+                <tr style="font-size: 0.74em">
+                    <th style="padding: 2px;" colspan="2">Total Payments: </th><td style="padding: 2px;" colspan="2">₦{{rec.payment_amount}}</td>
+                </tr>
+
+                <tr style="font-size: 0.74em">
+                    <th style="padding: 2px;" colspan="2">LOR Payment: </th><td style="padding: 2px;" colspan="2">₦{{rec.lor_amount}}</td>
+                </tr>
+
+                <tr style="font-size: 0.74em">
+                    <th style="padding: 2px;" colspan="2">Total LOR Bill: </th><td style="padding: 2px;" colspan="2">₦{{rec.lor_bill_total}}</td>
+                </tr>
+                <tr>
+                    <td style="padding: 2px;" colspan="4">
+                        <img src="https://chart.apis.google.com/chart?cht=qr&chs=100x100&chl={{rec.contact}}" width="40%"/>
+                        
+<!-- <img t-attf-src="data:image/*;base64,{{rec.image}}"/> -->
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style=" max-width: 50%;">           
+            <table class="table table-striped" style="padding: 2px;border: 1px solid #000">
+                <tr style="font-size: 0.74em;padding: 2px; ">
+                    <th colspan="2" style="padding: 2px;">Account Name</th> <td colspan="2" style="padding: 2px;">{{rec.name}}</td>
+                </tr>
+                <tr style="font-size: 0.50em;padding: 2px;">
+                    <th style="padding: 2px;" colspan="2">Address:</th> <td style="padding: 2px;" colspan="2">{{rec.address}}</td>
+                </tr>
+                <tr style="font-size: 0.74em;padding: 2px;">
+                    <th style="padding: 2px;" colspan="2">Account No.</th> <td style="padding: 2px;" colspan="2">{{rec.account_no}}</td>
+                </tr>
+                <tr style="font-size: 0.74em;padding: 2px;">
+                    <th style="padding: 2px;" colspan="2">Meter No.</th><td style="padding: 2px;" colspan="2">{{rec.meter_no}}</td>
+                </tr>
+                <tr style="font-size: 0.74em;padding: 2px;">
+                    <th style="padding: 2px;">Tariff:</th><td style="padding: 2px;">{{rec.tariff}}</td>
+                    <th style="padding: 2px;">Rate:</th><td style="padding: 2px;">{{rec.tariff_rate}}</td>
+                </tr>
+                <tr style="font-size: 0.74em;padding: 2px; overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;">
+                    <th style="padding: 2px;" colspan="2">Customers Phone</th><td style="padding: 2px;" colspan="2"> {{rec.phone}}</td>
+                </tr>
+                <tr style="font-size: 0.50em;padding: 2px; text-overflow: ellipsis;
+  white-space: nowrap;overflow: hidden;" >
+                    <th style="padding: 2px;" colspan="2">Transformer</th><td style="padding: 2px;" colspan="2">{{rec.transformer}}</td>
+                </tr>
+                <tr style="font-size: 0.74em;padding: 2px; overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;">
+                    <th style="padding: 2px;" colspan="2">Feeder Name</th><td style="padding: 2px;" colspan="2">{{rec.feeder}}</td>
+                </tr>
+                <tr style="font-size: 0.74em;padding: 2px;">
+                    <th style="padding: 2px;" colspan="2">Old Acct No.</th><td style="padding: 2px;" colspan="2">{{rec.old_acc_no}}</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">           
+            <table class="table table-striped" style="border: 1px solid #000">
+                 <tr>
+                    <th style="padding: 2px;" colspan="4">Your Account Summary</th> 
+                </tr>
+                <tr style="font-size: 0.74em">
+                    <th style="padding: 2px;">Multiplier:</th> <td style="padding: 2px;">{{rec.multiplier}}</td>
+                    <th style="padding: 2px;">Dails:</th> <td style="padding: 2px;"></td>
+                    <th style="padding: 2px;">Previous:</th> <td style="padding: 2px;">{{rec.previous_read}}</td>
+                    <th style="padding: 2px;">Current:</th> <td style="padding: 2px;">{{rec.current_read}}</td>
+
+                </tr>
+                <tr style="font-size: 0.74em">
+                    <th style="padding: 2px;">ADC:</th> <td style="padding: 2px;"></td>
+                    <th style="padding: 2px;">LAR DATE:</th> <td style="padding: 2px;"></td>
+                    <th style="padding: 2px;">LAR:</th> <td style="padding: 2px;"></td>
+                    <th style="padding: 2px; overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;">READ MODE:</th> <td style="padding: 2px;"></td>
+                    
+                </tr>
+                <tr style="font-size: 0.74em; overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;">
+                    <th style="padding: 2px;" colspan="2">Marketer Name:</th> <td style="padding: 2px;" colspan="2">{{rec.marketer_name}}</td>
+                    <th style="padding: 2px; overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;" colspan="2">Marketer Phone:</th> <td style="padding: 2px;" colspan="2">{{rec.marketer_phone}}</td>
+                </tr>
+            </table>
+
+        </div>
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">           
+            <table class="table table-striped" style="border: 1px solid #000; font-size: 0.74em">
+                <tr style="font-size: 0.74em">
+                    <th style="padding: 2px;" colspan="5">How we calculated your bill</th> 
+                </tr>
+                <tr style="font-size: 0.74em">
+                    <th style="padding: 2px;" colspan="4"></th> 
+                    <th style="padding: 2px;">Amount</th>
+                </tr>
+                <tr style="font-size: 0.74em">
+                    <th style="padding: 2px;">Consumption:</th> <th style="padding: 2px;">{{rec.e_consumed}}KWH</th>
+                    <th style="padding: 2px;">Unit Price:</th> <th style="padding: 2px;">{{rec.tariff_rate}}</th>
+                    <th style="padding: 2px;">{{rec.rate}}</th></tr>
+                <tr style="font-size: 0.74em">
+                    <th style="padding: 2px;">Fix Charge:</th> <th style="padding: 2px;">0.00</th>
+                    <th style="padding: 2px;">Vat:</th> <th style="padding: 2px;">₦{{rec.vat}}</th>
+                    <th style="padding: 2px;">{{rec.vat}}</th>
+                </tr>
+
+                
+                <tr><th style="padding: 2px;" colspan="4">Adjustments</th> <td style="padding: 2px;" colspan="1">{{rec.adjustment}}</td></tr>
+                <tr><th style="padding: 2px;" colspan="4">Net Arrears</th> <td style="padding: 2px;" colspan="1">₦{{rec.arrears}}</td></tr>
+                <tr style="font-size: 1em; border-bottom: 2px solid #000"><th style="padding: 2px;" colspan="4">Month Due</th> <td style="padding: 2px;" colspan="1">₦{{rec.amount}}</td></tr>
+                <tr style="font-size: 1em; border-bottom: 2px solid #000"><th style="padding: 2px;" colspan="4">Total Due</th> <td style="padding: 2px;" colspan="1">₦{{rec.total_pay}}</td></tr>
+                <tr  style="font-size: 0.74em; border-bottom: 2px solid #000; font-weight: bold;"> 
+                    <th style="padding: 2px;" colspan="5"><center> Please Pay before 15/{{rec.month_num}}/{{rec.year}} to avoid disconnection</center></th>
+                </tr>
+                <tr  style="font-size: 0.74em; border: 2px solid #000; font-weight: bold;"> 
+                    <th style="padding: 2px;" colspan="5"><center>Dear Valued Customer, Meter is no more free. Visit Our Office or Website and get one through MAP</center></th>
+                </tr>
+            </table>
+            </div>
+            <div style="col-md-12 border-top: 2px dotted #000">
+                <center><h6>{{rec.district}} {{rec.month}} {{rec.year}} BILL</h6></center>
+            </div>
+            <table class="table table-striped">
+                <tbody style="font-size: 0.64em">
+                    <tr>
+                        <th style="padding: 2px;">Name: </th><td style="padding: 2px;" colspan="4">{{rec.name}}</td>
+                        <th style="padding: 2px;">Address: </th><td style="padding: 2px; overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;" colspan="4">{{rec.address}}</td>
+                    </tr>
+                    <tr>
+                        <th style="padding: 2px;">AccountNo: </th><td style="padding: 2px;" colspan="2">{{rec.old_acc_no}}</td>
+                        <th style="padding: 2px;">Total Due: </th><td style="padding: 2px;" colspan="3">{{rec.total_pay}}</td>
+                        <th style="padding: 2px;">Amount Paid: </th><td style="padding: 2px;" colspan="3"><sub>..........................</sub></td>
+                    </tr>
+                </tbody>
+            </table>
+        
+
+    </div>
+    {% endfor %}
+</body>
+</html>

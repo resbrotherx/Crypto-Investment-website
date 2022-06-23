@@ -1,0 +1,247 @@
+/*
+Template Name: Pollo Admin
+Author: PSD2ALLCONVERSION
+Email: psd2allconversion@gmail.com
+File: Main Style
+*/
+
+
+/* Font Family Import */
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i,900,900i");
+
+/* Color Variables */
+
+:root {
+    --sidebarbg: #fff;
+    --sidebarcolor: #292b3a;
+    --sidebarbordercolor: rgba(0, 0, 0, 0.1);
+    --primarycolor: #7367f0;
+    --bodycolor: #292b3a;
+    --bodybackground: #eff0f5;
+    --bordercolor: rgba(0, 0, 0, 0.1);
+    --mainbackground: #fff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --dark: #343a40;
+    --sidebarwidth: 140px;
+}
+
+.semi-dark {
+    --sidebarbg: #10163a;
+    --sidebarcolor: #fff;
+    --sidebarbordercolor: rgba(255, 255, 255, 0.1);
+    --primarycolor: #7367f0;
+    --bodycolor: #292b3a;
+    --bodybackground: #eff0f5;
+    --bordercolor: rgba(0, 0, 0, 0.1);
+    --mainbackground: #fff;
+}
+
+.dark {
+    --sidebarbg: #2b2e39;
+    --sidebarcolor: #a5abb1;
+    --sidebarbordercolor: rgba(255, 255, 255, 0.1);
+    --primarycolor: #7367f0;
+    --bodycolor: #a5abb1;
+    --bodybackground: #3c4452;
+    --bordercolor: rgba(255, 255, 255, 0.1);
+    --mainbackground: #2b2e39;
+}
+
+.dark-alt {
+    --sidebarbg: #101329;
+    --sidebarcolor: #a5abb1;
+    --sidebarbordercolor: rgba(255, 255, 255, 0.1);
+    --primarycolor: #7367f0;
+    --bodycolor: #8283a0;
+    --bodybackground: #1c1c38;
+    --bordercolor: rgba(255, 255, 255, 0.1);
+    --mainbackground: #101329;
+}
+
+.semi-dark-alt {
+    --sidebarbg: #fff;
+    --sidebarcolor: #292b3a;
+    --sidebarbordercolor: rgba(0, 0, 0, 0.1);
+    --primarycolor: #7367f0;
+    --bodycolor: #8283a0;
+    --bodybackground: #1c1c38;
+    --bordercolor: rgba(255, 255, 255, 0.1);
+    --mainbackground: #101329;
+}
+
+
+/* Scroll bar color */
+
+body::-webkit-scrollbar {
+    width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+}
+
+
+/* Table / Layout */
+
+.table:not(.table-dark) {
+    color: #fff;
+}
+
+.table:not(.table-dark) thead th,
+.table:not(.table-dark) tfoot th,
+.table:not(.table-dark) td,
+.table:not(.table-dark) th {
+    padding: 1rem;
+    border-color: var(--bordercolor);
+}
+
+.table:not(.table-dark).table-bordered {
+    border-color: var(--bordercolor);
+}
+
+.layout-primary thead {
+    background-color: var(--primarycolor);
+    color: #fff;
+}
+
+.layout-primary thead th {
+    border-bottom: none;
+}
+
+.layout-primary.bordered {
+    border: 2px solid var(--primarycolor);
+}
+
+.layout-secondary thead {
+    background-color: var(--secondary);
+    color: #fff;
+}
+
+.layout-secondary thead th {
+    border-bottom: none;
+}
+
+.layout-secondary.bordered {
+    border: 2px solid var(--secondary);
+}
+
+.layout-danger thead {
+    background-color: var(--danger);
+    color: #fff;
+}
+
+.layout-danger thead th {
+    border-bottom: none;
+}
+
+.layout-danger.bordered {
+    border: 2px solid var(--danger);
+}
+
+.layout-warning thead {
+    background-color: var(--warning);
+    color: #fff;
+}
+
+.layout-warning.bordered {
+    border: 2px solid var(--warning);
+}
+
+.layout-info thead {
+    background-color: var(--info);
+    color: #fff;
+}
+
+.layout-info thead th {
+    border-bottom: none;
+}
+
+.layout-info.bordered {
+    border: 2px solid var(--info);
+}
+
+.layout-success thead {
+    background-color: var(--success);
+    color: #fff;
+}
+
+.layout-success thead th {
+    border-bottom: none;
+}
+
+.layout-success.bordered {
+    border: 2px solid var(--success);
+}
+
+.layout-dark thead {
+    background-color: var(--dark);
+    color: #fff;
+}
+
+.layout-dark thead th {
+    border-bottom: none;
+}
+
+.layout-dark.bordered {
+    border: 2px solid var(--dark);
+}
+
+
+/* datatable */
+
+.pagination .page-item.disabled .page-link {
+    background-color: transparent;
+    border-color: var(--bordercolor);
+    color: var(--bodycolor);
+}
+
+.pagination .page-link {
+    background-color: transparent;
+    border-color: var(--bordercolor);
+    color: var(--primarycolor);
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--primarycolor);
+    border-color: var(--primarycolor);
+    color: #fff;
+}
+
+
+/* Tablesaw/Responsive Table */
+
+.tablesaw-columntoggle td.title a,
+.tablesaw-swipe td.title a {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 10em;
+    max-width: 40vw;
+}
+
+@media (min-width: 40em) {
+    td.title {
+        max-width: 12em;
+    }
+}
+
+
+/* Buttons */
+
+.btn.rounded-btn {
+    border-radius: 60px;
+    padding: 7px 18px;
+}
+
+/* Wallet Page */

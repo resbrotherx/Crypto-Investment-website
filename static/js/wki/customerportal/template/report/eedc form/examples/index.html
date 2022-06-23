@@ -1,0 +1,688 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>GEOMETRIC Connection Form</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Include Bootstrap CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+      {% load static %}
+      <!-- Include SmartWizard CSS -->
+      <link href="{% static 'dist/css/smart_wizard.css' %}" rel="stylesheet" type="text/css" />
+      <link href="{% static 'dist/css/smart_wizard_theme_dots.css' %}" rel="stylesheet" type="text/css" />
+      <style type="text/css">
+         .multiselect {
+  width: 200px;
+}
+
+.selectBox {
+  position: relative;
+}
+
+.selectBox select {
+  width: 100%;
+  font-weight: bold;
+}
+
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#checkboxes {
+  display: none;
+  border: 1px #dadada solid;
+}
+
+#checkboxes label {
+  display: block;
+}
+
+#checkboxes label:hover {
+  background-color: #1e90ff;
+}
+      </style>
+   </head>
+   <body>
+      <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+         <a class="navbar-brand" href="#"><img src="{% static 'img/geom2.png' %}" style="width:80px;"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+               <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+               </li>
+            </ul>
+         </div>
+      </nav>
+      <div class="jumbotron text-left text-white" style="background: url('{% static 'img/bgImg.svg' %}'); background-size: cover; background-repeat: no-repeat;">
+         <h5 style="font-weight: bold;">Application for Electricity Supply & Agreement Form</h5>
+      </div>
+      <div class="col-md-8 ml-auto mr-auto" style="margin-top: -80px;">
+         <!-- SmartWizard html -->
+         <div class="card card-shadow">
+            <div id="smartwizard" class="p-3">
+               <ul>
+                  <li><a href="#step-1">Customer details<br /><small>Bio Data</small></a></li>
+
+               </ul>
+               <div class="card-body">
+                  <div id="step-1" class="">
+                     <div class="row">
+                        <div class="pl-4 pr-4">
+                           <div class="row">
+                           	<div class="col-md-12 form-group">
+                           		<label for="form-subcomponent-shorthand-input-first-name">Applicant Photo *</label>
+                           		
+                           		 <div class="ui fluid input"><input type="file" class="upload form-control" name="" output="app_image" output-text="app_text"></div>
+                           		<div style="width: 300px">
+                           			<img src="" alt="" id="app_image" style="width:100% , height: 100%;" width="100%" height="150px">
+                           		</div>
+                           		<input type="hidden" data-name="a_image" id="app_text" required="">
+                           	</div>
+                              <div class="col-md-6 form-group">
+                                 <label for="form-subcomponent-shorthand-input-first-name">Surname *</label>
+                                 <div class="ui fluid input">
+                                    <input type="hidden" class="input" data-name="table" value="new_connection" >
+                                    {% csrf_token %}
+                                    <input class="form-control input" required="" id="form-subcomponent-shorthand-input-first-name" placeholder="Surname"  data-name="a_surname"type="text" required="">
+                                    
+                                    <input type="hidden" class="input" data-name="app_no" value="{{ formid}}" >
+                                    <input type="hidden" class="input" data-name="state" value="inprogress" >
+                                    <input type="hidden" class="input" data-name="create_date" value="now()" >
+
+                                 </div>
+                              </div>
+                              <div class="col-md-6 form-group">
+                                 <label for="form-subcomponent-shorthand-input-last-name">Other Names *</label>
+                                 <div class="ui fluid input">
+                                    <input class="form-control input" id="form-subcomponent-shorthand-input-last-name" placeholder="Other Names" data-name="a_other_name" type="text" required="">
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="col-md-6 form-group">
+                                 <label for="form-subcomponent-shorthand-input-first-name">Address </label>
+                                 <div class="ui fluid input">
+                                    <input class="form-control input" id="form-subcomponent-shorthand-input-first-name" data-name="a_address" placeholder="Address" type="text" required="">
+                                 </div>
+                              </div>
+                              <div class="col-md-6 form-group">
+                                 <label for="form-subcomponent-shorthand-input-last-name">Landmark *</label>
+                                 <div class="ui fluid input">
+                                    <input class="form-control input" id="form-subcomponent-shorthand-input-last-name" placeholder="Landmark" data-name="a_landmark" type="text" required="">
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="col-md-6 form-group">
+                                 <label>State</label>
+                                 <select class="custom-select form-control input" data-name="a_state" class="form-control" required="True">
+                                    <option value="abia">Abia</option>
+                                    <option value="anambra">Anambra</option>
+                                    <option value="ebonyi">Ebonyi</option>
+                                    <option value="enugu">Enugu</option>
+                                    <option value="imo">Imo</option>
+                                 </select>
+                              </div>
+
+                              <!-- <div class="col-md-6 form-group">
+                                 <label>District</label>
+                                 <select class="custom-select form-control input" data-name="x_district" class="form-control" required="True">
+                                    <option value="137">Aba</option>
+                                    <option value="138">Abakaliki</option>
+                                    <option value="4">Abakpa</option>
+                                    <option value="139">Ariaria</option>
+                                    <option value="140">Awka</option>
+                                    <option value="141">Awkunanaw</option>
+                                    <option value="142">Ekwulobia</option>
+                                    <option value="135">Mbaise</option>
+                                    <option value="143">New Owerri</option>
+                                    <option value="144">Nnewi</option>
+                                    <option value="136">Aba</option>
+                                    <option value="138">Nsukka</option>
+                                    <option value="145">Ogbaru</option>
+                                    <option value="130">Ogidi</option>
+                                    <option value="1">Ogui</option>
+                                    <option value="146">Onitsha</option>
+                                    <option value="147">Orlu</option>
+                                    <option value="148">Owerri</option>
+                                    <option value="149">Umuahia</option>
+                                 </select>
+                              </div> -->
+
+
+                              <div class="col-md-6 form-group">
+                                 <label>LGA</label>
+                                 <select class="custom-select form-control input" data-name="a_lga" class="form-control" required="True">
+                                    <option value="Aba North">Aba North</option>
+                                    <option value="Aba South">Aba South</option>
+                                    <option value="Arochukwu">Arochukwu</option>
+                                    <option value="Bende">Bende</option>
+                                    <option value="Ikwuano">Ikwuano</option>
+                                    <option value="IsialaNgwa North">Isiala Ngwa North</option>
+                                    <option value="IsialaNgwa South">Isiala Ngwa South</option>
+                                    <option value="Isuikwuato">Isuikwuato</option>
+                                    <option value="Obi Ngwa">Obi Ngwa</option>
+                                    <option value="Ohafia">Ohafia</option>
+                                    <option value="Osisioma Ngwa">Osisioma Ngwa</option>
+                                    <option value="Ugwunagbo">Ugwunagbo</option>
+                                    <option value="Ukwa East">Ukwa East</option>
+                                    <option value="Ukwa West">Ukwa West</option>
+                                    <option value="Umuahia North">Umuahia North</option>
+                                    <option value="Umuahia South">Umuahia South</option>
+                                    <option value="Umu Nneochi">Umu Nneochi</option>
+
+                                    <option value="Aguata">Aguata</option>
+                                    <option value="Anambra East">Anambra East</option>
+                                    <option value="Anambra West">Anambra West</option>
+                                    <option value="Anaocha">Anaocha</option>
+                                    <option value="Anyamelum">Anyamelum</option>
+                                    <option value="AwkaNorth">Awka North</option>
+                                    <option value="AwkaSouth">Awka South</option>
+                                    <option value="Demili North">Demili North</option>
+                                    <option value="Dunukofia">Dunukofia</option>
+                                    <option value="Ekwusigo">Ekwusigo</option>
+                                    <option value="Idemili South">Idemili South</option>
+                                    <option value="Ihiala">Ihiala</option>
+                                    <option value="Njikoka">Njikoka</option>
+                                    <option value="Nnewi North">Nnewi North</option>
+                                    <option value="Nnewi South">Nnewi South</option>
+                                    <option value="Ogbaru">Ogbaru</option>
+                                    <option value="Onitsha North">Onitsha North</option>
+                                    <option value="Onitsha South">Onitsha South</option>
+                                    <option value="Orumba North">Orumba North</option>
+                                    <option value="Orumba South">Orumba South</option>
+                                    <option value="Oyi">Oyi</option>
+
+                                    <option value="Abakaliki">Abakaliki</option>
+                                    <option value="Afikpo orth">Afikpo North</option>
+                                    <option value="Afikpo South">Afikpo South</option>
+                                    <option value="Ebonyi">Ebonyi</option>
+                                    <option value="Ezza North">Ezza North</option>
+                                    <option value="Ezza South">Ezza South</option>
+                                    <option value="Ikwo">Ikwo</option>
+                                    <option value="Ishielu">Ishielu</option>
+                                    <option value="Ivo-Ebonyi">Ivo-Ebonyi</option>
+                                    <option value="Izzi">Izzi</option>
+                                    <option value="Ohaozara">Ohaozara</option>
+                                    <option value="Ohaukwu">Ohaukwu</option>
+                                    <option value="Onicha">Onicha</option>
+
+                                    <option value="Aninri">Aninri</option>
+                                    <option value="Awgu">Awgu</option>
+                                    <option value="Enugu East">Enugu East</option>
+                                    <option value="Enugu North">Enugu North</option>
+                                    <option value="Enugu South">Enugu South</option>
+                                    <option value="Ezeagu">Ezeagu</option>
+                                    <option value="Igbo Etiti">Igbo Etiti</option>
+                                    <option value="Igbo ze North">Igbo Eze North</option>
+                                    <option value="Igbo Eze South">Igbo Eze South</option>
+                                    <option value="Isi Uzo">Isi Uzo</option>
+                                    <option value="Nkanu East">Nkanu East</option>
+                                    <option value="Nkanu West">Nkanu West</option>
+                                    <option value="Nsukka">Nsukka</option>
+                                    <option value="Oji River">Oji River</option>
+                                    <option value="Udenu">Udenu</option>
+                                    <option value="Udi">Udi</option>
+                                    <option value="Uzo-Uwani">Uzo-Uwani</option>
+
+                                    <option value="Aboh-Mbaise">Aboh-Mbaise</option>
+                                    <option value="Ahiazu-Mbaise">Ahiazu-Mbaise</option>
+                                    <option value="Ehime-Mbano">Ehime-Mbano</option>
+                                    <option value="Ezinihitte-Mbaise">Ezinihitte-Mbaise</option>
+                                    <option value="Ideato North">Ideato North</option>
+                                    <option value="Ideato South">Ideato South</option>
+                                    <option value="Ihitte-Uboma">Ihitte-Uboma</option>
+                                    <option value="Ikeduru">Ikeduru</option>
+                                    <option value="Isiala-Mbano">Isiala-Mbano</option>
+                                    <option value="Isu">Isu</option>
+                                    <option value="Mbaitolu">Mbaitolu</option>
+                                    <option value="Ngor-Okpala">Ngor-Okpala</option>
+                                    <option value="Njaba">Njaba</option>
+                                    <option value="Nkwerre">Nkwerre</option>
+                                    <option value="Nwangele">Nwangele</option>
+                                    <option value="Obowo">Obowo</option>
+                                    <option value="Oguta">Oguta</option>
+                                    <option value="Ohaji-Egbema">Ohaji-Egbema</option>
+                                    <option value="Okigwe">Okigwe</option>
+                                    <option value="Onuimo">Onuimo</option>
+                                    <option value="Orlu">Orlu</option>
+                                    <option value="Orsu">Orsu</option>
+                                    <option value="OruEast">Oru East</option>
+                                    <option value="OruWest">Oru West</option>
+                                    <option value="Owerri Municipal">Owerri Municipal</option>
+                                    <option value="Owerri North">Owerri North</option>
+                                    <option value="Owerri West">Owerri West</option>
+                                 </select>
+                              </div>
+
+                              <div class="col-md-6 form-group">
+                                 <label>Type oF Premises *</label>
+                                 <select class="custom-select form-control input" data-name="premise_type" class="form-control" required="">
+                                    <option value="duplex">Duplex</option>
+                                    <option value="3bedroom">3 Bedroom Flat</option>
+                                    <option value="2bedroom">2 Bedroom Flat</option>
+                                    <option value="single">Single Room</option>
+                                    <option value="blockofflat">Block of Flats</option>
+                                    <option value="tenementhouse">Tenement House</option>
+                                    <option value="boysquarters">Boys Quarters</option>
+                                    <option value="shop">Shop</option>
+                                    <option value="individual">Individual</option>
+                                    <option value="others">Other (please specify):</option>
+                                 </select>
+                              </div>
+                              <div class="col-md-6 form-group">
+                                 <label for="form-subcomponent-shorthand-input-first-name">Other Premises Type:</label>
+                                 <div class="ui fluid input">
+                                    <input class="form-control input" id="form-subcomponent-shorthand-input-first-name" placeholder="" data-name="a_o_premise_type" type="text">
+                                 </div>
+                              </div>
+                              <!-- <div class="col-md-6 form-group">
+                                 <label for="form-subcomponent-shorthand-input-first-name">Number Of Accounts Required</label>
+                                 <div class="ui fluid input">
+                                    <input class="form-control input" id="form-subcomponent-shorthand-input-first-name" placeholder="" data-name="a_acct" type="number" required = "True" >
+                                 </div>
+                              </div> -->
+                           </div>
+                           <div class="row">
+                              <div class="col-md-6 form-group">
+                                 <label>Use of Premises</label>
+                                 <select class="custom-select form-control input" data-name="premise_use" class="form-control" required="">
+                                    <option value="residential">Residential</option>
+                                    <option value="commercial">Commercial</option>
+                                    <option value="industrial">Industrial</option>
+                                    <option value="streetLight">Street Light</option>
+                                 </select>
+                              </div>
+                              
+                              <div class="col-md-6 form-group">
+                                 <label for="form-subcomponent-shorthand-input-first-name">Email</label>
+                                 <div class="ui fluid input"><input class="form-control" id="form-subcomponent-shorthand-input-first-name" placeholder="Email" data-name="a_email" type="text" ></div>
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="col-md-6 form-group">
+                                 <label for="form-subcomponent-shorthand-input-first-name">Contact Tel No.</label>
+                                 <div class="ui fluid input"><input class="form-control input" id="form-subcomponent-shorthand-input-first-name" placeholder="Contact Tel No." data-name="a_telephone" type="text" required="True"></div>
+                              </div>
+                              <div class="col-md-6 form-group">
+                                 <label for="form-subcomponent-shorthand-input-first-name">Mobile No.</label>
+                                 <div class="ui fluid input"><input class="form-control input" id="form-subcomponent-shorthand-input-first-name" placeholder="Mobile No." data-name="a_mobile" type="text" required="TRUE"></div>
+                              </div>
+
+                           </div>
+
+                           <div class="col-md-12 pl-0 pt-4 pb-3">
+                              <h3>Customer Previous Details </h3>
+                              <hr>
+                           </div>
+                           <div class="row">
+                              <div class="col-md-6 form-group">
+                                 <label for="form-subcomponent-shorthand-input-first-name">Customer Address</label>
+                                 <div class="ui fluid input">
+                                    <input class="form-control input" id="form-subcomponent-shorthand-input-first-name" data-name="prev_address" placeholder="Customer Address" type="text" required="">
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="col-md-6 form-group">
+                                 <label for="form-subcomponent-shorthand-input-first-name">Account No.</label>
+                                 <div class="ui fluid input"><input class="form-control input" id="form-subcomponent-shorthand-input-first-name" data-name="prev_acc_no" placeholder="Account No." type="text" ></div>
+                              </div>
+                              <div class="col-md-6 form-group">
+                                 <label for="form-subcomponent-shorthand-input-first-name">Meter No.</label>
+                                 <div class="ui fluid input"><input class="form-control input" id="form-subcomponent-shorthand-input-first-name" placeholder="Metric No." data-name="prev_meter_no"  type="text" ></div>
+                              </div>
+                              <div class="col-md-6 form-group">
+                                 <label>District</label>
+                                 <select class="custom-select form-control input" data-name="district" required="">
+                                    <option value="aba">Aba</option>
+                                    <option value="abakpa">Abakpa</option>
+                                    <option value="abakaliki">Abakaliki</option>
+                                    <option value="ariaria">Ariaria</option>
+                                    <option value="awka">Awka</option>
+                                    <option value="awkunanaw">Awkunanaw</option>
+                                    <option value="ekwulobia">Ekwulobia</option>
+                                    <option value="mbaise">Mbaise</option>
+                                    <option value="new_owerri">New Owerri</option>
+                                    <option value="nnewi">Nnewi</option>
+                                    <option value="nsukka">Nsukka</option>
+                                    <option value="ogbaru">Ogbaru</option>
+                                    <option value="ogidi">Ogidi</option>
+                                    <option value="ogui">Ogui</option>
+                                    <option value="onitsha">Onitsha</option>
+                                    <option value="orlu">Orlu</option>
+                                    <option value="owerri">Owerri</option>
+                                    <option value="umuahia">Umuahia</option>
+                                 </select>
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="col-md-6 form-group">
+                                 <label for="form-subcomponent-shorthand-input-first-name">Name of Employer</label>
+                                 <div class="ui fluid input"><input class="form-control input" id="form-subcomponent-shorthand-input-first-name" placeholder="Name of Employer" data-name="employer_name" type="text" required=""></div>
+                              </div>
+                              <div class="col-md-6 form-group">
+                                 <label for="form-subcomponent-shorthand-input-first-name">Address of Employer</label>
+                                 <div class="ui fluid input"><input class="form-control input" id="form-subcomponent-shorthand-input-first-name" placeholder="Address of Employer" data-name="employer_address" type="text"></div>
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="col-md-6 form-group">
+                                 <label for="form-subcomponent-shorthand-input-first-name">Landmark</label>
+                                 <div class="ui fluid input"><input class="form-control input" id="form-subcomponent-shorthand-input-first-name" placeholder="Landmark" data-name="employer_landmark" type="text"></div>
+                              </div>
+                              <!-- <div class="col-md-6 form-group">
+                                 <label for="form-subcomponent-shorthand-input-first-name">LGA</label>
+                                 <div class="ui fluid input"><input class="form-control input" id="form-subcomponent-shorthand-input-first-name" placeholder="LGA" data-name="employer_lga" type="text"></div>
+                              </div> -->
+                              <div class="col-md-6 form-group">
+                                 <label for="form-subcomponent-shorthand-input-first-name">Pin Code</label>
+                                 <div class="ui fluid input"><input class="form-control input" id="form-subcomponent-shorthand-input-first-name" placeholder="Pin Code" data-name="employer_pin" type="text"></div>
+                              </div>
+                           </div>
+                           <div class="row">
+                                                            <div class="col-md-6 form-group">
+                                 <label>Means of Identification</label>
+                                 <select class="custom-select form-control" class="form-control input" data-name="a_means_id" required="">
+                                    <option value="intlPass">Intl Passport</option>
+                                    <option value="drivers_license">Drivers Licence</option>
+                                    <option value="pvc">PVC</option>
+                                 </select>
+                              </div>
+                           <div class="col-md-6 form-group">
+                                 <label for="form-subcomponent-shorthand-input-first-name">Personal Identification No.</label>
+                                 <div class="ui fluid input"><input class="form-control input" id="form-subcomponent-shorthand-input-first-name" placeholder="Personal Identification No." data-name="app_three_p_id_num" type="text" required=""></div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <hr>
+                     <div class="row mt-2">
+                                            <div class="col-md-12 form-group multiselect">
+                                                <div class="ui checkbox text-left">
+
+   
+                                                   
+                                                    <label for="one" style="margin: 5px;"> <br>
+                                                      I AGREE TO GET DIRECT CONNECTION IF METER IS NOT AVAILABLE, PENDING ITS AVAILABILITY.
+                                            
+                                                </label>
+                                               <!--  <input class="hidden input" readonly="" data-name="a_agree" tabindex="0" type="checkbox" value="" id="one" name="check" onclick="onlyOne(this)">
+ -->
+
+                                            <!--     <select class="custom-select ui checkbox form-control text-left form-control input" data-name="a_agree">
+                                                <option class="hidden input" readonly="" data-name="a_agree" value="True">True</option>
+                                                <option class="hidden input" readonly="" data-name="a_agree" value="False">False</option>
+                                                </select> -->
+
+                                             
+                                                    <div class="selectBox" onclick="showCheckboxes()">
+                                                   <select style="padding: 9px;
+    border-color: #ced4da;
+    color: #66696b;">
+                                                     <option>Select Accept if Agreed</option>
+                                                   </select>
+                                                   <div class="overSelect"></div>
+                                                 </div>
+
+                                                 <div id="checkboxes" class="ui checkbox">
+                                                   <label for="one" style="margin: 5px;">
+
+                                                    <input class="hidden input" readonly="" data-name="a_agree" tabindex="0" type="checkbox" value="" checked="" id="one" name="check" onclick="onlyOne(this)">
+                                                     i Accept</label>
+                                                   <label for="two" style="margin: 5px;">
+                                                     <input class="" readonly="" name="check" tabindex="0" type="checkbox" value="" id="two" onclick="onlyOne(this)"> i Dont
+                                                  </label>
+                                                 </div>
+                                               
+
+
+                                            </div>
+                                        </div>
+                     </div>
+                     
+                           <div class="col-md-12 pl-0 pt-4 pb-3">
+                              <h3>Landlord details </h3>
+                              <hr>
+                           </div>
+
+                            <div class="row mt-2">
+                                <div class="col-md-6 form-group">
+
+                                    <label for="form-subcomponent-shorthand-input-first-name">Landlord Surname</label>
+                                    <div class="ui fluid input">
+                                        <!-- <input type="hidden" class="input" data-name="table" value="new_connection">
+                                        <!-- {% csrf_token %} -->
+                                        <!-- <input type="hidden" id="edit" url="../../searchEdit/" value="{{id}}"> -->
+                                        <input class="form-control input" data-name="app_three_surname" id="form-subcomponent-shorthand-input-first-name" placeholder="Surname" type="text">
+                                    </div>
+                                </div>
+                                    
+                                    <div class="col-md-6 form-group">
+                                        <label for="form-subcomponent-shorthand-input-first-name">Landlord Other Names</label>
+                                        <div class="ui fluid input">
+                                            <input class="form-control input" data-name="app_three_othername" id="form-subcomponent-shorthand-input-first-name" placeholder="Other Names" type="text"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row mt-2">
+                                        <div class="col-md-6 form-group">
+                                            <label for="form-subcomponent-shorthand-input-first-name">Phone</label>
+                                            <div class="ui fluid input">
+                                                <input class="form-control input" id="form-subcomponent-shorthand-input-first-name" data-name="app_three_mobile" placeholder="Phone" type="text">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-6 form-group">
+                                            <label for="form-subcomponent-shorthand-input-first-name">Email Address</label>
+                                            <div class="ui fluid input">
+                                                <input class="form-control input" id="form-subcomponent-shorthand-input-first-name" placeholder="Email Address" type="text" data-name="app_three_email">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row mt-2">
+                                        <div class="col-md-6 form-group">
+                                            <label for="form-subcomponent-shorthand-input-first-name">NAME OF EMPLOYER/BUSINESS</label>
+                                            <div class="ui fluid input">
+                                                <input class="form-control input" id="form-subcomponent-shorthand-input-first-name" placeholder="Name of Employer/Business" type="text" data-name="app_three_emp_biz">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 form-group">
+                                            <label for="form-subcomponent-shorthand-input-first-name">Address of Employer</label>
+                                            <div class="ui fluid input">
+                                                <input class="form-control input" id="form-subcomponent-shorthand-input-first-name" placeholder="Address of Employer" type="text" data-name="app_three_emp_addres"></div>
+                                            </div></div>
+                                            
+                                            <div class="row mt-2">
+                                                <div class="col-md-6 form-group"><label for="form-subcomponent-shorthand-input-first-name">Meter Account No.</label>
+                                                <div class="ui fluid input">
+                                                    <input class="form-control input" id="form-subcomponent-shorthand-input-first-name" data-name="app_three_meter_acc" placeholder="Meter Account No." type="text"></div></div>
+                                            <div class="col-md-6 form-group"><label for="form-subcomponent-shorthand-input-first-name">Customer Account</label><div class="ui fluid input"><input class="form-control input" id="form-subcomponent-shorthand-input-first-name" data-name="app_three_cus_acc_no" placeholder="Customer Account" type="text"></div></div></div>
+<div class="row mt-2">
+                                                <div class="col-md-6 form-group"><label>Customer Preferred Method Of Payment.</label>
+                                                <select class="custom-select form-group input" data-name="app_four_pay_method">
+                                                    <!-- ('cheque','Cheque'),('atm','ATM'),('pos','POS'),('online', 'Online'),('cash', 'Cash Deposit') -->
+                                                    <option value="cash">Cash</option>
+                                                    <option value="cheque">Cheque</option>
+                                                    <option value="online">Online</option>
+                                                    <option value="pos">POS</option>
+                                                    <option value="atm">ATM</option>
+                                                </select></div>
+                                                    
+                                                <div class="col-md-6 form-group"><label>Preferred method of Receiving Bills</label>
+                                                <select class="custom-select form-group input" data-name="app_four_receive_bil">
+                                                    <!-- ('sms','Bill Sent By SMS'),('email', 'Bill Sent By Email'),('house', 'Bill Delivery to the House') -->
+                                                    <option value="email">Bill Sent By Email</option>
+                                                    <option value="sms">Bill Sent By SMS</option>
+                                                    <option value="house">Bill Delivery to the House</option></select>
+                                                </div>
+                                           
+                                        </div>
+
+                                            <div class="row mt-2">
+                                                <div class="col-md-6 form-group"><label>Personal Identification Type</label>
+                                                <select class="custom-select form-group input" data-name="app_three_p_id">
+                                                    <option value="intlPass">Intl Passport</option>
+                                                    <option value="drivers_license">Drivers Licence</option>
+                                                    <option value="pvc">PVC</option>
+                                                </select>
+                                                </div>
+                                                    <div class="col-md-6 form-group"><label for="form-subcomponent-shorthand-input-first-name">Personal Identification No.</label>
+                                                <div class="ui fluid input">
+                                                    <input class="form-control input" id="form-subcomponent-shorthand-input-first-name" data-name="app_three_p_id_num" placeholder="Personal Identification No." required="" type="text"></div></div>
+                                           
+                                        </div>
+                                        
+                                        <div class="row mt-2">
+                                            <div class="col-md-12 form-group">
+                                                <div class="ui checkbox text-left">
+                                                    <input class="hidden input" readonly="" data-name="app_three_confirm" tabindex="0" type="checkbox" value=""><label>
+                                                    I confirm that the Applicant is my tenant and certify his/her request for electricity 
+                                                    supply and also accept to notify GEOMETRIC in writing when he/she gives notice 
+                                                    (in writing or otherwise) of termination of his/her tenancy agreement, failing which 
+                                                    any outstanding debt or dues on his/her account may be debited to my own account.
+                                                </label>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        
+
+                                       <div class="col-md-12 pl-0 pt-4 pb-3">
+                                       <h3>Disclaimer </h3>
+                                       <hr>
+                                       </div>
+                                       <div class="col-md-12 form-group">
+                                                <label>
+                                                    “It is not the responsibility of GEOMETRIC to carry out load separation for the purpose of metering block of flats. Kindly contact a certified electrician to ensure that the load wires are properly separated. Do not use GEOMETRIC staff for this purpose”.
+                                                </label>
+                                            
+                                        </div>
+
+
+                     <input type="hidden" id="new" value="success?formid={{formid}}" >
+                     {% if id != '' %}
+                     <input type="hidden" id="edit" value="{{id}}" url="../searchEdit/">
+                     {% endif %}
+                  <div class="col-md-6 form-group"><button new="Home" data-ajax='../add/' sweetalert type="button" class="submit btn btn-info ">Submit</button></div>
+                  
+                  </div>
+                     </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Include jQuery -->
+      <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+      <script
+         src="https://code.jquery.com/jquery-3.3.1.min.js"
+         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+         crossorigin="anonymous"></script>
+      <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+      <!-- Include SmartWizard JavaScript source -->
+      <script type="text/javascript" src="{% static 'dist/js/jquery.smartWizard.min.js' %}"></script>
+      <script type="text/javascript" src="{% static 'ajaxsend.js' %}"></script>
+      <script type="text/javascript">
+         $(document).ready(function(){
+         
+             // Step show event
+             $("#smartwizard").on("showStep", function(e, anchorObject, stepNumber, stepDirection, stepPosition) {
+                //alert("You are on step "+stepNumber+" now");
+                if(stepPosition === 'first'){
+                    $("#prev-btn").addClass('disabled');
+                }else if(stepPosition === 'final'){
+                    $("#next-btn").addClass('disabled');
+                }else{
+                    $("#prev-btn").removeClass('disabled');
+                    $("#next-btn").removeClass('disabled');
+                }
+             });
+         
+             // Toolbar extra buttons
+             var btnFinish = $('<button></button>').text('Finish')
+                                              .addClass('btn btn-info')
+                                              .on('click', function(){ ajax_submit(); });
+             var btnCancel = $('<button></button>').text('Cancel')
+                                              .addClass('btn btn-danger')
+                                              .on('click', function(){ $('#smartwizard').smartWizard("reset"); });
+         
+         
+             // Smart Wizard
+             $('#smartwizard').smartWizard({
+                     selected: 0,
+                     theme: 'dots',
+                     transitionEffect:'fade',
+                     showStepURLhash: true,
+                     toolbarSettings: {toolbarPosition: 'end',
+                                       toolbarButtonPosition: 'end',
+                                       toolbarExtraButtons: []
+                                     }
+             });
+         
+         
+             // External Button Events
+             $("#reset-btn").on("click", function() {
+                 // Reset wizard
+                 $('#smartwizard').smartWizard("reset");
+                 return true;
+             });
+         
+             $("#prev-btn").on("click", function() {
+                 // Navigate previous
+                 $('#smartwizard').smartWizard("prev");
+                 return true;
+             });
+         
+             $("#next-btn").on("click", function() {
+                 // Navigate next
+                 $('#smartwizard').smartWizard("next");
+                 return true;
+             });
+         
+             $("#theme_selector").on("change", function() {
+                 // Change theme
+                 $('#smartwizard').smartWizard("theme", $(this).val());
+                 return true;
+             });
+         
+             // Set selected theme on page refresh
+             $("#theme_selector").change();
+         });
+
+         var expanded = false;
+
+         function showCheckboxes() {
+           var checkboxes = document.getElementById("checkboxes");
+           if (!expanded) {
+             checkboxes.style.display = "block";
+             expanded = true;
+           } else {
+             checkboxes.style.display = "none";
+             expanded = false;
+           }
+         }
+
+         function onlyOne(checkbox) {
+          var checkboxes = document.getElementsByName('check')
+          checkboxes.forEach((item) => {
+              if (item !== checkbox) item.checked = false
+          })
+      }
+      </script>
+   </body>
+</html>
+

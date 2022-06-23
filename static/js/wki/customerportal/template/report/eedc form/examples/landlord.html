@@ -1,0 +1,246 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Landlord Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Include SmartWizard CSS -->
+    {% load static %}
+    <link href="{% static 'dist/css/smart_wizard.css' %}" rel="stylesheet" type="text/css" />
+
+
+    <link href="{% static 'dist/css/smart_wizard_theme_dots.css' %}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+                <a class="navbar-brand" href="#">EEDC</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                   
+                  </ul>
+                </div>
+              </nav>
+
+              
+        <div class="jumbotron"  style="background: url('{% static 'img/bgImg.svg' %}'); background-size: cover; background-repeat: no-repeat;">
+                <h3 style="font-weight: bold;">LandLord Profile</h3>
+            </div>
+
+    <div class="col-md-8 ml-auto mr-auto" style="margin-top: -80px;">
+        <!-- SmartWizard html -->
+       <div class="card card-shadow">
+            <div id="smartwizard" class="p-3">
+            <ul>
+                <li><a href="#step-1">Step 1<br /><small>LandLord</small></a></li>
+            </ul>
+
+            <div class="card-body">
+                <div id="step-1" class="">                 
+                    <div class="p-4">
+                        <p style="text-align: center; font-weight: bold;"> Customer Name is {{name}}</p>
+                        <form class="ui form">
+                            <div class="row mt-2">
+                                <div class="col-md-6 form-group">
+
+                                    <label for="form-subcomponent-shorthand-input-first-name">Landlord Surname</label>
+                                    <div class="ui fluid input">
+                                        <input type="hidden" class="input" data-name="table" value="new_connection">
+                                        {% csrf_token %}
+                                        <input type="hidden" id="edit" url="../../searchEdit/" value="{{id}}">
+                                        <input class="form-control input" data-name="app_three_surname" id="form-subcomponent-shorthand-input-first-name" placeholder="Surname" type="text">
+                                    </div>
+                                </div>
+                                    
+                                    <div class="col-md-6 form-group">
+                                        <label for="form-subcomponent-shorthand-input-first-name">Landlord Other Names</label>
+                                        <div class="ui fluid input">
+                                            <input class="form-control input" data-name="app_three_othername" id="form-subcomponent-shorthand-input-first-name" placeholder="Other Names" type="text"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row mt-2">
+                                        <div class="col-md-6 form-group">
+                                            <label for="form-subcomponent-shorthand-input-first-name">Phone</label>
+                                            <div class="ui fluid input">
+                                                <input class="form-control input" id="form-subcomponent-shorthand-input-first-name" data-name="app_three_mobile" placeholder="Phone" type="text">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-6 form-group">
+                                            <label for="form-subcomponent-shorthand-input-first-name">Email Address</label>
+                                            <div class="ui fluid input">
+                                                <input class="form-control input" id="form-subcomponent-shorthand-input-first-name" placeholder="Email Address" type="text" data-name="app_three_email">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row mt-2">
+                                        <div class="col-md-6 form-group">
+                                            <label for="form-subcomponent-shorthand-input-first-name">NAME OF EMPLOYER/BUSINESS</label>
+                                            <div class="ui fluid input">
+                                                <input class="form-control input" id="form-subcomponent-shorthand-input-first-name" placeholder="Name of Employer/Business" type="text" data-name="app_three_emp_biz">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 form-group">
+                                            <label for="form-subcomponent-shorthand-input-first-name">Address of Employer</label>
+                                            <div class="ui fluid input">
+                                                <input class="form-control input" id="form-subcomponent-shorthand-input-first-name" placeholder="Address of Employer" type="text" data-name="app_three_emp_addres"></div>
+                                            </div></div>
+                                            
+                                            <div class="row mt-2">
+                                                <div class="col-md-6 form-group"><label for="form-subcomponent-shorthand-input-first-name">Meter Account No.</label>
+                                                <div class="ui fluid input">
+                                                    <input class="form-control input" id="form-subcomponent-shorthand-input-first-name" data-name="app_three_meter_acc" placeholder="Meter Account No." type="text"></div></div>
+                                            <div class="col-md-6 form-group"><label for="form-subcomponent-shorthand-input-first-name">Customer Account</label><div class="ui fluid input"><input class="form-control input" id="form-subcomponent-shorthand-input-first-name" data-name="app_three_cus_acc_no" placeholder="Customer Account" type="text"></div></div></div>
+<div class="row mt-2">
+                                                <div class="col-md-6 form-group"><label>Customer Preferred Method Of Payment.</label>
+                                                <select class="custom-select form-group input" data-name="app_four_pay_method">
+                                                    <!-- ('cheque','Cheque'),('atm','ATM'),('pos','POS'),('online', 'Online'),('cash', 'Cash Deposit') -->
+                                                    <option value="cash">Cash</option>
+                                                    <option value="cheque">Cheque</option>
+                                                    <option value="online">Online</option>
+                                                    <option value="pos">POS</option>
+                                                    <option value="atm">ATM</option>
+                                                </select></div>
+                                                    
+                                                <div class="col-md-6 form-group"><label>Preferred method of Receiving Bills</label>
+                                                <select class="custom-select form-group input" data-name="app_four_receive_bil">
+                                                    <!-- ('sms','Bill Sent By SMS'),('email', 'Bill Sent By Email'),('house', 'Bill Delivery to the House') -->
+                                                    <option value="email">Bill Sent By Email</option>
+                                                    <option value="sms">Bill Sent By SMS</option>
+                                                    <option value="house">Bill Delivery to the House</option></select>
+                                                </div>
+                                           
+                                        </div>
+
+                                            <div class="row mt-2">
+                                                <div class="col-md-6 form-group"><label>Personal Identification Type.</label>
+                                                <select class="custom-select form-group input" data-name="app_three_p_id">
+                                                    <option>International Passport</option>
+                                                    <option>Driver's License</option><option>PVC</option></select></div>
+                                                    <div class="col-md-6 form-group"><label for="form-subcomponent-shorthand-input-first-name">Personal Identification No.</label>
+                                                <div class="ui fluid input">
+                                                    <input class="form-control input" id="form-subcomponent-shorthand-input-first-name" data-name="app_three_p_id_num" placeholder="Personal Identification No." required="" type="text"></div></div>
+                                           
+                                        </div>
+                                        
+                                        <div class="row mt-2">
+                                            <div class="col-md-12 form-group">
+                                                <div class="ui checkbox text-left">
+                                                    <input class="hidden input" readonly="" data-name="app_three_confirm" tabindex="0" type="checkbox" value=""><label>
+                                                    I confirm that the Applicant is my tenant and certify his/her request for electricity 
+                                                    supply and also accept to notify EEDC in writing when he/she gives notice 
+                                                    (in writing or otherwise) of termination of his/her tenancy agreement, failing which 
+                                                    any outstanding debt or dues on his/her account may be debited to my own account.
+                                                </label>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <hr>
+                                        <input type="hidden" id="new" value="../success?formid={{formid}}" >
+                                            <div class="col-md-6 form-group"><button new="Home" data-ajax='../../add/' sweetalert type="button" class="submit btn btn-info ">Submit</button></div>
+                  
+                                    </form></div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+       </div>
+
+    </div>
+
+    <!-- Include jQuery -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
+    <!-- Include SmartWizard JavaScript source -->
+    <script type="text/javascript" src="{% static 'dist/js/jquery.smartWizard.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'ajaxsend.js' %}"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            // Step show event
+            // $("#smartwizard").on("showStep", function(e, anchorObject, stepNumber, stepDirection, stepPosition) {
+            //    //alert("You are on step "+stepNumber+" now");
+            //    if(stepPosition === 'first'){
+            //        $("#prev-btn").addClass('disabled');
+            //    }else if(stepPosition === 'final'){
+            //        $("#next-btn").addClass('disabled');
+            //    }else{
+            //        $("#prev-btn").removeClass('disabled');
+            //        $("#next-btn").removeClass('disabled');
+            //    }
+            // });
+
+            // Toolbar extra buttons
+            var btnFinish = $('<button></button>').text('Finish')
+                                             .addClass('btn btn-info')
+                                             .on('click', function(){ alert('Finish Clicked'); });
+            var btnCancel = $('<button></button>').text('Cancel')
+                                             .addClass('btn btn-danger')
+                                             .on('click', function(){ $('#smartwizard').smartWizard("reset"); });
+
+
+            // Smart Wizard
+            $('#smartwizard').smartWizard({
+                    selected: 0,
+                    theme: 'dots',
+                    transitionEffect:'fade',
+                    showStepURLhash: true,
+                    toolbarSettings: {toolbarPosition: 'end',
+                                      toolbarButtonPosition: 'end',
+                                      toolbarExtraButtons: []
+                                    }
+            });
+
+
+            // External Button Events
+            $("#reset-btn").on("click", function() {
+                // Reset wizard
+                $('#smartwizard').smartWizard("reset");
+                return true;
+            });
+
+            // $("#prev-btn").on("click", function() {
+            //     // Navigate previous
+            //     $('#smartwizard').smartWizard("prev");
+            //     return false;
+            // });
+
+            // $("#next-btn").on("click", function() {
+            //     // Navigate next
+            //     $('#smartwizard').smartWizard("next");
+            //     return false;
+            // });
+
+       
+        });
+    </script>
+</body>
+</html>

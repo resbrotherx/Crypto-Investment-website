@@ -1,0 +1,931 @@
+
+{% extends "report/custormer_portal/base.html" %}
+{% load static %}
+
+    <!-- Google Web Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'all/csss/bootstrap.min.css'%}">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="{% static 'all/csss/fontawesome-all.min.css'%}">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="{% static 'all/font/flaticon.css">
+
+{% block content %}
+
+  <!---<div class="row  align-items-end  customer-profile-cover">
+    <figure class="background"><img src="{% static 'all/img/normal.png'%}" alt="Social cover image"> </figure>
+    <div class="container mb-2">
+      <div class="row  align-items-center p-2">
+        <figure class="social-profile-pic"><img src="{% static 'all/img/team.png'%}" alt=""></figure>
+        <div class="col-sm-16 col-lg-4 col-xl-4  profile-name">
+          <h2>{{request.session.name}}</h2>
+          <p>Nigeria</p>
+          <p>{{request.session.email}}</p>
+        </div>
+        
+      </div>
+    </div>
+  </div>---->
+   
+<style type="text/css">
+
+
+
+
+#main {
+  margin: 50px 0;
+}
+
+#main #faq .card {
+  margin-bottom: 30px;
+  border: 0;
+}
+
+#main #faq .card .card-header {
+  border: 0;
+  -webkit-box-shadow: 0 0 20px 0 rgba(213, 213, 213, 0.5);
+          box-shadow: 0 0 20px 0 rgba(213, 213, 213, 0.5);
+  border-radius: 2px;
+ /* padding: 0;*/
+}
+
+#main #faq .card .card-header .btn-header-link {
+  color: #fff;
+  display: block;
+  text-align: left;
+  background: #ffffff00;
+  color: #222;
+  /*padding: 20px;*/
+}
+
+#main #faq .card .card-header .btn-header-link:after {
+  content: "\f107";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  float: right;
+}
+
+#main #faq .card .card-header .btn-header-link.collapsed {
+  background: #571fbd;/*#A541BB;*/
+  color: #fff;
+}
+
+#main #faq .card .card-header .btn-header-link.collapsed:after {
+  content: "\f106";
+}
+
+#main #faq .card .collapsing {
+  background: #FFE472;
+  line-height: 30px;
+}
+
+#main #faq .card .collapse {
+  border: 0;
+}
+
+#main #faq .card .collapse.show {
+  background: rgb(255 255 255);
+  line-height: 30px;
+  color: #222;
+}
+
+.accordion .card-header {
+    background: #571fbd; /*rgb(165 65 187);*/
+}
+
+
+
+/*——————————————
+Global
+———————————————*/
+
+body {
+  font-family: helvetica;
+}
+/*——————————————
+TimeLine CSS
+———————————————*/
+/* Base */
+
+#content {
+  margin-top: 10px;
+  text-align: center;
+}
+
+section.timeline-outer {
+  width: 80%;
+  margin: 0 auto;
+}
+
+h1.header {
+  font-size: 50px;
+  line-height: 70px;
+}
+/* Timeline */
+
+.timeline {
+  border-left: 8px solid #42A5F5;
+  border-bottom-right-radius: 2px;
+  border-top-right-radius: 2px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  color: #333;
+  margin: auto;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding: 20px;
+  list-style: none;
+  text-align: right;
+}
+
+.timeline h1,
+.timeline h2,
+.timeline h3 {
+  font-size: 1.4em;
+}
+
+.timeline .event {
+  border-bottom: 1px solid rgba(160, 160, 160, 0.2);
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.timeline .event:last-of-type {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border: none;
+}
+
+.timeline .event:before,
+.timeline .event:after {
+  position: absolute;
+  display: block;
+  top: 0;
+}
+
+.timeline .event:before {
+  left: -177.5px;
+  color: #212121;
+  content: attr(data-date);
+  text-align: right;
+  /*  font-weight: 100;*/
+  
+  font-size: 16px;
+  min-width: 120px;
+}
+
+.timeline .event:after {
+  box-shadow: 0 0 0 8px #42A5F5;
+  left: -30px;
+  background: #212121;
+  border-radius: 50%;
+  height: 11px;
+  width: 11px;
+  content: "";
+  top: 5px;
+}
+/**/
+/*——————————————
+Responsive Stuff
+———————————————*/
+
+@media (max-width: 945px) {
+  .timeline .event::before {
+    left: 0.5px;
+    top: 20px;
+    min-width: 0;
+    font-size: 13px;
+  }
+  .timeline h3 {
+    font-size: 16px;
+  }
+  .timeline p {
+    padding-top: 20px;
+  }
+  section.lab h3.card-title {
+    padding: 5px;
+    font-size: 16px
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline .event::before {
+    left: 0.5px;
+    top: 20px;
+    min-width: 0;
+    font-size: 13px;
+  }
+  .timeline .event:nth-child(1)::before,
+  .timeline .event:nth-child(3)::before,
+  .timeline .event:nth-child(5)::before {
+    top: 38px;
+  }
+  .timeline h3 {
+    font-size: 16px;
+  }
+  .timeline p {
+    padding-top: 20px;
+  }
+}
+/*——————————————
+others
+———————————————*/
+
+a.portfolio-link {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+
+
+input{
+  background: transparent;
+  color: #ffffff00;
+  border: 1px solid #ffffff00;
+}
+
+.card .card-header .btn {
+     line-height: ; 
+    padding: 0 12px;
+   font-size: ;
+    margin-left: 10px;
+    height: 30px;
+}
+
+.patrick{
+	float: left; 
+    margin-left: 0px;
+    font-size: 19px;
+}
+section.timeline-outer {
+    width: 100%;
+}
+
+</style>
+
+
+<script type="text/javascript">
+window.onload = function() {
+  var c = document.getElementById('platypus1');
+  var d = document.getElementById('platypus2');
+  c.onclick = function() {
+    if (c.value == "platypus1") {
+    document.getElementById('answer1').style.display = 'inline';
+    document.getElementById('answer2').style.display = '';
+    }
+  }
+
+  d.onclick = function() {
+    if (d.value == "platypus2") {
+    document.getElementById('answer2').style.display = 'inline';
+    document.getElementById('answer1').style.display = '';
+    }
+  }
+}
+</script>
+
+<style type="text/css">
+#answer1 {display:none;}
+#answer2 {display:none;}
+</style>
+
+<div class="wrapper-content">
+
+ 
+
+
+
+
+
+                    <!-- 
+                    </div>
+
+                </form>
+              </div>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="main">
+  <div class="container">
+<div class="accordion" id="faq" style="margin-top: 7%;">
+                    <div class="card" style="box-shadow: 0 0 100px rgba(0,0,0,0.4); width: 80%">
+                        <div class="card-header" id="faqhead1">
+                            <a href="#" class="btn btn-header-link" data-toggle="collapse" data-target="#faq1"
+                            aria-expanded="true" aria-controls="faq1">ACCOUNT</a>
+                        </div>
+
+                        <div id="faq1" class="collapse show" aria-labelledby="faqhead1" data-parent="#faq" style="width: 102%">
+               
+			<div class="card-body">
+
+
+
+
+                                    <center>
+
+                                            <div class="main-container">
+                                      <section id="timeline" class="timeline-outer">
+                                        <div class="container" id="content">
+                                          <div class="row" >
+                                            <div class="col s12 m12 l12">
+
+                <a href="login-30.html" class="fxt-logo"><img src="{% static 'img/geom2.png' %}"  height='100' alt="Logo"></a> 
+            
+
+
+                    <div class="form-group"> 
+                        <input type="hidden" id="edit" url="/portal_search/" value="">
+                        <input type="hidden" data-name="table" class="input" value="stage_api">
+                        {% csrf_token %}
+                    </div>
+
+                                              <ul class="timeline"style=" box-shadow: 10px 10px 5px grey;">
+                                                <li class="event" data-date=" "><p class="patrick"> ACCOUNT NAME</p>
+                                                  <h3><input class="input"  data-name="name" type="text" disabled="" style=" color: blue; background: #ffffff00;"></h3>
+                                                
+                                                </li>
+                                                <li class="event" data-date=""><p class="patrick"> CATEGORY :</p>
+                                                  <h3><input class="input" type="text" data-name="customer_category" disabled="" style=" color: blue; background: #ffffff00;" ></h3>
+                                                
+                                                </li>
+                                                <li class="event" data-date=""><p class="patrick"> BILL STATUS:</p>
+                                                  <h3> <input class="input" data-name="bill_status" disabled="" type="text"style=" color: blue; background: #ffffff00;" ></h3>
+                                                 
+                                                </li>
+                                                <li class="event" data-date=""><p class="patrick">ENTITY TYPE :</p>
+                                                  <h3>
+                                                     <input class="input" data-name="e_type" type="text" disabled="" style=" color: blue; background: #ffffff00;" ></h3>
+                                                 
+                                                </li>
+                                                <li class="event" data-date=""><p class="patrick">BILLING MODE :</p>
+                                                  <h3> <input class="input" type="text" data-name="metering_type" disabled="" style="float: ; color: blue; background: #ffffff00; "></h3>
+
+                                                     
+                                                </li>
+
+                                                 <li class="event" data-date=" "><p class="patrick">ACCOUNT NUMBER</p>
+                                                  <h3><input class="input"  data-name="acc_no" type="text" disabled="" style=" color: blue; background: #ffffff00;"></h3>
+                                                
+                                                </li>
+                                                <li class="event" data-date=""><p class="patrick">ID TYPE :</p>
+                                                  <h3><input class="input" type="text" data-name="id_type" disabled="" style=" color: blue; background: #ffffff00;" ></h3>
+                                                
+                                                </li>
+                                                <li class="event" data-date=""><p class="patrick">STANDALONE A/C-NO</p>
+                                                  <h3> <input class="input" data-name="standalone_acc_no" disabled="" type="text"style=" color: blue; background: #ffffff00;" ></h3>
+                                                 
+                                                </li>
+                                                <li class="event" data-date=""><p class="patrick">TARIFF RATE :</p>
+                                                  <h3>
+                                                     <input class="input" data-name="tariff_rate" type="text" disabled="" style=" color: blue; background: #ffffff00;" ></h3>
+                                                 
+                                                </li>
+                                                <li class="event" data-date=""><p class="patrick">OLD ACC NO :</p>
+                                                  <h3> <input class="input" type="text" data-name="old_acc_no" disabled="" style="float: ; color: blue; background: #ffffff00; "></h3>
+
+                                                     
+                                                </li>
+
+                                                  <li class="event" data-date=""><p class="patrick">IS MAP CUSTOMER :</p>
+                                                  <h3>
+                                                     <input class="input" data-name="mc_customer" type="text" disabled="" style=" color: blue; background: #ffffff00;" ></h3>
+                                                 
+                                                </li>
+                                                <li class="event" data-date=""><p class="patrick">JUICE ACC NO :</p>
+                                                  <h3> <input class="input" type="text" data-name="juice_acc_no" disabled="" style="float: ; color: blue; background: #ffffff00; "></h3>
+
+                                                     
+                                                </li>
+                                              </ul>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </section>
+                                      <br/>
+                                    </div>
+								</center>
+
+								</div>
+
+                        </div>
+                    </div>
+
+
+                                              <!--  <hr style="background: #fff; width:1px; height:90%; padding-bottom: 90%;" height="90%" > -->
+
+
+
+
+
+
+
+
+                    <div class="card" style="box-shadow: 0 0 100px rgba(0,0,0,0.4); width: 80%">
+                        <div class="card-header" id="faqhead2">
+                            <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse" data-target="#faq2"
+                            aria-expanded="true" aria-controls="faq2">CONTACT DETAILS</a>
+                        </div>
+
+                        <div id="faq2" class="collapse" aria-labelledby="faqhead2" data-parent="#faq" style="width: 102%">
+                            <div class="card-body">
+
+
+
+                                    <center>
+
+                                            <div class="main-container">
+                                      <section id="timeline" class="timeline-outer">
+                                        <div class="container" id="content">
+                                          <div class="row" >
+                                            <div class="col s12 m12 l12">
+
+                <a href="login-30.html" class="fxt-logo"><img src="{% static 'img/logo.png' %}"  height='60' alt="Logo"></a> 
+            
+
+
+                    <div class="form-group"> 
+                        <input type="hidden" id="edit" url="/portal_search/" value="">
+                        <input type="hidden" data-name="table" class="input" value="stage_api">
+                        {% csrf_token %}
+                    </div>
+
+                                              <ul class="timeline"style=" box-shadow: 10px 10px 5px grey;">
+                                                <li class="event" data-date=" "><p class="patrick">EMAIL</p>
+                                                  <h3><input class="input"  data-name="email" type="text" disabled="" style=" color: blue; background: #ffffff00;"></h3>
+                                                
+                                                </li>
+                                                <li class="event" data-date=""><p class="patrick">PHONE NUMBER :</p>
+                                                  <h3><input class="input" type="text" data-name="phone" disabled="" style=" color: blue; background: #ffffff00;" ></h3>
+                                                
+                                                </li>
+                                                <li class="event" data-date=""><p class="patrick">PREFERED CONTACT METHOD</p>
+                                                  <h3> <input class="input" data-name="p_c_m" disabled="" type="text"style=" color: blue; background: #ffffff00;" ></h3>
+                                                 
+                                                </li>
+                                                <li class="event" data-date=""><p class="patrick">PREFERED CONTACT LANGUAGE</p>
+                                                  <h3>
+                                                     <input class="input" data-name="p_c_l" type="text" disabled="" style=" color: blue; background: #ffffff00;" ></h3>
+                                                 
+                                                </li>
+                                                <li class="event" data-date=""><p class="patrick">BUILDING ID :</p>
+                                                  <h3> <input class="input" type="text" data-name="street_number2" disabled="" style="float: ; color: blue; background: #ffffff00; "></h3>
+
+                                                     
+                                                </li>
+
+                                                 <li class="event" data-date=" "><p class="patrick">STREET </p>
+                                                  <h3><input class="input"  data-name="street_number2" type="text" disabled="" style=" color: blue; background: #ffffff00;"></h3>
+                                                
+                                                </li>
+                                                <li class="event" data-date=""><p class="patrick">DISTRICT :</p>
+                                                  <h3><input class="input" type="text" data-name="district" disabled="" style=" color: blue; background: #ffffff00;" ></h3>
+                                                
+                                                </li>
+                                                <li class="event" data-date=""><p class="patrick">STATE </p>
+                                                  <h3> <input class="input" data-name="state" disabled="" type="text"style=" color: blue; background: #ffffff00;" ></h3>
+                                                 
+                                                </li>
+                                               
+                                              </ul>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </section>
+                                      <br/>
+                                    </div>
+								</center>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="card" style="box-shadow: 0 0 100px rgba(0,0,0,0.4); width: 80%">
+                        <div class="card-header" id="faqhead3">
+                            <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse" data-target="#faq3"
+                            aria-expanded="true" aria-controls="faq3">ACCOUNT SUMMARY</a>
+                        </div>
+
+                        <div id="faq3" class="collapse" aria-labelledby="faqhead3" data-parent="#faq" style="width: 102%">
+                            <div class="card-body">
+
+
+
+                                    <center>
+
+                                            <div class="main-container">
+                                      <section id="timeline" class="timeline-outer">
+                                        <div class="container" id="content">
+                                          <div class="row">
+                                            <div class="col s12 m12 l12">
+
+                <a href="login-30.html" class="fxt-logo"><img src="{% static 'img/logo.png' %}"  height='60' alt="Logo"></a> 
+            
+
+
+                    <div class="form-group"> 
+                        <input type="hidden" id="edit" url="/portal_search/" value="">
+                        <input type="hidden" data-name="table" class="input" value="stage_api">
+                        {% csrf_token %}
+                    </div>
+
+                                              <ul class="timeline"style=" box-shadow: 10px 10px 5px grey;">
+                                                <li class="event" data-date=" "><p class="patrick">START DATE :</p>
+                                                  <h3><input class="input"  data-name="start_date" type="text" disabled="" style=" color: blue; background: #ffffff00;"></h3>
+                                                
+                                                </li>
+                                                <li class="event" data-date=""><p class="patrick">LAST MODIFIED :</p>
+                                                  <h3><input class="input" type="text" data-name="last_modified" disabled="" style=" color: blue; background: #ffffff00;" ></h3>
+                                                
+                                                </li>
+                                                <li class="event" data-date=""><p class="patrick">BILLING MODE :</p>
+                                                  <h3>
+                                                     <input class="input" data-name="bill_status" type="text" disabled="" style=" color: blue; background: #ffffff00;" ></h3>
+                                                 
+                                                </li>
+                                                <li class="event" data-date=""><p class="patrick">BILLING CYCLE :</p>
+                                                  <h3> <input class="input" type="text" data-name="b_cycle" disabled="" style="float: ; color: blue; background: #ffffff00; "></h3>
+
+                                                     
+                                                </li>
+
+                                                 <li class="event" data-date=" "><p class="patrick">CLASS :</p>
+                                                  <h3><input class="input"  data-name="tariff_name" type="text" disabled="" style=" color: blue; background: #ffffff00;"></h3>
+                                                
+                                                </li>
+                                               
+                                                <li class="event" data-date=""><p class="patrick">SERVICE BAND :</p>
+                                                  <h3> <input class="input" data-name="band_id" disabled="" type="text"style=" color: blue; background: #ffffff00;" ></h3>
+                                                 
+                                                </li>
+
+
+                                              </ul>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </section>
+                                      <br/>
+                                    </div>
+                </center>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+                    <div class="card" style="box-shadow: 0 0 100px rgba(0,0,0,0.4); width: 80%">
+                        <div class="card-header" id="faqhead4">
+                            <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse" data-target="#faq4"
+                            aria-expanded="true" aria-controls="faq4">CONNECTED ADDRESS</a>
+                        </div>
+
+                        <div id="faq4" class="collapse" aria-labelledby="faqhead4" data-parent="#faq" style="width: 102%">
+                            <div class="card-body">
+
+
+
+                                    <center>
+
+                                            <div class="main-container">
+                                      <section id="timeline" class="timeline-outer">
+                                        <div class="container" id="content">
+                                          <div class="row">
+                                            <div class="col s12 m12 l12">
+
+                <a href="login-30.html" class="fxt-logo"><img src="{% static 'img/logo.png' %}"  height='60' alt="Logo"></a> 
+            
+
+
+                    <div class="form-group"> 
+                        <input type="hidden" id="edit" url="/portal_search/" value="">
+                        <input type="hidden" data-name="table" class="input" value="stage_api">
+                        {% csrf_token %}
+                    </div>
+
+                                              <ul class="timeline"style=" box-shadow: 10px 10px 5px grey;">
+                                              
+                                                <li class="event" data-date=""><p class="patrick">STREET:</p>
+                                                  <h3><input class="input" type="text" data-name="street" disabled="" style=" color: blue; background: #ffffff00;" ></h3>
+                                                
+                                                </li>
+                                                <li class="event" data-date=""><p class="patrick">CITY/TOWN :</p>
+                                                  <h3> <input class="input" data-name="district" disabled="" type="text"style=" color: blue; background: #ffffff00;" ></h3>
+                                                 
+                                                </li>
+                                                <li class="event" data-date=""><p class="patrick">STATE :</p>
+                                                  <h3>
+                                                     <input class="input" data-name="state" type="text" disabled="" style=" color: blue; background: #ffffff00;" ></h3>
+                                                 
+                                                </li>
+                                         
+                                              </ul>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </section>
+                                      <br/>
+                                    </div>
+                </center>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              
+            </div>  
+
+
+       
+
+
+
+
+
+
+
+ <!--- rgba(255, 255, 255, 0.9) <div class="tab-pane" id="messages" role="tabpanel">
+    <div class="row">
+      <div class="col-sm-16">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="card-title">Meter <small>Details</small></h5>
+          </div>
+          <div class="card-body">
+
+             <div class="form-group row">
+                  <div class="col-lg-8 col-md-8">
+                    <div class="row">
+                      <div class="col-lg-5">
+                        <label>METER CAPACITY :</label>
+                      </div>
+                      <div class="col-lg-5">
+                        <label><input type="text" class="form-control input" data-name="meter_capacity" disabled placeholder="" style="border-top:0px;border-left:0px;border-right:0px; background:blue ; color:#fff; width:250px; " ></label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="row">
+                      <div class="col-lg-5">
+                        <label>METER LOCATION :</label>
+                      </div>
+                      <div class="col-lg-5">
+                        <label><input type="text" class="form-control input" data-name="meter_location" disabled placeholder="" style="border-top:0px;border-left:0px;border-right:0px; background:blue ; color:#fff; width:250px;" ></label>
+                      </div>
+                    </div>
+                  </div>
+
+                    <div class="col-lg-8 col-md-8">
+                    <div class="row">
+                      <div class="col-lg-5">
+                        <label>METER MAKE :</label>
+                      </div>
+                      <div class="col-lg-5">
+                        <label><input type="text" class="form-control input" data-name="meter_make" disabled placeholder="" style="border-top:0px;border-left:0px;border-right:0px; background:blue ; color:#fff; width:250px;" ></label>
+                      </div>
+                    </div>
+                  </div>
+
+                   <div class="col-lg-8 col-md-8">
+                    <div class="row">
+                      <div class="col-lg-5">
+                        <label>NO OF DIGITS :</label>
+                      </div>
+                      <div class="col-lg-5">
+                        <label><input type="text" class="form-control input" data-name="no_of_digits" disabled placeholder="" style="border-top:0px;border-left:0px;border-right:0px; background:blue ; color:#fff; width:250px; " ></label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      </div>
+
+
+ <div class="tab-pane " id="orders" role="tabpanel">
+       
+    <div class="row">
+      <div class="col-sm-16">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="card-title">Billing <small>Data</small></h5>
+          </div>
+          <div class="card-body">
+
+             <div class="form-group row">
+                  <div class="col-lg-8 col-md-8">
+                    <div class="row">
+                      <div class="col-lg-5">
+                        <label>FEEDER :</label>
+                      </div>
+                      <div class="col-lg-5">
+                        <label><input type="text" class="form-control input" data-name="feeder_id" disabled placeholder="" style="border-top:0px;border-left:0px;border-right:0px; background:blue ; color:#fff; width:250px; " ></label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="row">
+                      <div class="col-lg-5">
+                        <label>TRANSFORMER :</label>
+                      </div>
+                      <div class="col-lg-5">
+                        <label><input type="text" data-name="transformer_id" class="form-control input" disabled placeholder="" style="border-top:0px;border-left:0px;border-right:0px; background:blue ; color:#fff; width:250px;" ></label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-8 col-md-8">
+                    <div class="row">
+                      <div class="col-lg-5">
+                        <label>BOOK :</label>
+                      </div>
+                      <div class="col-lg-5">
+                        <label><input type="text" class="form-control input" data-name="book_id" disabled placeholder="" style="border-top:0px;border-left:0px;border-right:0px; background:blue ; color:#fff; width:250px;" ></label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-8 col-md-8">
+                    <div class="row">
+                      <div class="col-lg-5">
+                        <label>MARKETER :</label>
+                      </div>
+                      <div class="col-lg-5">
+                        <label><input type="text" class="form-control input" data-name="marketer" disabled placeholder="" style="border-top:0px;border-left:0px;border-right:0px; background:blue ; color:#fff; width:250px; " ></label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="row">
+                      <div class="col-lg-5">
+                        <label>CUSTOMER CLASS :</label>
+                      </div>
+                      <div class="col-lg-5">
+                        <label><input type="text" class="form-control input" data-name="customer_class" disabled placeholder="" style="border-top:0px;border-left:0px;border-right:0px; background:blue ; color:#fff; width:250px;" ></label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-8 col-md-8">
+                    <div class="row">
+                      <div class="col-lg-5">
+                        <label>BILL TYPE :</label>
+                      </div>
+                      <div class="col-lg-5">
+                        <label><input type="text" class="form-control input" data-name="metering_type" disabled placeholder="" style="border-top:0px;border-left:0px;border-right:0px; background:blue ; color:#fff; width:250px;" ></label>
+                      </div>
+                    </div>
+                  </div>
+
+                 <!-- <div class="col-lg-8 col-md-8">
+                    <div class="row">
+                      <div class="col-lg-5">
+                        <label>PREVIOUS READING :</label>
+                      </div>
+                      <div class="col-lg-5">
+                        <label><input type="text" class="form-control input"  disabled placeholder="" style="border-top:0px;border-left:0px;border-right:0px; background:blue ; color:#fff; width:250px; " ></label>
+                      </div>
+                    </div>
+                  </div>-
+                  <div class="col-lg-8 col-md-8">
+                    <div class="row">
+                      <div class="col-lg-5">
+                        <label>MULTIPLICITY :</label>
+                      </div>
+                      <div class="col-lg-5">
+                        <label><input type="text" class="form-control input" data-name="multiplicity" disabled placeholder="" style="border-top:0px;border-left:0px;border-right:0px; background:blue ; color:#fff; width:250px;" ></label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-8 col-md-8">
+                    <div class="row">
+                      <div class="col-lg-5">
+                        <label>SERVICE CENTER :</label>
+                      </div>
+                      <div class="col-lg-5">
+                        <label><input type="text" class="form-control input" data-name="service_id" disabled placeholder="" style="border-top:0px;border-left:0px;border-right:0px; background:blue ; color:#fff; width:250px;" ></label>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+
+
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+      </div>
+
+
+    </div>
+  </div>
+
+--->
+    <!-- jquery-->
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+
+
+    <!-- jquery-->
+    <script src="{% static 'all/jss/jquery-3.5.0.min.js'%}"></script>
+    <!-- Popper js -->
+    <script src="{% static 'all/jss/popper.min.js'%}"></script>
+    <!-- Bootstrap js -->
+    <script src="{% static 'all/jss/bootstrap.min.js'%}"></script>
+    <!-- Imagesloaded js -->
+    <script src="{% static 'all/jss/imagesloaded.pkgd.min.js'%}"></script>
+   <!-- Star Animation js -->
+   <script src="{% static 'all/jss/star-animation.js'%}"></script>
+    <!-- Validator js -->
+    <script src="{% static 'all/jss/validator.min.js'%}"></script>
+    <!-- Custom Js -->
+    <script src="{% static 'all/jss/main.js'%}"></script>
+
+    <!-- Particles js -->
+    <script src="{% static 'all/jss/particles.min.js'%}"></script>
+    <script src="{% static 'all/jss/particles-1.js'%}"></script>
+
+
+  {% endblock %}
+  
+<!-- themepicker modal ends here ! --> 
+
+<!-- jQuery first, then Tether, then Bootstrap JS. -->
+
+

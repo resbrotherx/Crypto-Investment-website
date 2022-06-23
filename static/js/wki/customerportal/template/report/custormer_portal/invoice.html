@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://www.enugudisco.com/templates/kdsg2/images/s5_logo.png" rel="icon" />
+<title>Recharge Invoice - EEDC</title>
+
+<!-- Web Fonts
+======================= -->
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900' type='text/css'>
+
+<!-- Stylesheet
+======================= -->
+<link rel="stylesheet" type="text/css" href="http://demo.harnishdesign.net/html/koice/vendor/bootstrap/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="http://demo.harnishdesign.net/html/koice/vendor/font-awesome/css/all.min.css"/>
+<link rel="stylesheet" type="text/css" href="http://demo.harnishdesign.net/html/koice/css/stylesheet.css"/>
+<style type="text/css">
+  .stamp{
+  
+  color: #0A9928;
+  border: 0.25rem solid #0A9928;
+  -webkit-mask-position: 13rem 6rem;
+  
+  
+  transform: rotate(12deg);
+  font-size: 3rem;
+  font-weight: 700;
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  text-transform: uppercase;
+  border-radius: 1rem;
+  font-family: 'Courier';
+  -webkit-mask-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/8399/grunge.png');
+  -webkit-mask-size: 944px 604px;
+  mix-blend-mode: multiply;
+  
+  
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  animation-delay:0.4s;
+  -webkit-animation-delay:2.5s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  opacity: 0;
+  -webkit-animation-fill-mode:forwards;
+   animation-fill-mode:forwards;
+}
+
+@-webkit-keyframes pulse{
+  0%{
+    opacity: 0;
+  }
+  10%{
+    opacity:.50;
+    transform-origin: 50% 50%;
+    transform: rotate(-2deg) scale(5);
+    transition: all .3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  }
+  100%{
+    opacity:1;
+    transform: rotate(-15deg) scale(1.5);
+  }
+}
+
+</style>
+<body>
+<!-- Container -->
+<div class="container-fluid invoice-container"> 
+  <!-- Header -->
+  <header>
+    <div class="row align-items-center">
+      <div class="col-sm-7 text-center text-sm-left mb-3 mb-sm-0"> <img id="logo" src="https://www.enugudisco.com/templates/kdsg2/images/s5_logo.png" title="EEDC" alt="EEDC" /> </div>
+      <div class="col-sm-5 text-center text-sm-right">
+        <h4 class="mb-0">Invoice</h4>
+        <p class="mb-0">Invoice ID - 17004</p>
+      </div>
+    </div>
+    <hr>
+  </header>
+  <!-- Main Content -->
+  <main>
+    <div class="row">
+      <div class="col-sm-6 text-sm-right order-sm-1"> <strong>Pay To:</strong>
+        <address>
+        EEDC PLC<br />
+        62 Okpara Ave, Achara,<br />
+        Enugu Nigeria
+        </address>
+      </div>
+      <div class="col-sm-6 order-sm-0"> <strong>Invoiced To:</strong>
+        <address>
+        OFFOR NICHOLAS M.<br />
+        MR. BIGGS BACK OF VENCON OKWE ROAD <br />
+        9TH MILEENUGU<br />
+        Nigeria Enugu
+        </address>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6"> <strong>Payment Method:</strong><br>
+        <span> Paystack </span> <br />
+        <br />
+      </div>
+      <div class="col-sm-6 text-sm-right"> <strong>payment Date:</strong><br>
+        <span> 05/12/2019<br>
+        <br>
+        </span> </div>
+    </div>
+    <div class="card">
+      <div class="card-header"> <span class="font-weight-600 text-4">Recharge Summary  <div class="stamp"><b>SUCCEFULL</b></div></span> </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <td class="col-8 border-top-0"><strong>Token ID</strong></td>
+                <td class="col-2 text-center border-top-0"><strong>Account</strong></td>
+                <td class="col-2 text-right border-top-0"><strong>Amount</strong></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="text-3">0352 1499 0390 5055 7647</span></td>
+                <td class="text-center">1855257875</td>
+                <td class="text-right">₦98.00</td>
+              </tr>
+              <tr>
+                <td colspan="2" class="bg-light-2 text-right"><strong>Total</strong></td>
+                <td class="bg-light-2 text-right">₦930</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="table-responsive d-print-none">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <td class="text-center"><strong>Transaction ID</strong></td>
+            <td class="text-center"><strong>VAT</strong></td>
+            <td class="text-center"><strong>UNIT</strong></td>
+            <td class="text-center"><strong>Amount</strong></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-center">11326965</td>
+            <td class="text-center">₦</td>
+            <td class="text-center">KWH</td>
+            <td class="text-center">93.10</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <!-- Footer -->
+  <footer class="text-center">
+    <div class="btn-group btn-group-sm d-print-none"> <a href="javascript:window.print()" class="btn btn-light border text-black-50 shadow-none"><i class="fa fa-print"></i> Print</a> <a href="#" class="btn btn-light border text-black-50 shadow-none"><i class="fa fa-download"></i> Download</a> </div>
+  </footer>
+</div>
+<!-- Back to My Account Link -->
+<p class="text-center d-print-none"><a href="/account">&laquo; Back to My Account</a></p>
+</body>
+
+</html>

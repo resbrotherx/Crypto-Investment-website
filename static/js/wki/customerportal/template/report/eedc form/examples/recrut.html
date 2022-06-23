@@ -1,0 +1,272 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> {% load static %}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="{% static 'all/recruit/css/reset.css' %}"> <!-- CSS reset -->
+  <link rel="stylesheet" href="{% static 'all/recruit/css/style.css' %}"> <!-- Resource style -->
+  <script src="{% static 'all/recruit/js/modernizr.js' %}"></script> <!-- Modernizr -->
+    <style type="text/css">
+      .form-control {
+            font-size: 1.7rem;
+      }
+
+      button{
+      background: -webkit-linear-gradient(top, #121212 0%,#006699 100%);
+    background-image: -webkit-linear-gradient(top, rgb(18, 18, 18) 0%, rgb(0, 102, 153) 100%);
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+}
+.submit{
+  width: 110px;
+}
+.cd-form .cd-pricing-features::before {
+
+    background-color: #117a8b;
+}
+.cl{
+  color: #fff;
+}
+
+@media screen and (max-width: 1060px){
+  #primary {
+    width: 67%;
+  }
+  #secondary {
+    width: 30%;
+    margin-left:3%;
+  }
+}
+
+@media screen and (max-width: 768px){
+  #primary {
+    width: 100%;
+  }
+  #secondary {
+    width: 100%;
+    margin: 0;
+    border: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+.submit{
+  width: 610px;
+}
+label{
+}
+    </style>
+  <title>EEDC | RECRUITMENT</title>
+</head>
+<body>
+
+
+
+<div class="container">
+<!-- <CENTER> -->
+<div class="cd-form is-visible" style="width: 919px; height: 84vh; top: 73px; left: 320px; opacity: 1; transform: translateX(0px) translateY(0px);">
+    
+    <div class="cd-plan-info" style="width: 210px; height: 255px;">
+      <header class="cd-pricing-header" style="background-color: #117a8b;">
+        <h2><img src="{% static 'img/logo.png' %}" width="100px"></h2>
+
+        <div class="cd-price">
+          <span>Recruitment</span>
+        </div>
+      </header> <!-- .cd-pricing-header -->
+
+      <div class="cd-pricing-features">
+        <ul>
+          <li class="available"><em class="cl">STAGE 1</em></li>
+          <li class=""><em>STAGE 2</em></li>
+          <li class=""><em>STAGE 3</em></li>
+          <li class=""><em>STAGE 4</em></li>
+        </ul>
+      </div> <!-- .cd-pricing-features -->
+
+      <footer class="cd-pricing-footer">
+        <a href="#0">Select</a>
+      </footer> <!-- .cd-pricing-footer -->
+    </div>
+
+    <div class="cd-more-info">
+
+
+
+    </div>
+    
+    <form action="" class="is-scrollable">
+      <fieldset>
+        <center>
+        <legend>PERSONAL DETAILS</legend></center>
+                                    
+                                    <input type="hidden" id="refreshed" value="no">
+                                    <input type="hidden" class="input" data-name="table" value="hr_applicant">
+                                    <input type="hidden" class="input" data-name="active" value="true">
+                                    <input type="hidden" class="input" data-name="company_id" value="1">
+                                    <input type="hidden" class="input" data-name="create_date" value="now()">
+                                    <input type="hidden" class="input" data-name="x_form_id" value="{{formid}}">
+
+                                   {% csrf_token %}
+
+                                    
+        <br>                           
+        <div class="ui fluid input">
+          <label for="userName">Full name *</label>
+           <input class="form-control input"  id="form-subcomponent-shorthand-input-last-name" placeholder="Enter Full Name"  onkeyup="
+                                  var start = this.selectionStart;
+                                  var end = this.selectionEnd;
+                                  this.value = this.value.toUpperCase();
+                                  this.setSelectionRange(start, end);" name="lname" data-name="partner_name" type="text" required="" size="680px" maxlength="50px" required="">
+        </div>
+        <br>
+         <div class="ui fluid input">
+            <label for="userName">Address *</label>
+                                    <input class="form-control input" id="form-subcomponent-shorthand-input-first-name" placeholder="Home Address"  onkeyup="
+                                  var start = this.selectionStart;
+                                  var end = this.selectionEnd;
+                                  this.value = this.value.toUpperCase();
+                                  this.setSelectionRange(start, end);"  data-name="partner_street" type="text" required="">
+                                 </div>
+        <br>
+        <div class="ui fluid input">
+          <label for="userPassword">Job Position</label>
+           <input class="form-control input" required="" id="form-subcomponent-shorthand-input-first-name" placeholder="What Position Are You Applying For? " onkeyup="
+                                  var start = this.selectionStart;
+                                  var end = this.selectionEnd;
+                                  this.value = this.value.toUpperCase();
+                                  this.setSelectionRange(start, end);"  name="fname" data-name="name" type="text" required="True">
+        </div>
+        <br>
+        
+                   <div class="ui fluid input">
+                    <label for="userPassword">Email Address</label>
+                                    <input class="form-control input"  id="form-subcomponent-shorthand-input-last-name" placeholder="Email Address " name="lname"  onkeyup="
+                                  var start = this.selectionStart;
+                                  var end = this.selectionEnd;
+                                  this.value = this.value.toUpperCase();
+                                  this.setSelectionRange(start, end);" data-name="email_from" type="text" required="">
+                               </div>
+        <br>
+                  <div class="ui fluid input">
+          <label for="userPassword">Phone Number</label>
+           <input class="form-control input" id="form-subcomponent-shorthand-input-last-name"  onkeyup="
+                                  var start = this.selectionStart;
+                                  var end = this.selectionEnd;
+                                  this.value = this.value.toUpperCase();
+                                  this.setSelectionRange(start, end);" placeholder="Phone Number "  data-name="partner_phone" type="text" required="" >
+        </div>
+<br>
+        <div class="ui fluid input">
+                    <label for="userPassword">Date of Birth</label>
+                                    <input class="form-control input" id="form-subcomponent-shorthand-input-first-name" onkeyup="
+                                  var start = this.selectionStart;
+                                  var end = this.selectionEnd;
+                                  this.value = this.value.toUpperCase();
+                                  this.setSelectionRange(start, end);" placeholder="Date Of Birth"   data-name="d_o_b" type="date" required="" >
+                               </div>
+                               <br>
+          <div class="ui fluid input">
+                    <label for="userPassword">Sex</label>
+                    <select class="form-control input" data-name="sex" placeholder="Sex" required="">
+                                                                <option value="Male">Male</option>
+                                                                <option value="Female">female</option>
+                                                                
+                                                               </select>
+                               </div>
+        <br>
+                   <div class="ui fluid input">
+                    <label for="userPassword">Availability</label>
+                                    <input class="form-control input" id="form-subcomponent-shorthand-input-first-name" onkeyup="
+                                  var start = this.selectionStart;
+                                  var end = this.selectionEnd;
+                                  this.value = this.value.toUpperCase();
+                                  this.setSelectionRange(start, end);" placeholder="Date Of Availability *"   data-name="availability" type="date" required="" >
+                               </div>
+<br>
+<br>
+                    <div class="ui fluid input">
+                    <label for="userPassword">Cover Letter</label>
+
+                       <textarea rows = "5" cols = "60" class="form-control input" data-name ="description" style="width:610px" required="True">
+                                  Why Should EEDC Hire You?...
+                      </textarea><br>
+                               </div>
+
+      </fieldset>
+
+      
+
+                    
+                     
+        
+    </form>
+
+
+    <center>
+      <div class="col-md-6 form-group"> <input type="hidden" id="new" value="/recruitment2/{{formid}}"><button new="Home" data-ajax="/add153/" sweetalert="" type="submit" class="submit btn btn-info " >NEXT PAGE</button>
+      </div>
+    </center>
+  </div>
+
+
+
+<!-- </CENTER> -->
+
+</div>
+
+
+
+
+<script type="text/javascript" src="{% static 'assets/js/jquery-2.1.1.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
+<script type="text/javascript" src="{% static 'ajaxsend.js' %}"></script>
+
+    <script type="text/javascript">
+
+           onload=function(){
+               var e=document.getElementById("refreshed");
+               if(e.value=="no")e.value="yes";
+               else{e.value="no";location.reload();}
+           }
+
+    </script>
+</body>
+</html>

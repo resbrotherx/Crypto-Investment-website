@@ -1,0 +1,653 @@
+{% extends "report/custormer_portal/base.html" %}
+{% load static %}
+{% block content %}
+
+<style>
+#chartdiv {
+  width: 200%;
+  height: 800px;
+}
+#chartdiv2 {
+  width: 200%;
+  height: 800px;
+}
+
+#chartdiv4{
+  width: 200%;
+  height: 800px;
+}
+</style>
+<div class="wrapper-content">
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+
+          {% if metering_type == 'postpaid' %}
+            <div class="col-md-6 col-xl-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <h4 class="mb-1 mt-1">₦<span data-plugin="counterup">{{rec.new_arrears}} </span><span><img src="https://cdn3.iconfinder.com/data/icons/market-and-economy-10/64/invoice-service-receipt-statement-payment-512.png" width="60px;" style="float: right;"></span></h4>
+                            <p class="text-muted mb-0">Total Arrears</p>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end col-->
+
+            <div class="col-md-6 col-xl-3">
+                <div class="card">
+                    <div class="card-body">
+
+                        <div>
+                            <h4 class="mb-1 mt-1">₦<span data-plugin="counterup">{{rec.b_amount}}</span><span><img src="https://img.icons8.com/ios/452/paid-bill.png" width="60px;" style="float: right;"></span></h4>
+                            <p class="text-muted mb-0">Last Bill</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div> <!-- end col-->
+
+            <div class="col-md-6 col-xl-3">
+                <div class="card">
+                    <div class="card-body">
+
+                        <div>
+                            <h4 class="mb-1 mt-1">₦<span data-plugin="counterup">{{rec.last_pay}} </span> <span><img src="https://cdn1.iconfinder.com/data/icons/money-outline-1/512/20_hand_banknote_money_finance_economy_payment-512.png" width="60px;" style="float: right;"></span></h4>
+                            <p class="text-muted mb-0">Last Payment </p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div> <!-- end col-->
+
+            <div class="col-md-6 col-xl-3">
+
+                <div class="card">
+                    <div class="card-body">
+
+                        <div>
+                            <h4 class="mb-1 mt-1">₦<span data-plugin="counterup">{{rec.wallet}}</span><span><img src="https://cdn4.iconfinder.com/data/icons/48-bubbles/48/07.Wallet-512.png" width="60px;" style="float: right;"></span></h4>
+                            <p class="text-muted mb-0">Wallet</p>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end col-->
+            {% else %}
+               <div class="col-md-6 col-xl-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <h4 class="mb-1 mt-1"><span data-plugin="counterup">{{res.meter}} </span><span><img src="https://cdn3.iconfinder.com/data/icons/market-and-economy-10/64/invoice-service-receipt-statement-payment-512.png" width="60px;" style="float: right;"></span></h4>
+                            <p class="text-muted mb-0">Meter Number</p>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end col-->
+
+            <div class="col-md-6 col-xl-3">
+                <div class="card">
+                    <div class="card-body">
+
+                        <div>
+                            <h4 class="mb-1 mt-1">₦<span data-plugin="counterup">{{res.amount}}</span><span><img src="https://cdn1.iconfinder.com/data/icons/money-outline-1/512/20_hand_banknote_money_finance_economy_payment-512.png" width="60px;" style="float: right;"></span></h4>
+                            <p class="text-muted mb-0">Last Payment</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div> <!-- end col-->
+
+            <div class="col-md-6 col-xl-3">
+                <div class="card">
+                    <div class="card-body">
+
+                        <div>
+                            <h4 class="mb-1 mt-1">~<span data-plugin="counterup">{{res.energy}} </span> <span><img src="https://img.icons8.com/ios/452/paid-bill.png" width="60px;" style="float: right;"></span></h4>
+                            <p class="text-muted mb-0">Energy </p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div> <!-- end col-->
+
+            <div class="col-md-6 col-xl-3">
+
+                <div class="card">
+                    <div class="card-body">
+
+                        <div>
+                            <h4 class="mb-1 mt-1">₦<span data-plugin="counterup">{{res.token}}</span></h4>
+                            <p class="text-muted mb-0">Token</p>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end col-->
+             {% endif %}
+        </div>
+
+
+
+ {% if metering_type == 'postpaid' %}
+
+  <div class="col-lg-6 col-md-12">
+   <div class="card custom-card overflow-hidden">
+      <div class="card-body">
+         <div>
+            <h6 class="main-content-label mb-1"></h6>
+            <p class="text-muted  card-sub-title"></p>
+         </div>
+
+
+         <div class="chartjs-wrapper-demo">
+            <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+               <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                  <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+               </div>
+               <div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                  <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+               </div>
+            </div>
+
+
+
+            <div id="chartdiv2" width="726" height="600" class="chartjs-render-monitor" style="display: block; width: 580px; height: 380px;"></div>
+         </div>
+      </div>
+   </div>
+</div>
+
+
+<!--<div class="col-xl-6 col-lg-12 col-sm-12">
+                                <div class="card">
+                                   
+                                    <div class="card-body">
+                                      <div class="chartjs-size-monitor">
+                                        <div class="chartjs-size-monitor-expand">
+                                          <div class="">
+                                            
+                                          </div>
+                                        </div>
+                                        <div class="chartjs-size-monitor-shrink">
+                                          <div class="">
+                                            
+                                          </div>
+                                        </div>
+                                      </div>
+                                        <div id="chartdiv3" width="1900" height="680" class="chartjs-render-monitor" style="display: block; width: 613px; height: 380px;"></div>
+                                    </div>
+                                </div>
+                            </div>-->
+
+<div class="col-lg-6 col-md-12" style="float: right; margin-top: -466px;">
+   <div class="card custom-card overflow-hidden">
+      <div class="card-body">
+         <div>
+            <h6 class="main-content-label mb-1"></h6>
+            <p class="text-muted  card-sub-title"></p>
+         </div>
+         <div class="chartjs-wrapper-demo">
+            <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+               <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                  <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+               </div>
+               <div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                  <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+               </div>
+            </div>
+            <div id="chartdiv3" width="726" height="600" class="chartjs-render-monitor" style="display: block; width: 580px; height: 380px;"></div>
+         </div>
+      </div>
+   </div>
+</div>
+
+{% else %}
+
+
+<div class="col-lg-6 col-md-12" >
+   <div class="card custom-card overflow-hidden">
+      <div class="card-body">
+         <div>
+            <h6 class="main-content-label mb-1"></h6>
+            <p class="text-muted  card-sub-title"></p>
+         </div>
+         <div class="chartjs-wrapper-demo">
+            <div id="chartdiv4" width="726" height="600" class="chartjs-render-monitor" style="display: block; width: 580px; height: 380px;"></div>
+         </div>
+      </div>
+   </div>
+</div>
+
+
+
+
+{% endif %}
+  <!-- Resources -->
+<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
+
+<!--------------------------------------------------------------------------------------- Chart 2 ---------------------------------------------------------------------------->
+
+
+<!-- Chart code -->
+<script>
+  function getMonthABBR(month) {
+   let monthAbbR = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+   return monthAbbR[(month - 1)]
+  }
+am4core.ready(function() {
+
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+// Create chart instance
+var chart = am4core.create("chartdiv2", am4charts.XYChart3D);
+
+
+let d = [];
+{% for v in view %}
+d.push({"year2018": Math.round("{{v.consume}}"),"country": getMonthABBR(parseInt("{{v.date}}"))});
+console.log("{{v.year}}")
+
+{%endfor%}
+
+// Add data
+chart.data = d.reverse();
+
+
+// chart.data = [{
+//     "country": "USA",
+//     "year2018": 4.2
+// }, {
+//     "country": "UK",
+//     "year2018": 3.1
+// }, {
+//     "country": "Canada",
+//     "year2018": 2.9
+// }, {
+//     "country": "Japan",
+//     "year2018": 2.3
+// }, {
+//     "country": "France",
+//     "year2018": 2.1
+// }, {
+//     "country": "Brazil",
+//     "year2018": 4.9
+// }, {
+//     "country": "Russia",
+ 
+//     "year2018": 7.2
+// }, {
+//     "country": "India",
+//     "year2018": 7.1
+// }, {
+//     "country": "China",
+//     "year2018": 10.1
+// }];
+
+// Create axes
+var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+categoryAxis.dataFields.category = "country";
+categoryAxis.renderer.grid.template.location = 0;
+categoryAxis.renderer.minGridDistance = 30;
+
+var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+valueAxis.title.text = "Consumption";
+// valueAxis.renderer.labels.template.adapter.add("text", function(text) {
+//   return text + "%";
+// });
+
+// Create series
+var series = chart.series.push(new am4charts.ColumnSeries3D());
+series.dataFields.valueY = "year2017";
+series.dataFields.categoryX = "country";
+series.name = "Year 2017";
+series.clustered = false;
+// series.columns.template.tooltipText = "GDP grow in {category} (2017): [bold]{valueY}[/]";
+series.columns.template.fillOpacity = 0.9;
+
+var series2 = chart.series.push(new am4charts.ColumnSeries3D());
+series2.dataFields.valueY = "year2018";
+series2.dataFields.categoryX = "country";
+series2.name = "Year 2018";
+series2.clustered = false;
+series2.columns.template.tooltipText = "Consumption: [bold]{valueY}[/]";
+
+}); // end am4core.ready()
+</script>
+
+
+
+
+
+
+
+
+<!-- Chart code -->
+<script>
+  function getMonthABBR(month) {
+   let monthAbbR = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+   return monthAbbR[(month - 1)]
+  }
+
+am4core.ready(function() {
+
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+// Create chart instance
+var chart = am4core.create("chartdiv3", am4charts.XYChart3D);
+
+let e = [];
+{% for p in pay %}
+e.push({"visits": Math.round("{{p.amount}}"),"country": getMonthABBR(parseInt("{{p.paydate}}"))});
+console.log("{{p.paydate}}")
+
+{%endfor%}
+
+// Add data
+chart.data = e.reverse();
+// Add data
+// chart.data = [{
+//   "country": "USA",
+//   "visits": 4025
+// }, {
+//   "country": "China",
+//   "visits": 1882
+// }, {
+//   "country": "Japan",
+//   "visits": 1809
+// }, {
+//   "country": "Germany",
+//   "visits": 1322
+// }, {
+//   "country": "UK",
+//   "visits": 1122
+// }, {
+//   "country": "France",
+//   "visits": 1114
+// }, {
+//   "country": "India",
+//   "visits": 984
+// }, {
+//   "country": "Spain",
+//   "visits": 711
+// }, {
+//   "country": "Netherlands",
+//   "visits": 665
+// }, {
+//   "country": "Russia",
+//   "visits": 580
+// }, {
+//   "country": "South Korea",
+//   "visits": 443
+// }, {
+//   "country": "Canada",
+//   "visits": 441
+// }, {
+//   "country": "Brazil",
+//   "visits": 395
+// }, {
+//   "country": "Italy",
+//   "visits": 386
+// }, {
+//   "country": "Australia",
+//   "visits": 384
+// }, {
+//   "country": "Taiwan",
+//   "visits": 338
+// }, {
+//   "country": "Poland",
+//   "visits": 328
+// }];
+
+// Create axes
+let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+categoryAxis.dataFields.category = "country";
+categoryAxis.renderer.labels.template.rotation = 270;
+categoryAxis.renderer.labels.template.hideOversized = false;
+categoryAxis.renderer.minGridDistance = 20;
+categoryAxis.renderer.labels.template.horizontalCenter = "right";
+categoryAxis.renderer.labels.template.verticalCenter = "middle";
+categoryAxis.tooltip.label.rotation = 270;
+categoryAxis.tooltip.label.horizontalCenter = "right";
+categoryAxis.tooltip.label.verticalCenter = "middle";
+
+let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+valueAxis.title.text = "Payment";
+valueAxis.title.fontWeight = "bold";
+
+// Create series
+var series = chart.series.push(new am4charts.ColumnSeries3D());
+series.dataFields.valueY = "visits";
+series.dataFields.categoryX = "country";
+series.name = "Visits";
+series.tooltipText = "{categoryX}: [bold]{valueY}[/]";
+series.columns.template.fillOpacity = .8;
+
+var columnTemplate = series.columns.template;
+columnTemplate.strokeWidth = 2;
+columnTemplate.strokeOpacity = 1;
+columnTemplate.stroke = am4core.color("#FFFFFF");
+
+columnTemplate.adapter.add("fill", function(fill, target) {
+  return chart.colors.getIndex(target.dataItem.index);
+})
+
+columnTemplate.adapter.add("stroke", function(stroke, target) {
+  return chart.colors.getIndex(target.dataItem.index);
+})
+
+chart.cursor = new am4charts.XYCursor();
+chart.cursor.lineX.strokeOpacity = 0;
+chart.cursor.lineY.strokeOpacity = 0;
+
+}); // end am4core.ready()
+</script>
+
+
+
+
+<!-- Chart code -->
+
+
+
+<!-- Chart code -->
+<script>
+  function getMonthABBR(month) {
+   let monthAbbR = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+   return monthAbbR[(month - 1)]
+  }
+am4core.ready(function() {
+
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+// Create chart instance
+var chart = am4core.create("chartdiv4", am4charts.XYChart3D);
+
+let o = [];
+{% for p in ppay %}
+o.push({"visits": Math.round("{{p.amount}}"),"country": (parseInt("{{p.date}}"))});
+console.log("{{p.payear}}")
+console.log("{{p.date}}")
+{%endfor%}
+
+// Add data
+chart.data = o.reverse();
+// Add data
+// chart.data = [{
+//   "country": "USA",
+//   "visits": 4025
+// }, {
+//   "country": "China",
+//   "visits": 1882
+// }, {
+//   "country": "Japan",
+//   "visits": 1809
+// }, {
+//   "country": "Germany",
+//   "visits": 1322
+// }, {
+//   "country": "UK",
+//   "visits": 1122
+// }, {
+//   "country": "France",
+//   "visits": 1114
+// }, {
+//   "country": "India",
+//   "visits": 984
+// }, {
+//   "country": "Spain",
+//   "visits": 711
+// }, {
+//   "country": "Netherlands",
+//   "visits": 665
+// }, {
+//   "country": "Russia",
+//   "visits": 580
+// }, {
+//   "country": "South Korea",
+//   "visits": 443
+// }, {
+//   "country": "Canada",
+//   "visits": 441
+// }, {
+//   "country": "Brazil",
+//   "visits": 395
+// }, {
+//   "country": "Italy",
+//   "visits": 386
+// }, {
+//   "country": "Australia",
+//   "visits": 384
+// }, {
+//   "country": "Taiwan",
+//   "visits": 338
+// }, {
+//   "country": "Poland",
+//   "visits": 328
+// }];
+
+// Create axes
+let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+categoryAxis.dataFields.category = "country";
+categoryAxis.renderer.labels.template.rotation = 270;
+categoryAxis.renderer.labels.template.hideOversized = false;
+categoryAxis.renderer.minGridDistance = 20;
+categoryAxis.renderer.labels.template.horizontalCenter = "right";
+categoryAxis.renderer.labels.template.verticalCenter = "middle";
+categoryAxis.tooltip.label.rotation = 270;
+categoryAxis.tooltip.label.horizontalCenter = "right";
+categoryAxis.tooltip.label.verticalCenter = "middle";
+
+let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+valueAxis.title.text = "Payment";
+valueAxis.title.fontWeight = "bold";
+
+// Create series
+var series = chart.series.push(new am4charts.ColumnSeries3D());
+series.dataFields.valueY = "visits";
+series.dataFields.categoryX = "country";
+series.name = "Visits";
+series.tooltipText = "{categoryX}: [bold]{valueY}[/]";
+series.columns.template.fillOpacity = .8;
+
+var columnTemplate = series.columns.template;
+columnTemplate.strokeWidth = 2;
+columnTemplate.strokeOpacity = 1;
+columnTemplate.stroke = am4core.color("#FFFFFF");
+
+columnTemplate.adapter.add("fill", function(fill, target) {
+  return chart.colors.getIndex(target.dataItem.index);
+})
+
+columnTemplate.adapter.add("stroke", function(stroke, target) {
+  return chart.colors.getIndex(target.dataItem.index);
+})
+
+chart.cursor = new am4charts.XYCursor();
+chart.cursor.lineX.strokeOpacity = 0;
+chart.cursor.lineY.strokeOpacity = 0;
+
+}); // end am4core.ready()
+</script>
+
+
+<!-- 
+<script>
+am4core.ready(function() {
+
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+// Create chart instance
+var chart = am4core.create("chartdiv4", am4charts.XYChart3D);
+
+let e = [];
+{% for p in ppay %}
+e.push({"visits": Math.round("{{p.amount}}"),"country": Math.round("{{p.meter}}"))});
+
+{%endfor%}
+// chart.paddingBottom = 30;
+// chart.angle = 35;
+
+// Add data
+chart.data = e.reverse();
+
+// Create axes
+var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+categoryAxis.dataFields.category = "country";
+categoryAxis.renderer.grid.template.location = 0;
+categoryAxis.renderer.minGridDistance = 20;
+categoryAxis.renderer.inside = true;
+categoryAxis.renderer.grid.template.disabled = true;
+
+let labelTemplate = categoryAxis.renderer.labels.template;
+labelTemplate.rotation = -90;
+labelTemplate.horizontalCenter = "left";
+labelTemplate.verticalCenter = "middle";
+labelTemplate.dy = 10; // moves it a bit down;
+labelTemplate.inside = false; // this is done to avoid settings which are not suitable when label is rotated
+
+var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+valueAxis.renderer.grid.template.disabled = true;
+
+// Create series
+var series = chart.series.push(new am4charts.ConeSeries());
+series.dataFields.valueY = "visits";
+series.dataFields.categoryX = "country";
+
+var columnTemplate = series.columns.template;
+columnTemplate.adapter.add("fill", function(fill, target) {
+  return chart.colors.getIndex(target.dataItem.index);
+})
+
+columnTemplate.adapter.add("stroke", function(stroke, target) {
+  return chart.colors.getIndex(target.dataItem.index);
+})
+
+}); // end am4core.ready()
+</script> -->
+
+
+
+    </div>
+
+</div>
+
+
+{% endblock %}
+
+<!-- themepicker modal ends here ! -->
+
+<!-- jQuery first, then Tether, then Bootstrap JS. -->
+
+

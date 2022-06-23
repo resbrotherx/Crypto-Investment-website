@@ -1,0 +1,36 @@
+{% extends 'basek.html' %}
+{% load static %}
+{% block content %}
+	<div class="o_main">
+		<div class="o_main_content">
+
+
+			<div class="o_content">
+				<div class="o_view_manager_content">
+					<div>
+						<div class="o_form_view o_form_readonly">
+							<div class="o_form_sheet_bg">
+
+								<div class="o_form_sheet">
+								   
+
+
+								   <div class="container-fluid"><div class="printscreen"><div class="printscreen"><div class="pagetitle">Pick ONE of these:</div><table><tbody><tr><td width="25px"><div class="step" style="width:20px;">A</div></td><td><div class="subpagetitle">Create New Location</div></td><td>&nbsp;</td><td width="25px"><div class="step" style="width:20px;">B</div></td><td><div class="subpagetitle">Use Existing Location</div></td><td>&nbsp;</td><td width="25px"><div class="step" style="width:20px;">C</div></td><td><div class="subpagetitle">Skip Location</div></td></tr><tr><td valign="top" colspan="2"><form action="/juice4/index.juice" method="post"><input type="hidden" name="mode" value="newacctwizard"><input type="hidden" name="subsubmode" value="newlocation"><table><tbody><tr><td class="key">CIS/GIS ID</td><td class="val"><input type="text" name="locname" size="20" max="20" value="" placeholder="Optional"></td></tr><tr><td class="key"></td><td class="val"><input type="checkbox" name="attempt" value="attempt">&nbsp;<span class="muted">Attempt to use this ID</span></td></tr><tr><td>&nbsp;</td></tr><tr><td class="key">Address 1</td><td class="val"><input type="text" name="locaddress1" size="40" max="40" value="" required="" placeholder="Required"></td></tr><tr><td class="key">Address 2</td><td class="val"><input type="text" name="locaddress2" size="40" max="40" value=""></td></tr><tr><td class="key">City</td><td class="val"><select name="loccity"><option value="ABA">ABA</option><option value="ABAKALIKI">ABAKALIKI</option><option value="ABAKPA">ABAKPA</option><option value="ARIARIA">ARIARIA</option><option value="AWKA">AWKA</option><option value="AWKUNANAW">AWKUNANAW</option><option value="EKWULOBIA">EKWULOBIA</option><option value="MBAISE">MBAISE</option><option value="NEW OWERRI">NEW OWERRI</option><option value="NNEWI">NNEWI</option><option value="NSUKKA">NSUKKA</option><option value="OGBARU">OGBARU</option><option value="OGIDI">OGIDI</option><option value="OGUI">OGUI</option><option value="ONITSHA">ONITSHA</option><option value="ORLU">ORLU</option><option value="OWERRI">OWERRI</option><option value="UMUAHIA">UMUAHIA</option></select></td></tr><tr><td class="key">State</td><td class="val"><select name="locstate"><option value="Abia">Abia</option><option value="Anambra">Anambra</option><option value="Ebonyi">Ebonyi</option><option value="Enugu">Enugu</option><option value="Imo">Imo</option></select></td></tr><tr><td class="key">Postal</td><td class="val"><input type="text" name="loczip" size="20" max="20" value=""></td></tr><tr><td class="muted">Module ID</td><td class="val"><input type="text" name="modulename" size="40" max="40" value="" placeholder="Optional"></td></tr><tr><td class="muted">Socket</td><td class="val"><input type="text" name="modulesocket" size="3" max="3" value="" placeholder="Optional"></td></tr><tr><td class="muted">Latitude</td><td class="val"><input type="text" name="loclat" size="20" max="20" value="" placeholder="±xx.xxxxxx / Axxx°xx.xxx"></td></tr><tr><td class="muted">Longitude</td><td class="val"><input type="text" name="loclong" size="20" max="20" value="" placeholder="±xx.xxxxxx / Axxx°xx.xxx"></td></tr><tr><td class="muted" valign="top">Comments</td><td class="val" valign="top"><textarea name="loccomments" cols="45" rows="2"></textarea></td></tr><tr><td></td><td><input class="btn btn-success" type="submit" name="action" value="Create Location"></td></tr></tbody></table></form></td><td style="border-right:1px solid #000000;">&nbsp;</td><td valign="top" colspan="2"><form action="/juice4/index.juice" method="post"><input type="hidden" name="mode" value="newacctwizard"><input type="hidden" name="subsubmode" value="existinglocmeter"><input type="text" class="input-medium search-query" name="locid" id="availlocmeter.value" onkeyup="juicelookup('availlocmeter')"><div id="availlocmeter"></div><p>&nbsp;</p><p>&nbsp;&nbsp;<input class="btn btn-info" type="submit" name="action" value="Use Selected Location"></p></form></td><td style="border-right:1px solid #000000;">&nbsp;</td><td valign="top" colspan="2"><p>&nbsp;</p><p class="muted">Locations/meters can be added later</p><p>&nbsp;&nbsp;<a href="/juice4/index.juice?mode=newacctwizard&amp;submode=customer&amp;subsubmode=skiplocation&amp;locid=unassigned" class="btn">Skip Location</a></p></td></tr></tbody></table></div><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div> <!-- /container -->
+   </div>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+ {% endblock content %}
+
+
+</body></html>
+
+</body>
+</html>

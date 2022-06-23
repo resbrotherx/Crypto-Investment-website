@@ -1,0 +1,225 @@
+{% extends 'report/custormer_portal/base.html' %}
+
+
+
+{% block content %}
+<style type="text/css">
+  .layout-warning.bordered {
+    border: 2px solid #571fbd;
+}
+.btn-secondary {
+    color: #fff;
+    background-color: #571fbd;
+    border-color: #6c757d;
+}
+</style>
+<div class="wrapper-content">
+ <div class="container">
+
+        <!-- START: Main Content-->
+                <!-- START: Breadcrumbs-->
+                <div class="row ">
+                    <div class="col-12  align-self-center">
+                        <div class="sub-header mt-3 py-3 px-3 align-self-center d-sm-flex w-100 rounded">
+                            <div class="w-sm-100 mr-auto"><h4 class="mb-0">Consumption</h4></div>
+
+                            <ol class="breadcrumb bg-transparent align-self-center m-0 p-0">
+                                <li class="breadcrumb-item"><a href="">Home</a></li>
+                                <li class="breadcrumb-item"><a href="">Table</a></li>
+                                <li class="breadcrumb-item active"><a href="">Consumption</a></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <!-- END: Breadcrumbs-->
+
+                <!-- START: Card Data-->
+                <div class="row">
+                    <div class="col-12 mt-3">
+                        <div class="card">
+                            <div class="card-header  justify-content-between align-items-center">                               
+                                <h4 class="card-title">Consumption</h4>
+                               
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table id="consumption" class="table layout-warning bordered" query="select concat(e_month,'-',e_year) as created_on,t.name as transformer_name,f.name as feeder_name, cl.name as class, previous_read as previous_read, current_read as current_read, concat(e_consumed,'KWH') as consumed, ROUND(cast(e_consumed * bill.tariff_rate as numeric) ,2) as amount from feeder_customer_details bill left join feeder_transformer t on t.id = bill.transformer left join feeder_feeder f on f.id = bill.feeder_id left join customer_class cl on cl.id = bill.user_class  where customer_ids = {{request.session.acc_id}}">
+
+
+                                    	
+                                        <thead>
+                                            <tr>
+                                                 <th style="color: #fff; background:#571fbd;">Created On </th>
+								                  <th style="color: #fff; background:#571fbd;">Transformer Name</th>
+								                  <th style="color: #fff; background:#571fbd;">Feeder Name</th>
+								                  <th style="color: #fff; background:#571fbd;">Class</th>
+								                  <th style="color: #fff; background:#571fbd;">Previous Read</th>
+								                  <th style="color: #fff; background:#571fbd;">Current Read rate</th>
+								                   <th style="color: #fff; background:#571fbd;">Consumed(KWH)</th>
+								                  <th style="color: #fff; background:#571fbd;">Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div> 
+
+                    </div>                  
+                </div>
+                <!-- END: Card DATA-->
+            
+       
+        <!-- END: Content-->
+<div class="col-sm-16">
+        <div class="card">
+          <div class="card-header">
+            <h6 class="card-title">Generated Bill Chart</h6>
+          </div>
+        
+
+
+
+<!-- 
+  <div class="col-lg-6 col-md-12"> <div class="card custom-card overflow-hidden"> <div class="card-body"> <div> <h6 class="main-content-label mb-1"></h6> <p class="text-muted  card-sub-title"></p></div> <div class="chartjs-wrapper-demo"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div> class="chartjs-render-monitor" style="display: block; width: 1000px; height: 380px;"></div> </div> </div> </div> </div>
+
+ -->
+
+     <div id="chartdiv2"  style=" height: 390px;"></div>
+      
+
+
+
+<script src="https://www.amcharts.com/lib/4/core.js"></script>
+<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+<script type="text/javascript">
+
+</script>
+
+
+
+
+        </div>
+      </div>
+
+
+
+   <!--- <div class="row">
+   
+      <div class="col-md-16 col-lg-6 col-xl-6 ">
+        <div class="card">
+          <div class="card-header">
+            <h6 class="card-title">Clock two faces</h6>
+          </div>
+          <div class="card-body">
+            <div id="chartdiv4" style="width:100%; height:400px;"></div>
+          </div>
+        </div>
+      </div>
+    </div> --->
+
+
+
+  </div>
+
+
+<!-- Chart code -->
+<script>
+  function getMonthABBR(month) {
+   let monthAbbR = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+   return monthAbbR[(month - 1)]
+  }
+am4core.ready(function() {
+
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+// Create chart instance
+var chart = am4core.create("chartdiv2", am4charts.XYChart3D);
+
+
+let d = [];
+{% for v in view %}
+d.push({"year2018": Math.round("{{v.consume}}"),"country": getMonthABBR(parseInt("{{v.date}}"))});
+console.log("{{v.date}} {{v.consume}}")
+
+{%endfor%}
+
+// Add data
+chart.data = d.reverse();
+console.log(d.reverse())
+
+
+
+// chart.data = [{
+//     "country": "USA",
+//     "year2018": 4.2
+// }, {
+//     "country": "UK",
+//     "year2018": 3.1
+// }, {
+//     "country": "Canada",
+//     "year2018": 2.9
+// }, {
+//     "country": "Japan",
+//     "year2018": 2.3
+// }, {
+//     "country": "France",
+//     "year2018": 2.1
+// }, {
+//     "country": "Brazil",
+//     "year2018": 4.9
+// }, {
+//     "country": "Russia",
+ 
+//     "year2018": 7.2
+// }, {
+//     "country": "India",
+//     "year2018": 7.1
+// }, {
+//     "country": "China",
+//     "year2018": 10.1
+// }];
+
+// Create axes
+var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+categoryAxis.dataFields.category = "country";
+categoryAxis.renderer.grid.template.location = 0;
+categoryAxis.renderer.minGridDistance = 30;
+
+var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+valueAxis.title.text = "Consumption";
+// valueAxis.renderer.labels.template.adapter.add("text", function(text) {
+//   return text + "%";
+// });
+
+// Create series
+var series = chart.series.push(new am4charts.ColumnSeries3D());
+series.dataFields.valueY = "year2017";
+series.dataFields.categoryX = "country";
+series.name = "Year 2017";
+series.clustered = false;
+// series.columns.template.tooltipText = "GDP grow in {category} (2017): [bold]{valueY}[/]";
+series.columns.template.fillOpacity = 0.9;
+
+var series2 = chart.series.push(new am4charts.ColumnSeries3D());
+series2.dataFields.valueY = "year2018";
+series2.dataFields.categoryX = "country";
+series2.name = "Year 2018";
+series2.clustered = false;
+series2.columns.template.tooltipText = "Consumption: [bold]{valueY}[/]";
+
+}); // en end am4core.ready()
+</script>
+
+
+
+
+
+
+ {% endblock %}
+

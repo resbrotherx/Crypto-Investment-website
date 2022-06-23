@@ -1,0 +1,1321 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>GEOMETRIC COnnection form</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Include Bootstrap CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+
+
+      {% load static %}
+      <!-- Include SmartWizard CSS -->
+      <link href="{% static 'dist/css/smart_wizard.css' %}" rel="stylesheet" type="text/css" />
+      <link href="{% static 'dist/css/smart_wizard_theme_dots.css' %}" rel="stylesheet" type="text/css" />
+      <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <style type="text/css">
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  font-family: 'Poppins', sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+nav .drop-btn{
+  margin-top: -78px;
+  
+  background: #037ad4;
+  border-radius: 5px;
+  line-height: 55px;
+  font-size: 12px;
+  font-weight: 300;
+  color: #fff;
+  padding: 0 20px;
+  float: right;
+}
+
+nav .drop-btn:hover{
+  background: red;
+  font-size: 29%;
+  color: #fff;
+}
+nav .drop-btn span{
+  float: right;
+  line-height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+}
+nav .tooltip{
+  position: absolute;
+  right: 20px;
+  bottom: -20px;
+  height: 15px;
+  width: 15px;
+  background: #242526;;
+  transform: rotate(45deg);
+  display: none;
+}
+nav .tooltip.show{
+  display: block;
+}
+nav .wrapper{
+  position: absolute;
+  /*top: 65px;*/
+  display: flex;
+  width: 400px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: #027dd1;
+  display: none;
+  transition: all 0.3s ease;
+
+}
+nav .wrapper.show{
+  display: block;
+  display: flex;
+}
+.wrapper ul{
+  width: 400px;
+  list-style: none;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+.wrapper ul li{
+  line-height: 55px;
+}
+.wrapper ul li a{
+  position: relative;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 0 10px;
+  display: flex;
+  border-radius: 8px;
+  align-items: center;
+  text-decoration: none;
+}
+.wrapper ul li:hover a{
+  background: #3A3B3C;
+}
+ul li a .icon{
+  height: 40px;
+  width: 40px;
+  margin-right: 13px;
+  background: #ffffff1a;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border-radius: 50%;
+}
+ul li a .icon span{
+  line-height: 40px;
+  font-size: 20px;
+  color: #b0b3b8;
+}
+ul li a i{
+  position: absolute;
+  right: 10px;
+  font-size: 25px;
+  pointer-events: none;
+}
+.wrapper ul.setting-drop,
+.wrapper ul.help-drop{
+  display: none;
+}
+.wrapper .arrow{
+  padding-left: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #b0b3b8;
+  cursor: pointer;
+}
+.wrapper .arrow span{
+  margin-right: 15px;
+}
+
+.loader {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader > img {
+    width: 100px;
+}
+
+.loader.hidden {
+    animation: fadeOut 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 105%;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.md{
+  display:none;
+}
+.nmd{
+  display: none;
+}
+
+      
+      </style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+
+   </head>
+   <body>
+    <div class="loader">
+    <img src="https://thumbs.gfycat.com/SaneIdioticCavy-size_restricted.gif" style="width: 16%" alt="Loading..." />
+    </div>
+      <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+         <a class="navbar-brand" href="#"><img src="{% static 'img/geom1.png' %}" height="100"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+               <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+               </li>
+            </ul>
+         </div>
+      </nav>
+      <div class="jumbotron text-left text-white" style="background: url('{% static 'img/bgImg.svg' %}'); background-size: cover; background-repeat: no-repeat;">
+         <h5 style="font-weight: bold;">Application for Electricity Supply & Agreement Form</h5>
+      </div>
+                <div id="step-2" class="col-md-12">
+
+<br>
+<br>
+
+
+
+
+    <nav>
+     <div class="drop-btn">
+         <span>Select Category &nbsp; <span class="fas fa-caret-down"> </span> </span>
+      </div>
+      <div class="tooltip"></div>
+      <div class="wrapper">
+        <ul onclick="scrollWin()" class="menu-bar" id="drop" onchange="changestatus()">
+          <li class="setting-item"id="md" ><a href="#"id="md" >
+            <div class="icon">
+              
+            <span class="fas fa-user"></span></div>
+            MD CUSTOMER <i class="fas fa-angle-right"></i>
+          </a></li>
+          <li class="help-item"id="non_md"><a href="#"id="non_md">
+            <div class="icon">
+              <span class="fas fa-user"></span></div>
+            NON MD CUSTOMER <i class="fas fa-angle-right"></i>
+          </a></li>
+        </ul>
+
+        <!-- Settings & privacy Menu-items -->
+        <ul class="setting-drop">
+          <li class="arrow back-setting-btn"><span class="fas fa-arrow-left"></span>BACK</li>
+          <li><a href="#section2">
+            <div class="icon">
+              <span class="fas fa-caret-down"> </span></div>
+            SCROLL DOWN </a></li>
+        </ul>
+
+        <!-- Help & support Menu-items -->
+        <ul class="help-drop">
+          <li class="arrow back-help-btn"><span class="fas fa-arrow-left"></span>BACK</li>
+          <li><a href="#section2">
+            <div class="icon">
+              <span class="fas fa-caret-down"> </span></div>
+            SCROLL DOWN </a></li>
+        </ul>
+      </div>
+    </nav>
+
+
+
+
+
+
+            <div class="card-body">
+                <div id="step-1" class="">                 
+                    <div class="p-4">
+                        <p style="text-align: center; font-weight: bold;"> Customer Name is {{name}}</p>
+                        <p style="text-align: center; font-weight: bold;"> Phone Number is {{mobile}}</p>
+                        <p style="text-align: center; font-weight: bold;"> Address is {{street}}</p>
+                        
+                        <h6 style="text-align: center; font-weight: bold;">New Service Connection - Technical Feasibility Form</h6>
+                        <form class="ui form">
+
+                             <div class="row mt-2">
+                                    <input type="hidden" class="input"  data-name="table" value="new_connection" >
+                                    {% csrf_token %}
+                                    <!-- <input class="form-control input"  id="form-subcomponent-shorthand-input-first-name" placeholder="Surname"  data-name="a_surname"type="text"> -->
+                                    
+                                    <input type="hidden" class="input"  data-name="app_no" value="{{ formid}}" >
+                                    <input type="hidden" class="input"  data-name="state" noupdate value="bill" >
+
+
+                            </div>
+                            <h6 style="text-align: center; font-weight: bold;">House Details</h6>
+                            <BR>
+                            <div class="row mt-2">
+
+
+                                                                            <div class="col-md-6 form-group" id="section2"><label>Type of house..</label>
+                                                                            <select class="custom-select form-group input"  data-name="app_three_house_type">
+                                                                                <option value="duplex">Duplex</option>
+                                                                                <option value="3bedroom">3 Bedroom Flat</option>
+                                                                                <option value="2bedroom">2 Bedroom Flat</option>
+                                                                                <option value="single">Single Room</option>
+                                                                                <option value="blockofflat">Block of Flats</option>
+                                                                                <option value="tenementhouse">Tenement House</option>
+                                                                                <option value="boysquarters">Boys Quarters</option>
+                                                                                <option value="shop">Shop</option>
+                                                                                <option value="shop">Complex</option>
+                                                                                <option value="shop">Hall</option>
+                                                                                <option value="individual">Individual</option>
+                                                                          </select></div>
+
+                                                                            <div class="col-md-6 form-group"><label>Use of Building</label>
+                                                                            <select class="custom-select form-group input"  data-name="app_three_use_of_build">
+                                                                                <option value="residential">Residential</option>
+                                                                                  <option value="commercial">Commercial</option>
+                                                                                  <option value="industrial">Industrial</option>
+                                                                                  <option value="streetLight">Street Light</option>
+                                                                              </select>
+                                                                            </div>
+
+
+
+                                                                            <div class="col-md-6 form-group"><label>Area..</label>
+                                                                            <select class="custom-select form-group input"  data-name="app_three_area">
+                                                                                <option value="Electrified">Electrified</option>
+                                                                                <option value="Unelectrified">Unelectrified</option></select></div>
+
+                                                                            <div class="col-md-6 form-group"><label>Type of Meter</label>
+                                                                            <select class="custom-select form-group input"  data-name="app_three_type_of_meter">
+                                                                                <option>Single Phase</option>
+                                                                                <option>Three Phase Whole Current</option>
+                                                                                <option>Three Phase CT Operation</option></select>
+                                                                            </div>
+
+                                                                            <div class="col-md-6 form-group"><label>Connect Through..</label>
+                                                                            <select class="custom-select form-group input"  data-name="app_three_connect_through">
+                                                                                <option>Bus Bar Connection</option>
+                                                                                <option>Overhead Conductor</option>
+                                                                                <option>Underground Line</option>
+                                                                                <option>AB Cable</option>
+                                                                                </select></div>
+
+                                                                            <div class="col-md-6 form-group"><label>Applicable Tariff Description *</label>
+                                                                            <select class="custom-select form-group input"  data-name="app_three_applicable_tariff">
+                                                                                <option>Domestic</option>
+                                                                                <option>Defence</option>
+                                                                                <option>Commercial</option>
+                                                                                <option>Railway Station</option>
+                                                                                <option>Industrial</option>
+                                                                                <option>Agriculture</option>
+                                                                                <option>Place of worship</option>
+                                                                                <option>Educational</option>
+                                                                                <option>Government</option>
+                                                                                 <option value="Others">Others (Specify) </option>
+                                                                                </select>
+                                                                            </div>
+
+                                                                    <div class="col-md-6 form-group" class="display: none">
+                                                                        <label for="form-subcomponent-shorthand-input-first-name">Applicable Tariff Category</label>
+                                                                        <!-- <div class="ui fluid input" >
+                                                                            <input class="form-control input"  id="form-subcomponent-shorthand-input-first-name" placeholder="..." type="text" data-name="app_three_applicable_tariff_others">
+                                                                        </div> -->
+                                                                        <select class="custom-select form-group input" required="TRUE" data-name="app_three_applicable_tariff_others">
+                                                                                <option>R1</option>
+                                                                                <option>C1T</option>
+                                                                                <option>R2S</option>
+                                                                                <option>R3</option>
+                                                                                <option>R4</option>
+                                                                                <option>A1T</option>
+                                                                                <option>A2</option>
+                                                                                <option>C3</option>
+                                                                                <option>D1S</option>
+                                                                                <option>D1T</option>
+                                                                                <option>D2</option>
+                                                                                <option>D3</option>
+                                                                                <option>A1S</option>
+                                                                                <option>A3</option>
+                                                                                <option>S1</option>
+                                                                                <option>C2</option>
+                                                                                <option>R2T</option>
+                                                                                <option>C1S</option>
+                                                                                </select>
+                                                                    </div>
+                                                                    <!-- <div class="col-md-6 form-group" id="nmd1">
+                                                                        <label for="form-subcomponent-shorthand-input-first-name">Bus Bar Type...</label>
+                                                                        <div class="ui fluid input" >
+                                                                            <input class="form-control input"  id="form-subcomponent-shorthand-input-first-name" placeholder="Business Bar Type..." type="text" data-name="app_three_bus_bar_type">
+                                                                        </div>
+                                                                    </div> -->
+
+                                                                     <!-- <div class="col-md-6 form-group" id="nmd2">
+                                                                        <label for="form-subcomponent-shorthand-input-first-name">Bus Bar No...</label>
+                                                                        <div class="ui fluid input" >
+                                                                            <input class="form-control input"  id="form-subcomponent-shorthand-input-first-name" placeholder="Business Bar Number..." type="text" data-name="app_three_bus_bar_no">
+                                                                        </div>
+                                                                    </div> -->
+                            </div>
+                            <br>
+                                        <center>
+                                                <h6>Electricity in the Neighbourhood</h6><!--  id="md19" -->
+                                                </center>
+                                                <br>
+                            <div class="row mt-2"   ><!-- id="md1" -->
+
+                                                    <div class="col-md-6 form-group">
+                                                        <label>Electricity in Neighbourhood....</label>
+                                                        <label>Same Premise:</label>
+                                                            
+                                                           </div>
+                                                           
+                                                           <div class="col-md-3 form-group">
+                                                               <label for="form-subcomponent-shorthand-input-last-name">Account No:</label>
+                                                               <div class="ui fluid input" >
+                                                                   <input class="form-control input"  id="form-subcomponent-shorthand-input-last-name" placeholder="Account No." type="text" data-name="app_three_sm_acc_no"></div>
+                                                               </div>
+                                                               
+                                                               <div class="col-md-2 form-group">
+                                                                   <label for="form-subcomponent-shorthand-input-last-name">Meter No:</label>
+                                                                   <div class="ui fluid input" >
+                                                                       <input class="form-control input"  id="form-subcomponent-shorthand-input-last-name" placeholder="Meter No." type="text" data-name="app_three_sm_met_no">
+                                                                   </div>
+                                                               </div>
+                                                               
+                                                           </div>   
+</div>
+<!-- 
+<div class="row mt-2"  id="md2">
+
+                                                    <div class="col-md-6 form-group">
+                                                        <label>Electricity in Neighbourhood....</label>
+                                                            <label>Left Adjoining</label>
+                                                           </div>
+                                                           
+                                                           <div class="col-md-3 form-group">
+                                                               <label for="form-subcomponent-shorthand-input-last-name">Account No:</label>
+                                                               <div class="ui fluid input" >
+                                                                   <input class="form-control input"  id="form-subcomponent-shorthand-input-last-name" placeholder="Account No." type="text" data-name="app_three_la_acc_no"></div>
+                                                               </div>
+                                                               
+                                                               <div class="col-md-2 form-group">
+                                                                   <label for="form-subcomponent-shorthand-input-last-name">Meter No:</label>
+                                                                   <div class="ui fluid input" >
+                                                                       <input class="form-control input"  id="form-subcomponent-shorthand-input-last-name" placeholder="Meter No." type="text" data-name="app_three_la_met_no">
+                                                                   </div>
+                                                               </div>
+                                                               
+                                                           </div>   
+</div> -->
+<!-- 
+<div class="row mt-2"  id="md3">
+
+                                                    <div class="col-md-6 form-group">
+                                                        <label>Electricity in Neighbourhood....</label>
+                                                            <label>Right Adjoining</label>
+                                                           </div>
+                                                           
+                                                           <div class="col-md-3 form-group">
+                                                               <label for="form-subcomponent-shorthand-input-last-name">Account No:</label>
+                                                               <div class="ui fluid input" >
+                                                                   <input class="form-control input"  id="form-subcomponent-shorthand-input-last-name" data-name="app_three_ra_acc_no" placeholder="Account No." type="text"></div>
+                                                               </div>
+                                                               
+                                                               <div class="col-md-2 form-group">
+                                                                   <label for="form-subcomponent-shorthand-input-last-name">Meter No:</label>
+                                                                   <div class="ui fluid input" >
+                                                                       <input class="form-control input"  id="form-subcomponent-shorthand-input-last-name" data-name="app_three_ra_met_no" placeholder="Meter No." type="text">
+                                                                   </div>
+                                                               </div>
+                                                               
+                                                           </div>    -->
+</div>
+
+
+
+
+
+
+                           <div class="row mt-2">
+
+                                          <!-- <div class="col-md-6 form-group">
+                                            <label for="form-subcomponent-shorthand-input-first-name">Resourse Substation Name (132/33)...</label>
+                                            <div class="ui fluid input" >
+                                                <input class="form-control input"  id="form-subcomponent-shorthand-input-first-name" placeholder="Resourse Substation Name" type="text" data-name="app_three_emp_biz">
+                                            </div>
+                                        </div>
+
+                                         <div class="col-md-6 form-group">
+                                            <label for="form-subcomponent-shorthand-input-first-name">Feeder Name (33kva)...</label>
+                                            <div class="ui fluid input" >
+                                                <input class="form-control input"  id="form-subcomponent-shorthand-input-first-name" placeholder="Business Bar Number..." type="text" data-name="app_three_emp_biz">
+                                            </div>
+                                        </div> -->
+
+
+                                         <div class="col-md-6 form-group">
+                                            <label for="form-subcomponent-shorthand-input-first-name">Substation Name (33/11)...</label>
+                                            <div class="ui fluid input" >
+                                                <select class="custom-select form-control input" required=""  data-name="app_three_substation" data-live-search="true">
+                                                                {%for station in substation %}
+                                                                <option value='{{station.id}}'>{{station.name}}</option>
+                                                                {%endfor%}
+                                                               </select>
+                                            </div>
+                                        </div>
+
+                                         <div class="col-md-6 form-group">
+                                            <label for="form-subcomponent-shorthand-input-first-name">Feeder Name ...</label>
+                                            <div class="ui fluid input" >
+                                                
+                                                <select class="custom-select form-control input feed" sub=".trans" url="/trans" required=""  data-name="app_three_feeder">
+                                                                {%for feed in feeder %}
+                                                                <option value='{{feed.id}}'>{{feed.name}}</option>
+                                                                {%endfor%}
+                                                               </select>
+                                            </div>
+                                        </div>
+
+-
+                                         <div class="col-md-6 form-group">
+                                            <label for="form-subcomponent-shorthand-input-first-name">Select Transformer  ...</label>
+                                            <div class="ui fluid input" >
+
+                                                <select class="custom-select form-control input trans"  required=""  data-name="app_three_transformer">
+                                                               </select>
+                                                                      <!--  <input class="form-control input" required="" id="form-subcomponent-shorthand-input-last-name" placeholder="DTR Code" type="text" data-name="app_three_transformer"> -->
+                                            </div>
+                                        </div>
+
+ <div class="col-md-6 form-group">
+                                            <label >Transformer  Capacity</label>
+                                            <div class="ui fluid input" >
+ 
+                                                <select type="text" class="custom-select form-control input"  id="form-subcomponent-shorthand-input-last-name" required=""  data-name="app_three_transformer_capacity">
+                                                  <option value='50'> 50</option>
+                          <option value='100'> 100</option>
+                          <option value='200'> 200</option>
+                          <option value='300'> 300</option>
+                          <option value='500'> 500</option>
+                          <option value='750'> 750</option>
+                          <option value='1000'> 1000</option>
+                          <option value='1500'> 1500</option>
+                          <option value='2000'> 2000</option>
+                          <option value='2500'> 2500</option>
+                          <option value='3000'> 3000</option>
+                          <option value='4000'> 4000</option>
+                                                               </select>
+                                                                       <!-- <input class="form-control input" required="" id="form-subcomponent-shorthand-input-last-name" placeholder="Transformer Capacity" type="text" data-name="app_three_transformer_capacity"> -->
+                                            </div>
+                                        </div>
+
+
+                                         <div class="col-md-6 form-group">
+                                            <label for="form-subcomponent-shorthand-input-first-name">Distance from Existing pole (Approx. in Meters)...</label>
+                                            <div class="ui fluid input" >
+                                                <input class="form-control input"  id="form-subcomponent-shorthand-input-first-name" placeholder="Distance from Existing pole..." type="text" data-name="app_three_distance">
+                                            </div>
+                                        </div>
+
+
+
+
+                                                    <div class="col-md-6 form-group">
+                                                        <label>   Whether the power Supply is Available on proposed Unit....</label>
+                                                            <select class="custom-select form-control input controller" value='[{"option":"yes","show":["c_acc_no","c_meter_no"],"hide":[]},{"option":"no","hide":["c_acc_no","c_meter_no"],"show":[]}]' data-name="app_three_power_supply">
+                                                                <option value="no">NO</option>
+                                                                <option value="yes">Yes (Add Customer Account no/Arrear):</option>
+                                                                
+                                                               </select>
+                                                           </div>
+                                                           
+                                                           <div class="col-md-3 form-group c_acc_no">
+                                                               <label for="form-subcomponent-shorthand-input-last-name">Customer Account No</label>
+                                                               <div class="ui fluid input" >
+                                                                   <input class="form-control input"  id="form-subcomponent-shorthand-input-last-name " placeholder="Customer Account Number" data-name="app_three_power_supply_acc_no" type="text"></div>
+                                                               </div>
+                                                               
+                                                               <div class="col-md-2 form-group c_meter_no">
+                                                                   <label for="form-subcomponent-shorthand-input-last-name">Arrear amount</label>
+                                                                   <div class="ui fluid input" >
+                                                                       <input class="form-control input"  id="form-subcomponent-shorthand-input-last-name" placeholder="Arrear Amount" type="text" data-name="app_three_power_supply_meter">
+                                                                   </div>
+                                                               </div>
+                                                               
+                                                           </div>
+
+                                </div>
+
+
+                  
+                                    </form>
+            </div>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <h3 class="border-bottom border-gray pb-2">Declaration</h3>
+                    <div>
+                            <div class="row">
+                                    <div class="pl-4 pr-4">
+         <div class="Appliance">
+                                                   <div class="row app">
+                                                        <div class="col-md-6 form-group"><label>Appliance</label>
+                                                            <select class="custom-select form-control appli">
+                                                              
+                                                                <option value="light_point">Light Point</option>
+                                                                <option value="ceiling_fan">Ceiling fan</option>
+                                                                <option value="socket_outlet">Sockets outlets</option><option>Cooker</option>
+                                                                <option value="water_heater">Water Heater</option>
+                                                                <option value="air_condition">Air Condition</option>
+                                                                <option value="freezer">Freezer</option>
+                                                                <option value="dispenser">Dispenser</option>
+                                                                <option value="pressing_iron">Pressing Iron</option>
+                                                                <option value="tv">TV</option>
+                                                                <option value="pumping_machine">Pumping machine</option>
+                                                                <option value="refrigerator">Refrigerator</option>
+                                                                <option value="washing_machine">Washing Machine</option>
+                                                                <option value="microwave">Microwave</option>
+                                                                <option value="toaster">Toaster</option>
+                                                                <option value="electric_kettle">Electric Kettle</option>
+                                                                <option value="machinery">Machinery</option>
+                                                                <option value="single_phase_motor">Single Phase Motor</option>
+                                                                <option value="three_phase_motor">Three Phase Motor</option>
+                                                               </select>
+                                                           </div>
+                                                           
+                                                           <div class="col-md-3 form-group">
+                                                               <label for="form-subcomponent-shorthand-input-last-name">Number</label>
+                                                               <div class="ui fluid input" >
+                                                                   <input class="form-control number" id="form-subcomponent-shorthand-input-last-name" placeholder="Number" type="text"></div>
+                                                               </div>
+                                                               
+                                                               <div class="col-md-2 form-group">
+                                                                   <label for="form-subcomponent-shorthand-input-last-name">Watts</label>
+                                                                   <div class="ui fluid input" >
+                                                                       <input class="form-control watt" id="form-subcomponent-shorthand-input-last-name" placeholder="Watts" type="text">
+                                                                   </div>
+                                                               </div>
+                                                               
+                                                           </div>
+            </div>
+            
+                                                           <div class="col-md-12">
+                                                               <button class="btn btn-danger add_app"> Add More Application's</button>
+                                                               <button class="readvalue btn btn-success"> Read</button>
+                                                           </div>
+            <!-- <div class="row mt-2">
+                <div class="col-md-6 form-group"><label for="form-subcomponent-shorthand-input-first-name">Total installed load</label>
+                  <div class="ui fluid input" >
+                     <input class="form-control input"  id="form-subcomponent-shorthand-input-first-name" placeholder="Total installed load" type="text">
+                  </div></div>
+                  <div class="col-md-6 form-group"><label for="form-subcomponent-shorthand-input-last-name">Watts</label><div class="ui fluid input" >
+                     <input class="form-control " id="form-subcomponent-shorthand-input-last-name" placeholder="Watts" type="text">
+                </div>
+             </div>
+             </div> -->
+                <div class="row mt-2" id="nmd1">
+                  <div class="col-md-6 form-group">
+                    <label>Requested Voltage</label>
+                    <select class="custom-select form-control input"  data-name="app_req_voltage">
+                      <option>33kv</option>
+                      <option>11kv</option>
+                      <option>0.4kv</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6 form-group"> 
+                    <label>Type of supply</label>
+                    <select class="custom-select form-control input"  data-name="app_reqa_voltage">
+                      <option value="1phase">1 Phase</option>
+                      <option value="3phase">3 Phase </option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row mt-2" id="md4">
+                  <div class="col-md-6 form-group">
+                    <label for="form-subcomponent-shorthand-input-first-name">Name of Registered Engineer/ Contractor</label>
+                    <div class="ui fluid input" >
+                      <input class="form-control input"  id="form-subcomponent-shorthand-input-first-name" placeholder="Name of Registered Engineer/ Contractor" data-name="app_eng_name" type="text">
+                    </div>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="form-subcomponent-shorthand-input-last-name">Address</label>
+                    <div class="ui fluid input" >
+                      <input class="form-control input"  id="form-subcomponent-shorthand-input-last-name" placeholder="Address" type="text" data-name="app_eng_address"></div>
+                    </div>
+                  </div>
+                  <div class="row mt-2" id="md5">
+                    <div class="col-md-6 form-group">
+                      <label for="form-subcomponent-shorthand-input-first-name">Licence</label>
+                      <div class="ui fluid input" >
+                        <input class="form-control input"  data-name="app_license" id="form-subcomponent-shorthand-input-first-name" placeholder="License" type="text">
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 form-group">
+                        <label>Category</label>
+                        <select type="text" class="custom-select form-control input"  data-name="app_category">
+                          <option value='A'>Category A</option>
+                          <option value='B'>Category B</option>
+                          <option value='C'>Category C</option>
+                        </select>
+                      </div>
+
+
+                    
+                    </div>
+
+                    <div class="row mt-2"  ><!-- id="md6" -->
+
+                      <div class="col-md-6 form-group">
+                      <label for="form-subcomponent-shorthand-input-last-name">Date</label>
+                      <div class="ui fluid input" >
+                        <input class="form-control input"  id="form-subcomponent-shorthand-input-last-name" placeholder="Date" type="date" required="" data-name="app_date"></div>
+                      </div>
+                      
+                      <div class="col-md-6 form-group">
+                        <label>Connection Type</label>
+                        <select type="text" class="custom-select form-control input"  data-name="connection_type">
+                          <option value='METERED'> METERED</option>
+                          <option value='UNMETERED'> UNMETERED</option>
+                           </select>
+                          
+                      </div>
+                      <div class="col-md-6 form-group">
+                        <label>Existing Meter Model(In Case of Seperation of Account)</label>
+                        <select type="text" class="custom-select form-control input"  data-name="existing_meter">
+                          <option value='Postpaid'>Postpaid</option>
+                          <option value='Prepaid'> Prepaid</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="row mt-2" ><!-- id="md7" -->
+                      <div class="col-md-6 form-group">
+                        <label>Account Description</label>
+                        <select type="text" class="custom-select form-control input"  data-name="acct_desc">
+                          <option value='Residential Account'> Residential Account</option>
+                          <option value='Commercial Account'> Commercial Account</option>
+                          <option value='Industrial Account'> Industrial Account</option>
+                          <option value='Special Account'> Special Account</option>
+                          <option value='Street Light'> Street Light</option>
+                          <option value='Bulk Account'> Bulk Account</option>
+                        </select>
+                          
+                      </div>
+                      <div class="col-md-6 form-group">
+                        <label>Transformer Type</label>
+                        <select type="text" class="custom-select form-control input"  data-name="transformer_type">
+                          <option value='Private'> Private</option>
+                          <option value='Public'> Public</option>
+                           </select>
+                      </div>
+                    </div>
+
+                    <div class="row mt-2"><!--  id="md8" -->
+                      <div class="col-md-6 form-group">
+                        <label>Rating/Type of Meter</label>
+                        <select type="text" class="custom-select form-control input"  data-name="meter_rec">
+                          <option value='1-Phase'> 1-Phase</option>
+                          <option value='3-Phase'> 3-Phase</option>
+                          <option value='HVMD-33KV'> HVMD-33KV</option>
+                          <option value='HVMD-11KV'> HVMD-11KV</option>
+                          <option value='100/5A-LVMD'> 100/5A-LVMD</option>
+                          <option value='200/5A-LVMD'> 200/5A-LVMD</option>
+                          <option value='1-Phase DIN-RAIL'>1-Phase DIN-RAIL</option>
+                          <option value='300/5A-LVMD'> 300/5A-LVMD</option>
+                          <option value='500/5A-LVMD'> 500/5A-LVMD</option>
+                          <option value='800/5A-LVMD'> 800/5A-LVMD</option>
+                          <option value='50/1A PANEL METER'> 50/1A PANEL METER</option>
+                          <option value='100/1A PANEL METER'> 100/1A PANEL METER</option>
+                          <option value='300/1A PANEL METER'> 300/1A PANEL METER</option>
+                          <option value='30/1A PANEL METER'> 30/1A PANEL METER</option>
+                          <option value='400/1A PANEL METER'> 400/1A PANEL METER</option>
+                          <option value='20/1A PANEL METER'> 20/1A PANEL METER</option>
+                          <option value='600/1A PANEL METER'> 600/1A PANEL METER</option>
+                          <option value='200/1A PANEL METER'> 200/1A PANEL METER</option>
+                          <option value='15/1A PANEL METER'> 15/1A PANEL METER</option>
+                          <option value='10/1A PANEL METER'> 10/1A PANEL METER</option>
+                           </select>
+                          
+                      </div>
+                      <div class="col-md-6 form-group">
+                        <label>Customer Category</label>
+                        <select type="text" class="custom-select form-control input"  data-name="customer_category">
+                          <option value='MD'> MD</option>
+                          <option value='NON-MD'> NON-MD</option>
+                           </select>
+                      </div>
+
+                      <div class="col-md-6 form-group">
+                        <label>Building Status</label>
+                        <select type="text" class="custom-select form-control input"  data-name="status">
+                          <option value='Active'> Active</option>
+                          <option value='Inactive'> Inactive</option>
+                           </select>
+                      </div>
+                    </div>
+
+                    <div class="row mt-2" ><!-- id="md9" -->
+                      <div class="col-md-6 form-group">
+                        <label>Priority Category</label>
+                        <select type="text" class="custom-select form-control input"  data-name="priority_category">
+                          <option value='New Account'> New Account</option>
+                          <option value='Unmetered'> Unmetered</option>
+                          <option value='Replacement'> Replacement</option>
+                          <option value='Legal Petition'> Legal Petition</option>
+                          <option value='Mass Replacement'> Mass Replacement</option>
+                          <option value='NERC'> NERC</option>
+                           </select>
+                          
+                      </div>
+                      <div class="col-md-6 form-group">
+                        <label>Meter Installation Position</label>
+                        <select type="text" class="custom-select form-control input"  data-name="meter_position">
+                          <option value='Concrete Pole'>Concrete Pole</option>
+                          <option value='High Wall'> High Wall</option>
+                          <option value='Plinth'>Plinth</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row mt-2" ><!-- id="md10" -->
+                      <div class="col-md-6 form-group">
+                        <label>Is The Site Ready?</label>
+                        <select type="text" class="custom-select form-control input"  data-name="site_ready">
+                          <option value='Yes'> Yes</option>
+                          <option value='No'>No</option>
+                           </select>     
+                      </div>
+
+                      <div class="col-md-6 form-group">
+                        <label>Reason Site Not Ready</label>
+                        <select type="text" class="custom-select form-control input"  data-name="site_ready_reason">
+                          <option value='Account number separation required'> Account number separation required</option>
+                          <option value='Load wire separation required'> Load wire separation required</option>
+                          <option value='Load cable required'> Load cable required</option>
+                           </select>     
+                      </div>
+                      <div class="col-md-6 form-group">
+                        <label>Presurvey Completion Date</label>
+                        <input type="date" class="custom-select form-control input" required="" data-name="presurvey_date"/>
+                          
+                      </div>
+                    </div>
+                    
+                    <div class="row mt-2"><!--  id="md11" -->
+                   <!--    <div class="col-md-6 form-group">
+                        <label>Nature Of the property</label>
+                        <select class="custom-select form-control input"  data-name="app_prop_nature">
+                          <option value="old">Old</option>
+                          <option value="new">New</option>
+                        </select>
+                      </div> -->
+                      <div class="col-md-6 form-group">
+                        <label>Type of Property</label>
+                        <select class="custom-select form-control input"  data-name="app_prop_type">
+                          <option value='single_house'>Single House</option><option value='apartment'>Apartment</option> <option value='terrace'>Terrace</option><option value='pump_house'>Pump House</option>
+                        </select>
+                      </div>
+                    </div>
+                 
+                    <div class="row mt-2" ><!-- id="md12" -->
+                      <div class="col-md-6 form-group">
+                        <label>Does the property have planning permission</label>
+                        <select class="custom-select form-control input"  data-name="app_prop_permission" required="">
+                          <option value="true">Yes</option>
+                          <option value="false">No</option>
+                        </select>
+                      </div>
+
+
+
+                      <div class="col-md-6 form-group">
+                        <label>Does Property have a meter</label>
+                        <select class="custom-select form-control input"  data-name="app_prop_has_meter" required="">
+                          <option value="true">Yes</option>
+                          <option value="false">No </option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row mt-2" ><!-- id="md13" -->
+                      <div class="col-md-6 form-group">
+                        <label for="form-subcomponent-shorthand-input-first-name">Meter No.</label>
+                        <div class="ui fluid input" >
+                          <input class="form-control input"  id="form-subcomponent-shorthand-input-first-name" placeholder="Meter No." type="text" data-name="app_meter_no">
+                        </div>
+                      </div>
+                      <div class="col-md-6 form-group">
+                        <label for="form-subcomponent-shorthand-input-last-name">Customer Account No.</label>
+                        <div class="ui fluid input" >
+                          <input class="form-control input"  id="form-subcomponent-shorthand-input-last-name" placeholder="Customer Account No." data-name="app_cus_acc_no" type="text"></div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                          <label>Meter Type at Property</label>
+                          <select class="custom-select form-control input"  data-name="app_prop_metype">
+                            <option value='prepaid'>Prepaid Meter</option>
+                            <option value='postpaid'>Postpaid Meter</option>
+                            <option value='maximum_demand'>Maximum Demand</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="row mt-2"><!--  id="md14" -->
+                        <div class="col-md-6 form-group">
+                          <label>Estimated Maximum Load For</label>
+                          <div class="ui right labeled">
+                            <input class="form-control input"  data-name="app_est_load" placeholder="Estimated Maximum Load For" type="text">
+                            <div class="ui tag label label">Amperes per phase</div>
+                          </div></div></div>
+
+
+                          <div class="row mt-2" id="md15">
+                            <!-- <div class="col-md-6 form-group">
+                              <label for="form-subcomponent-shorthand-input-first-name">Meter No.</label>
+                              <div class="ui fluid input" >
+                                <input class="form-control input"  id="form-subcomponent-shorthand-input-first-name" placeholder="Meter No." type="text">
+                              </div>
+                            </div>
+                            <div class="col-md-6 form-group">
+                              <label for="form-subcomponent-shorthand-input-first-name">Account No.</label>
+                              <div class="ui fluid input" >
+                                <input class="form-control input"  id="form-subcomponent-shorthand-input-first-name" placeholder="Account No." type="text">
+                              </div>
+                            </div> -->
+                          </div>
+                          <hr><!-- 
+         <p class="text-capitalize text-darken">I/WE HEREBY REQUEST THE ENUGU ELECTRICITY DISTRIBUTION COMPANY TO SUPPLY US WITH ELECTRICITY AT THE ADDRESS STATED AT THE 1.2 ABOVE FOR THE PURPOSE STATED IN 1.4 ABOVE AND AGREE TO PAY ALL CHARGES MADE BY EEDC IN ACCORDANCE WITH THE PREVAILING EEDC TARIFF OF SUPPLY AS APPROVED BY NIGERIAN ELECTRICITY REGULATORY COMMISSION (NERC).<br><br>I/WE CONFIRM THAT THE INFORMATION GIVEN IN PART 1 ABOVE IS TRUE IN ITS ENTIRETY AND AGREE THAT IF ANY PART OF IT IS FOUND TO BE UNTRUE THE ELECTRICITY SUPPLY MAY BE DISCONTINUED.</p> -->
+         <div class="row mt-2" style="display: none;" id="md16">
+          <div class="col-md-6 form-group">
+            <label for="form-subcomponent-shorthand-input-first-name">Applicant's signature title</label>
+            <div class="ui fluid input" >
+              <input class="form-control input"  id="form-subcomponent-shorthand-input-first-name" placeholder="Applicant's signature title" type="text">
+            </div>
+          </div>
+          <div class="col-md-6 form-group">
+            <label for="form-subcomponent-shorthand-input-first-name">Date</label>
+            <div class="ui fluid input" >
+              <input class="form-control input"  id="form-subcomponent-shorthand-input-first-name" placeholder="Date" type="text">
+            </div>
+          </div>
+        </div>
+      </div>
+    
+ 
+                                 </div>
+                    </div>
+                </div>
+
+      <hr>
+                     <input type="hidden" id="new" value="success?formid={{formid}}" >
+                     {% if id != '' %}
+                     <input type="hidden" id="edit" value="{{id}}" url="../searchEdit/">
+                     {% endif %}
+                  <div class="col-md-6 form-group"><button new="Home" multi_app="appli" data-ajax='../add/' sweetswal type="button" class="submit btn btn-info ">Submit</button></div>
+      </div>
+
+      <!-- Include jQuery -->
+      <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+      <script
+         src="https://code.jquery.com/jquery-3.3.1.min.js"
+         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+         crossorigin="anonymous"></script>
+      <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetswal/2.1.2/sweetswal.min.js"></script>
+      <!-- Include SmartWizard JavaScript source -->
+      <!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+      <script type="text/javascript" src="{% static 'dist/js/jquery.smartWizard.min.js' %}"></script>
+      <script type="text/javascript" src="{% static 'ajaxsend.js' %}"></script>
+      <script type="text/javascript">
+         $(document).ready(function(){
+// swal("camed");(
+
+$('.readvalue').on('click',function(e){
+   let val = []
+   $('.app').each(function(e){
+      let appli =$(this).find('.appli').val()
+      let number =$(this).find('.number').val()
+      let watt =$(this).find('.watt').val()
+      let inputs = {'table':'appliances_table','new_customer_ids':$("#edit").val(),'app_light_point':appli,'app_number':number,'app_watt':watt}
+      val.push(inputs);
+
+
+   })
+   console.log(val)
+})
+
+$('.add_app').on('click',function(e){
+
+$('.Appliance').append('<div class="row app app'+$('.app').length +'">\
+                                                        <div class="col-md-6 form-group"><label>Appliance</label>\
+                                                            <select class="custom-select form-control input appli">\
+                                                                  <option value="light_point">Light Point</option>\
+                                                                <option value="ceiling_fan">Ceiling fan</option>\
+                                                                <option value="socket_outlet">Sockets outlets</option><option>Cooker</option>\
+                                                                <option value="water_heater">Water Heater</option>\
+                                                                <option value="air_condition">Air Condition</option>\
+                                                                <option value="freezer">Freezer</option>\
+                                                                <option value="dispenser">Dispenser</option>\
+                                                                <option value="pressing_iron">Pressing Iron</option>\
+                                                                <option value="tv">TV</option>\
+                                                                <option value="pumping_machine">Pumping machine</option>\
+                                                                <option value="refrigerator">Refrigerator</option>\
+                                                                <option value="washing_machine">Washing Machine</option>\
+                                                                <option value="microwave">Microwave</option>\
+                                                                <option value="toaster">Toaster</option>\
+                                                                <option value="electric_kettle">Electric Kettle</option>\
+                                                                <option value="machinery">Machinery</option>\
+                                                                <option value="single_phase_motor">Single Phase Motor</option>\
+                                                                <option value="three_phase_motor">Three Phase Motor</option>\
+                                                              \
+                                                               </select>\
+                                                           </div>\
+                                                           \
+                                                           <div class="col-md-3 form-group">\
+                                                               <label for="form-subcomponent-shorthand-input-last-name">Number</label>\
+                                                               <div class="ui fluid input" >\
+                                                                   <input class="form-control number" id="form-subcomponent-shorthand-input-last-name" placeholder="Number" type="text"></div>\
+                                                               </div>\
+                                                               \
+                                                               <div class="col-md-2 form-group">\
+                                                                   <label for="form-subcomponent-shorthand-input-last-name">Watts</label>\
+                                                                   <div class="ui fluid input" >\
+                                                                       <input class="form-control watt" id="form-subcomponent-shorthand-input-last-name" placeholder="Watts" type="text">\
+                                                                   </div>\
+                                                               </div>\
+                                                               \
+                                                               <div class="col-md-1 close_app"><span onclick="close_app(\'app'+$('.app').length + '\')" class="fa fa-close" style="cursor: pointer;"></span></div>\
+                                                           </div>\
+                                                   ')         
+    
+})          // Step show event
+             $("#smartwizard").on("showStep", function(e, anchorObject, stepNumber, stepDirection, stepPosition) {
+                //swal("You are on step "+stepNumber+" now");
+                if(stepPosition === 'first'){
+                    $("#prev-btn").addClass('disabled');
+                }else if(stepPosition === 'final'){
+                    $("#next-btn").addClass('disabled');
+                }else{
+                    $("#prev-btn").removeClass('disabled');
+                    $("#next-btn").removeClass('disabled');
+                }
+             });
+
+         
+             // Toolbar extra buttons
+             var btnFinish = $('<button></button>').text('Finish')
+                                              .addClass('btn btn-info')
+                                              .on('click', function(){ ajax_submit(); });
+             var btnCancel = $('<button></button>').text('Cancel')
+                                              .addClass('btn btn-danger')
+                                              .on('click', function(){ $('#smartwizard').smartWizard("reset"); });
+         
+         
+             // Smart Wizard
+             $('#smartwizard').smartWizard({
+                     selected: 0,
+                     theme: 'dots',
+                     transitionEffect:'fade',
+                     showStepURLhash: true,
+                     toolbarSettings: {toolbarPosition: 'end',
+                                       toolbarButtonPosition: 'end',
+                                       toolbarExtraButtons: []
+                                     }
+             });
+         
+         
+             // External Button Events
+             $("#reset-btn").on("click", function() {
+                 // Reset wizard
+                 $('#smartwizard').smartWizard("reset");
+                 return true;
+             });
+         
+             $("#prev-btn").on("click", function() {
+                 // Navigate previous
+                 $('#smartwizard').smartWizard("prev");
+                 return true;
+             });
+         
+             $("#next-btn").on("click", function() {
+                 // Navigate next
+                 $('#smartwizard').smartWizard("next");
+                 return true;
+             });
+         
+             $("#theme_selector").on("change", function() {
+                 // Change theme
+                 $('#smartwizard').smartWizard("theme", $(this).val());
+                 return true;
+             });
+         
+             // Set selected theme on page refresh
+             $("#theme_selector").change();
+         });
+
+function close_app(clas){
+   //swal("Camed");
+   $('.'+clas).remove();
+}
+      </script>
+
+      <script>
+    const drop_btn = document.querySelector(".drop-btn span");
+    const tooltip = document.querySelector(".tooltip");
+    const menu_wrapper = document.querySelector(".wrapper");
+    const menu_bar = document.querySelector(".menu-bar");
+    const setting_drop = document.querySelector(".setting-drop");
+    const help_drop = document.querySelector(".help-drop");
+    const setting_item = document.querySelector(".setting-item");
+    const help_item = document.querySelector(".help-item");
+    const setting_btn = document.querySelector(".back-setting-btn");
+    const help_btn = document.querySelector(".back-help-btn");
+      drop_btn.onclick = (()=>{
+        menu_wrapper.classList.toggle("show");
+        tooltip.classList.toggle("show");
+      });
+      setting_item.onclick = (()=>{
+        menu_bar.style.marginLeft = "-400px";
+        setTimeout(()=>{
+          setting_drop.style.display = "block";
+        }, 100);
+      });
+      help_item.onclick = (()=>{
+        menu_bar.style.marginLeft = "-400px";
+        setTimeout(()=>{
+          help_drop.style.display = "block";
+        }, 100);
+      });
+      setting_btn.onclick = (()=>{
+        menu_bar.style.marginLeft = "0px";
+        setting_drop.style.display = "none";
+      });
+      help_btn.onclick = (()=>{
+        help_drop.style.display = "none";
+        menu_bar.style.marginLeft = "0px";
+      });
+
+
+ 
+    </script>
+
+<script>
+function scrollWin() {
+  window.scrollTo(0, 400);
+}
+
+function scrollWin() {
+  window.scrollTo(20, 400);
+}
+
+function scrollWin() {
+  window.scrollTo(300, 400)
+
+}
+
+
+function scrollWin() {
+  window.scroll({
+   top: 0, 
+   left: 0, 
+   behavior: 'smooth' 
+  });
+
+}
+</script>
+
+
+  <script>
+
+$(document).ready(function(){
+  $("#md").on("click", function(){
+    $("#md1").hide(1000, function(){
+      swal("MD Filleds Displayed!", "scroll down to fill form!", "success");
+    });
+    $("#md2").hide(1000, function(){
+      swal("MD Filleds Displayed!", "scroll down to fill form!", "success");
+    });
+    $("#md3").hide(1000, function(){
+      swal("MD Filleds Displayed!", "scroll down to fill form!", "success");
+    });
+    // $("#md4").hide(1000, function(){
+    //   swal("MD Filleds Displayed!", "scroll down to fill form!", "success");
+    // });
+    // $("#md5").hide(1000, function(){
+    //   swal("MD Filleds Displayed!", "scroll down to fill form!", "success");
+    // });
+    $("#md6").hide(1000, function(){
+      swal("MD Filleds Displayed!", "scroll down to fill form!", "success");
+    });
+    $("#md7").hide(1000, function(){
+      swal("MD Filleds Displayed!", "scroll down to fill form!", "success");
+    });
+    $("#md8").hide(1000, function(){
+      swal("MD Filleds Displayed!", "scroll down to fill form!", "success");
+    });
+    $("#md9").hide(1000, function(){
+      swal("MD Filleds Displayed!", "scroll down to fill form!", "success");
+    });
+    $("#md10").hide(1000, function(){
+      swal("MD Filleds Displayed!", "scroll down to fill form!", "success");
+    });
+    $("#md11").hide(1000, function(){
+      swal("MD Filleds Displayed!", "scroll down to fill form!", "success");
+    });
+    $("#md12").hide(1000, function(){
+      swal("MD Filleds Displayed!", "scroll down to fill form!", "success");
+    });
+    $("#md13").hide(1000, function(){
+      swal("MD Filleds Displayed!", "scroll down to fill form!", "success");
+    });
+    $("#md14").hide(1000, function(){
+      swal("MD Filleds Displayed!", "scroll down to fill form!", "success");
+    });
+    $("#md15").hide(1000, function(){
+      swal("MD Filleds Displayed!", "scroll down to fill form!", "success");
+    });
+    $("#md16").hide(1000, function(){
+      swal("MD Filleds Displayed!", "scroll down to fill form!", "success");
+    });
+    $("#md19").hide(1000, function(){
+      swal("MD Filleds Displayed!", "scroll down to fill form!", "success");
+    });
+  });
+  
+});
+
+
+
+
+$(document).ready(function(){
+  $("#non_md").on("click", function(){
+    $("#nmd1").hide(1000, function(){
+      swal("NON MD Filleds Displayed!", "scroll down to fill form!", "success");
+    });
+    // $("#nmd2").hide(1000, function(){
+    //   swal("NON MD Filleds Displayed!", "scroll down to fill form!", "success");
+    // });
+    $("#nmd3").hide(1000, function(){
+      swal("NON MD Filleds Displayed!", "scroll down to fill form!", "success");
+    });
+    $("#md4").hide(1000, function(){
+      swal("NON MD Filleds Displayed!", "scroll down to fill form!", "success");
+    });
+    $("#md5").hide(1000, function(){
+      swal("NON MD Filleds Displayed!", "scroll down to fill form!", "success");
+    });
+    $("#md6").hide(1000, function(){
+      swal("NON MD Filleds Displayed!", "scroll down to fill form!", "success");
+    });
+    $("#md7").hide(1000, function(){
+      swal("NON MD Filleds Displayed!", "scroll down to fill form!", "success");
+    });
+    $("#md8").hide(1000, function(){
+      swal("NON MD Filleds Displayed!", "scroll down to fill form!", "success");
+    });
+    $("#md9").hide(1000, function(){
+      swal("NON MD Filleds Displayed!", "scroll down to fill form!", "success");
+    });
+    $("#md10").hide(1000, function(){
+      swal("NON MD Filleds Displayed!", "scroll down to fill form!", "success");
+    });
+    $("#md11").hide(1000, function(){
+      swal("NON MD Filleds Displayed!", "scroll down to fill form!", "success");
+    });
+    $("#md12").hide(1000, function(){
+      swal("NON MD Filleds Displayed!", "scroll down to fill form!", "success");
+    });
+    $("#md13").hide(1000, function(){
+      swal("NON MD Filleds Displayed!", "scroll down to fill form!", "success");
+    });
+    $("#md14").hide(1000, function(){
+      swal("NON MD Filleds Displayed!", "scroll down to fill form!", "success");
+    });
+    $("#md15").hide(1000, function(){
+      swal("NON MD Filleds Displayed!", "scroll down to fill form!", "success");
+    });
+    $("#md16").hide(1000, function(){
+      swal("NON MD Filleds Displayed!", "scroll down to fill form!", "success");
+    });
+  });
+  
+});
+
+window.addEventListener("load", function () {
+    const loader = document.querySelector(".loader");
+    loader.className += " hidden"; // class "loader hidden"
+});
+
+
+  </script>
+   </body>
+</html>
+

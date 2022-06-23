@@ -1,0 +1,204 @@
+{% extends 'basek.html' %}
+{% load static %}
+{% block content %}
+
+<div class="o_main">
+    <div class="o_main_content">
+
+
+        <div class="o_content">
+            <div class="o_view_manager_content">
+                <div>
+
+                    <div class="o_form_view o_form_readonly">
+                        <div class="o_form_sheet_bg">
+                            <div class="o_form_sheet">
+                                <div class="container-fluid">
+                                    <form onsubmit="return false" action="/juice4/index.juice?rr=ZiT8e944D111245"
+                                          method="post"><input type="hidden" name="mode" value="qp">
+                                        <div class="pagetitle">Payment / Purchase</div>
+                                        <center>
+                                            <table width="100%" cellpadding="5" cellspacing="0" border="0">
+                                                <tbody>
+                                                <tr>
+                                                    <td></td>
+                                                    <td bgcolor="#ffffff" width="150"><a
+                                                            href="/juice4/index.juice?mode=login&amp;account=1140531"
+                                                            class="btn"><i class="icon-user"
+                                                                           style="font-size: 18px;"></i>&nbsp;&nbsp;Account</a>
+                                                    </td>
+                                                    <td>1140531<br>IGWE BENARD</td>
+                                                    <td>25 ENUGU AGIDI STR ACHARA LAYOUT AWKUNANAW Enugu</td>
+                                                    <td></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                            <input type="hidden" name="submode" value="cash"><input type="hidden"
+                                                                                                    name="subsubmode"
+                                                                                                    value="step4"><input
+                                                type="hidden" name="serialnumber" value="45028750185">
+                                            <center>
+                                                <table>
+                                                    <tbody>
+                                                    <tr>
+                                                        <th colspan="4">
+                                                            <div class="pagetitle">Credit Card Purchase</div>
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th valign="top" width="200" style="text-align:right;">Payment
+                                                            Type:&nbsp;
+                                                        </th>
+                                                        <td valign="top">
+                                                            <table></table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align:right;">Quick Pick:&nbsp;</td>
+                                                        <td colspan="1">
+                                                            <div class="btn-group"><input type="button" class="btn"
+                                                                                          onclick="document.getElementById('amount').value='1000';"
+                                                                                          value="1000"><input
+                                                                    type="button" class="btn"
+                                                                    onclick="document.getElementById('amount').value='1500';"
+                                                                    value="1500"><input type="button" class="btn"
+                                                                                        onclick="document.getElementById('amount').value='2000';"
+                                                                                        value="2000"><input
+                                                                    type="button" class="btn"
+                                                                    onclick="document.getElementById('amount').value='3000';"
+                                                                    value="3000"><input type="button" class="btn"
+                                                                                        onclick="document.getElementById('amount').value='5000';"
+                                                                                        value="5000"></div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th valign="top" style="text-align:right;">Amount:&nbsp;</th>
+                                                        <td valign="top"><input id="amount" type="text" name="amount"
+                                                                                size="10" max="15" value=""
+                                                                                class="keyboardInput"
+                                                                                style="background:#DDFFDD;font-size:x-large;font-weight:bold;color:#000000;text-align:right;height:40px;">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2"><span id="extra"></span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2"
+                                                            style="border:2px solid #dddddd;background:#eeeeee;">
+                                                            <div style="position:relative;left:130px;">
+                                                                <table>
+                                                                    <tbody>
+                                                                    <tr>
+                                                                        <td>CC#/Swipe</td>
+                                                                        <td colspan="2"><input type="hidden"
+                                                                                               name="subsubsubmode"
+                                                                                               value="CC"><input
+                                                                                type="hidden" name="swipe"
+                                                                                id="swipe"><input type="text" id="ccnum"
+                                                                                                  name="ccnum" size="20"
+                                                                                                  max="50"
+                                                                                                  class="keyboardInput"
+                                                                                                  onkeypress="processswipe();"
+                                                                                                  value=""></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>First Name</td>
+                                                                        <td colspan="2"><input type="text" id="ccfirst"
+                                                                                               class="keyboardInput"
+                                                                                               name="ccfirst" size="20"
+                                                                                               max="30" value=""></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Last Name</td>
+                                                                        <td colspan="2"><input type="text" id="cclast"
+                                                                                               class="keyboardInput"
+                                                                                               name="cclast" size="20"
+                                                                                               max="30" value=""></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Expire:</td>
+                                                                        <td><select class="input-small" id="ccexpmth"
+                                                                                    name="ccexpmth">
+                                                                            <option value="01">01-Jan</option>
+                                                                            <option value="02">02-Feb</option>
+                                                                            <option value="03">03-Mar</option>
+                                                                            <option value="04">04-Apr</option>
+                                                                            <option value="05">05-May</option>
+                                                                            <option value="06">06-Jun</option>
+                                                                            <option value="07">07-Jul</option>
+                                                                            <option value="08">08-Aug</option>
+                                                                            <option value="09">09-Sep</option>
+                                                                            <option value="10">10-Oct</option>
+                                                                            <option value="11">11-Nov</option>
+                                                                            <option value="12">12-Dec</option>
+                                                                        </select></td>
+                                                                        <td><select class="input-small" id="ccexpyr"
+                                                                                    name="ccexpyr">
+                                                                            <option value="20">2020</option>
+                                                                            <option value="21">2021</option>
+                                                                            <option value="22">2022</option>
+                                                                            <option value="23">2023</option>
+                                                                            <option value="24">2024</option>
+                                                                            <option value="25">2025</option>
+                                                                            <option value="26">2026</option>
+                                                                            <option value="27">2027</option>
+                                                                            <option value="28">2028</option>
+                                                                            <option value="29">2029</option>
+                                                                        </select></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>CCV</td>
+                                                                        <td colspan="2"><input class="input-small"
+                                                                                               type="text" id="cccvv"
+                                                                                               name="cccvv" size="4"
+                                                                                               max="5" value=""></td>
+                                                                    </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="hidden" name="currency" value="NGN"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td>
+                                                            <table>
+                                                                <tbody>
+                                                                <tr>
+                                                                    <td><a class="btn"
+                                                                           href="/juice4/index.juice?mode=login&amp;account=1140531&amp;z=1">&lt;-
+                                                                        Back</a></td>
+                                                                    <td>
+                                                                        <button type="reset" name="reset value="
+                                                                                reset="" onclick="resetfields()"
+                                                                                class="btn">Reset
+                                                                        </button>
+                                                                    </td>
+                                                                    <td>
+                                                                        <button type="button"
+                                                                                onclick="this.form.submit();"
+                                                                                class="btn btn-primary">Next -&gt;
+                                                                        </button>
+                                                                    </td>
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </center>
+                                        </center>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endblock content %}
+

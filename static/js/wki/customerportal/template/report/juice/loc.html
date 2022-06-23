@@ -1,0 +1,179 @@
+{% extends 'basek.html' %}
+{% load static %}
+{% block content %}
+    <div class="o_main">
+        <div class="o_main_content">
+            <div class="o_control_panel">
+                <div class="a_cp_top">
+                    <ol class="breadcrumb">
+                        <li class="active">Fast Search Engineering: Locations and Meters</li>
+                    </ol>
+                    <div class="o_cp_searchview">
+                        <div class="o_searchview">
+                            <span class="o_searchview_more fa fa-search-minus" title="Advanced Search..."></span>
+                            <ul class="dropdown-menu o_searchview_autocomplete" role="menu" style="display: none;"></ul>
+                            <input class="o_searchview_input" placeholder="Search..." type="text"></div>
+                    </div>
+                </div>
+                <div class="a_cp_bottom">
+                    <div class="o_cp_buttons">
+                        <div class="o_list_buttons">
+
+                            <button class="btn btn-sm btn-default o_button_import" type="button">
+                                Meter Report
+                            </button>
+
+                              <button class="btn btn-sm btn-default o_button_import" type="button">
+                                Location Reports
+                            </button>
+
+                                      <div class="btn-group o_dropdown">
+                            <button class="o_dropdown_toggler_btn btn btn-sm dropdown-toggle" data-toggle="dropdown">
+                               
+                                <span class="hidden-xs">
+                    Limit
+                    <span class="caret"></span></span>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-right o_filters_menu" role="menu">
+                                            <center>
+                                <li data-index="0" title="Draft Slip">
+                                    100
+                                </li>
+                                <li data-index="1" title="Done Slip">
+                                    25
+                                </li>
+                                <li data-index="0" title="Draft Slip">
+                                    100
+                                </li>
+                                <li data-index="1" title="Done Slip">
+                                    500
+                                </li>
+                                <li data-index="1" title="Done Slip">
+                                    1000
+                                </li></center>
+                            </ul>
+                        </div>
+
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="o_content">
+                <div class="o_view_manager_content">
+                    <div>
+                        <div class="table-responsive">
+                            <table class="o_list_view table table-condensed table-striped o_list_view_ungrouped">
+                                <thead>
+                                <tr>
+                                    <th class="o_column_sortable">Meter</th>
+                                    <th class="o_column_sortable">Locid</th>
+                                    <th class="o_column_sortable">Account</th>
+                                    <th class="o_column_sortable">Name</th>
+                                    <th class="o_column_sortable">Locaaddres1</th>
+                                    <th class="o_column_sortable">Locaaddres2</th>
+                                    <th class="o_column_sortable">Loccity</th>
+                                </tr>
+                                </thead>
+                                <tbody class="ui-sortable">
+                                <tr>
+                                   
+                                    <td class="o_data_cell"> <a href="/juice/meterdetails">0101175082102</a></td>
+                                    <td class="o_data_cell"> <a href="/juice/locid">L00002453</td>
+                                    <td class="o_data_cell"> <a href="/juice/accountdetails">1002467</td>
+                                    <td class="o_data_cell"></td>
+
+                                    <td class="o_data_cell">AHABOKA ENUGWU NANKA</td>
+                                    <td class="o_data_cell"></td>
+                                    <td class="o_data_cell">EKWULOBIA</td>
+                                </tr>
+                                <tr>
+
+                                    <td class="o_data_cell"> <a href="/juice/meterdetails">0101175082102</a></td>
+                                    <td class="o_data_cell"> <a href="/juice/locid">L00002453</td>
+                                    <td class="o_data_cell"> <a href="/juice/accountdetails">1002467</td>
+                                    <td class="o_data_cell"></td>
+
+                                    <td class="o_data_cell">AHABOKA ENUGWU NANKA</td>
+                                    <td class="o_data_cell"></td>
+                                    <td class="o_data_cell">EKWULOBIA</td>
+                                </tr>
+                                 <tr>
+
+                                   <td class="o_data_cell"> <a href="/juice/meterdetails">0101175082102</a></td>
+                                    <td class="o_data_cell"> <a href="/juice/locid">L00002453</td>
+                                    <td class="o_data_cell"> <a href="/juice/accountdetails">1002467</td>
+                                    <td class="o_data_cell"></td>
+
+                                    <td class="o_data_cell">AHABOKA ENUGWU NANKA</td>
+                                    <td class="o_data_cell"></td>
+                                    <td class="o_data_cell">EKWULOBIA</td>
+                                </tr>
+                                 <tr>
+
+                                   <td class="o_data_cell"> <a href="/juice/meterdetails">0101175082102</a></td>
+                                    <td class="o_data_cell"> <a href="/juice/locid">L00002453</td>
+                                    <td class="o_data_cell"> <a href="/juice/accountdetails">1002467</td>
+                                    <td class="o_data_cell"></td>
+
+                                    <td class="o_data_cell">AHABOKA ENUGWU NANKA</td>
+                                    <td class="o_data_cell"></td>
+                                    <td class="o_data_cell">EKWULOBIA</td>
+                                </tr>
+                                 <tr>
+
+                                  <td class="o_data_cell"> <a href="/juice/meterdetails">0101175082102</a></td>
+                                    <td class="o_data_cell"> <a href="/juice/locid">L00002453</td>
+                                    <td class="o_data_cell"> <a href="/juice/accountdetails">1002467</td>
+                                    <td class="o_data_cell"></td>
+
+                                    <td class="o_data_cell">AHABOKA ENUGWU NANKA</td>
+                                    <td class="o_data_cell"></td>
+                                    <td class="o_data_cell">EKWULOBIA</td>
+                                </tr>
+                                 <tr>
+
+                                   <td class="o_data_cell"> <a href="/juice/meterdetails">0101175082102</a></td>
+                                    <td class="o_data_cell"> <a href="/juice/locid">L00002453</td>
+                                    <td class="o_data_cell"> <a href="/juice/accountdetails">1002467</td>
+                                    <td class="o_data_cell"></td>
+
+                                    <td class="o_data_cell">AHABOKA ENUGWU NANKA</td>
+                                    <td class="o_data_cell"></td>
+                                    <td class="o_data_cell">EKWULOBIA</td>
+                                </tr>
+                                  <tr>
+
+                                   <td class="o_data_cell"> <a href="/juice/meterdetails">0101175082102</a></td>
+                                    <td class="o_data_cell"> <a href="/juice/locid">L00002453</td>
+                                    <td class="o_data_cell"> <a href="/juice/accountdetails">1002467</td>
+                                    <td class="o_data_cell"></td>
+
+                                    <td class="o_data_cell">AHABOKA ENUGWU NANKA</td>
+                                    <td class="o_data_cell"></td>
+                                    <td class="o_data_cell">EKWULOBIA</td>
+                                </tr>
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock content %}
+</body>
+</html>

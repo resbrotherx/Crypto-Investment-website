@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+
+    <script async="async" defer="defer"
+            src="https://maps.googleapis.com/maps/api/js?v=3.32&amp;libraries=geometry,places"></script>
+
+    <script src="https://cdn.rawgit.com/gityopie/v3-utility-library/master.2018-02-25.6c72652/markerclusterer/src/markerclusterer.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="{% static 'juicestatic/web/content/103818-884abc9/web.assets_common.0.css' %}"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'juicestatic/web/content/551723-85cb682/web.assets_backend.0.css' %}"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'juicestatic/web/content/551724-85cb682/web.assets_backend.1.css' %}"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'juicestatic/web/content/554015-5b0d7c3/web_editor.summernote.0.css ' %}"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'juicestatic/web/content/554016-21268dd/web_editor.summernote.0.css' %}"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'juicestatic/web/content/553586-5b0d7c3/web_editor.summernote.0.css' %}"/>
+
+    <link type="text/css" rel="stylesheet" href="{% static 'juicestatic/web/content/553587-21268dd/web_editor.assets_editor.0.css' %}"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'juicestatic/web/content/styles/style.css' %}"/>
+
+
+<script>
+var looper;
+var degrees = 0;
+function rotateAnimation(el,speed){
+  var elem = document.getElementById(el);
+  if(navigator.userAgent.match("Chrome")){
+    elem.style.WebkitTransform = "rotate("+degrees+"deg)";
+  } else if(navigator.userAgent.match("Firefox")){
+    elem.style.MozTransform = "rotate("+degrees+"deg)";
+  } else if(navigator.userAgent.match("MSIE")){
+    elem.style.msTransform = "rotate("+degrees+"deg)";
+  } else if(navigator.userAgent.match("Opera")){
+    elem.style.OTransform = "rotate("+degrees+"deg)";
+  } else {
+    elem.style.transform = "rotate("+degrees+"deg)";
+  }
+  looper = setTimeout('rotateAnimation(\''+el+'\','+speed+')',speed);
+  degrees++;
+  if(degrees > 359){
+    degrees = 1;
+  }
+  document.getElementById("status").innerHTML = "rotate("+degrees+"deg)";
+}
+</script>
+
+</head>
+
+
+
+<body>
+   <nav class="a_navbar" role="navigation">
+<div id="sidebar">
+  <button type="button" class="a_app_menu_toggler toggle-btn" onclick="togggleSidebar()">
+            <span class="sr-only">Toggle App Menu</span>
+            <i class="fa fa-th fa-lg app-drawer-icon-open"></i>
+        </button>
+        
+ 
+      <div class="sidebar-brand">
+        <a href="/web">
+            <img src="{% static 'juicestatic/web/eedclogo.png' %}" style="width: 90px;"></a>
+      </div>
+      <ul class="nav sidebar-nav" style="margin-top: 79px;">
+    <li style=" font-size: 22px; background-color: #49afcd;">
+      <a data-action-id="100" data-action-model="ir.actions.client" data-menu="99" data-menu-xmlid="mail.mail_channel_menu_root_chat" href="/juice/file">
+      
+     <i class="icon-user"></i><i class="icon-signin"></i> Staff Production&nbsp;
+  </a>
+    </li><li style=" font-size: 22px; background-color: #5bb75b;">
+      <a data-action-id="" data-action-model="" data-menu="1060" data-menu-xmlid="prt_mail_messages.prt_messages_root" href="#menu_id=1060&amp;action=">
+      
+      Customers&nbsp;
+  </a>
+    </li>
+    <li style=" font-size: 22px; background-color: #49afcd;">
+      <a data-action-id="116" data-action-model="ir.actions.act_window" data-menu="104" data-menu-xmlid="calendar.mail_menu_calendar" href="#menu_id=104&amp;action=116">
+      
+      Vendors&nbsp;
+  </a>
+    </li><li style=" font-size: 22px; background-color:#5bb75b;">
+      <a data-action-id="452" data-action-model="ir.actions.act_window" data-menu="302" data-menu-xmlid="note.menu_note_notes" href="#menu_id=302&amp;action=452">
+      
+      Staff Training&nbsp;
+  </a>
+    </li>
+  </ul> 
+
+
+
+
+
+
+</div>
+
+<div class="a_menu_placeholder">
+    <ul class="nav navbar-nav a_menu">
+    
+  </ul>
+  
+    <ul class="nav navbar-nav navbar-right a_user_menu">
+    <li class="o_user_menu">
+      <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <span class="oe_topbar_name"></span>
+        <span class="caret"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+</nav>
+
+
+<div >
+
+
+
+
+
+
+<center>
+<img id="img1" src="{% static 'juicestatic/web/eedclogo.png' %}" style="width: 90px; margin-top:18%;" alt="cog1">
+<script>rotateAnimation("img1",30);</script>
+<!---<h2 style="width:200px;" id="status"></h2>-->
+</center>
+
+
+
+
+
+
+
+
+
+  <h3><a id="img1" href="#">Sterling Technologies</a></h3>
+</div>
+
+
+<script type="text/javascript">
+  
+function togggleSidebar(){
+  document.getElementById("sidebar").classList.toggle('active');
+}
+
+
+</script>
+</body>
+</html>

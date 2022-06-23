@@ -1,0 +1,83 @@
+{% extends 'basek.html' %}
+{% load static %}
+{% block content %}
+<style type="text/css">
+
+    tbody {
+        font-size: 20px;
+        width: 100%;
+    }
+</style>
+<div class="o_main">
+    <div class="o_main_content">
+
+        <div class="o_content">
+            <div class="o_view_manager_content">
+                <div>
+                    <div class="o_form_view o_form_readonly">
+                        <div class="o_form_sheet_bg">
+                            <div class="o_form_sheet">
+                                <div class="container-fluid">
+                                    <form action="#" method="post"><input type="hidden" name="mode" value="qp">
+                                        <div class="pagetitle" style="font-size: 20px;">Payment / Purchase</div>
+                                        <center>
+                                            <table width="100%" cellpadding="5" cellspacing="0" border="0">
+                                                <tbody>
+                                                <tr>
+                                                    <td></td>
+                                                    <td bgcolor="#ffffff" width="150"><a href="#" class="btn"><i
+                                                            class="icon-user" style="font-size: 20px;"></i>&nbsp;&nbsp;Account</a>
+                                                    </td>
+                                                    <td>1128329<br>ANIKPE EMEKA</td>
+                                                    <td style="font-size: 20px;"> 15 NDIZUOGU STR ABAKALIKI Ebonyi</td>
+                                                    <td></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                            <input type="hidden" name="submode" value="juicecard"><input type="hidden"
+                                                                                                         name="subsubmode"
+                                                                                                         value="step3"><input
+                                                type="hidden" name="serialnumber" value="45028653330">
+                                            <center>
+                                                <table>
+                                                    <tbody>
+                                                    <tr>
+                                                        <th colspan="2">Juice Card</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="font-size: 20px; margin-top: 29px;">Juice Card
+                                                            Number:
+                                                        </td>
+                                                        <td><input type="text" size="20" max="200" name="juicecard"
+                                                                   value=""></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td>
+                                                            <table>
+                                                                <tbody>
+                                                                <tr>
+                                                                    <td><a class="btn" href="#">&lt;- Back</a></td>
+                                                                    <td style="font-size: 20px; margin-top: 29px;">
+                                                                        <input type="submit" class="btn btn-primary"
+                                                                               name="action" value="Next ->"></td>
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </center>
+                                        </center>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        {% endblock content %}

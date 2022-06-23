@@ -1,0 +1,93 @@
+{% extends 'basek.html' %}
+
+{% load static %}
+{% block content %}
+
+<div class="o_main">
+    <div class="o_main_content">
+
+
+        <div class="o_content">
+            <div class="o_view_manager_content">
+                <div>
+
+                    <div class="o_form_view o_form_readonly">
+                        <div class="o_form_sheet_bg">
+                            <div class="o_form_sheet">
+
+
+                                <div class="container-fluid">
+                                    <div class="printscreen">
+                                        <div class="row">
+                                            <div class="span9 offset2">
+                                                <form action="/juice4/index.juice" method="post"
+                                                      class="form-horizontal">
+                                                    <input type="hidden" name="mode" value="sendsms">
+                                                    <input type="hidden" name="submode" value="send">
+                                                    <input type="hidden" name="transaction" value="13776139">
+                                                    <input type="hidden" name="account" value="1036019">
+                                                    <p></p>
+                                                    <div class="pagetitle" style="font-size: 27px;">Send a SMS/Text
+                                                        message
+                                                    </div>
+                                                    <table class="table">
+                                                        <tbody>
+                                                        <tr>
+                                                            <td width="70" style="font-size: 24px;">To:</td>
+                                                            <td style="font-size: 24px;"><a href="#" class="button">1036019</a>
+                                                                CHIEF E. J. I. JEZIE (552)
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <p>
+                                                    <table class="table">
+                                                        <tbody>
+                                                        <tr>
+                                                            <td colspan="2" style="font-size: 22px;">Cell phone number
+                                                                to send text to:
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><input type="radio" name="number" value="T" checked="">
+                                                            </td>
+                                                            <td><input type="text" name="number3" value="" size="70"
+                                                                       max="120"></td>
+                                                            <td style="font-size: 20px;"><select name="savesms"
+                                                                                                 style="font-size: 24px;">
+                                                                <option value="1" style="font-size: 20px;">Save as
+                                                                    option# 1
+                                                                </option>
+                                                                <option value="2" style="font-size: 20px;">Save as
+                                                                    option # 2
+                                                                </option>
+                                                                <option value="0"
+                                                                        style="font-size: 20px;">Do Not Save</option></select></td></tr><tr><td colspan="4"><input class="span9" type="text" name="message"
+                                                                         value="3210 0737 4132 6943 6407 for meter 07063407691 for TAMPER"
+                                                                         size="120" max="120"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="4"><input style="margin:0px 0px 0px 100px;"
+                                                                                   type="submit" name="action"
+                                                                                   value="Send Message"
+                                                                                   class="btn btn-info"></td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    </p></form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p>&nbsp;</p>
+                                    <p>&nbsp;</p>
+                                    <p>&nbsp;</p>  <!-- /container -->
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endblock content %}
+

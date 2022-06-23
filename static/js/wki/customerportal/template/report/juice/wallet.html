@@ -1,0 +1,133 @@
+{% extends 'basek.html' %}
+{% load static %}
+{% block content %}
+
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+<div class="o_main">
+    <div class="o_main_content">
+
+
+        <div class="o_content">
+            <div class="o_view_manager_content">
+                <div>
+
+                    <div class="container-fluid">
+                        <form onsubmit="return false" action="/juice4/index.juice?rr=ZJ9uZJB69100213" method="post">
+                            <input type="hidden" name="mode" value="qp">
+                            <div class="pagetitle">Payment / Purchase</div>
+                            <center>
+                                <script>
+                                    function checkform() {
+                                        dynacontent('extra', '<table cellpadding=0 bgcolor=\'#ddffee\'><tr><td width=200 style=\'text-align:right\'>Check #:&nbsp</td><td><input type=text name=ccauth size=10 max=10 class=keyboardInput><tr><td style=\'text-align:right\'>Bank:&nbsp</td><td><input type=text name=bankname size=20 max=40 class=keyboardInput></td></tr><tr><td style=\'text-align:right\'>Check Name:&nbsp;</td><td><input type=text name=checkname size=20 max=40 class=keyboardInput></td></tr></table>');
+                                    };
+
+                                    function payrollform() {
+                                        dynacontent('extra', '<table cellpadding=0 bgcolor=\'#ddffee\'><tr><td width=200>Employee ID</td><td><input type=text name=ccauth size=10 max=10 class=keyboardInput><tr><td></td><td><input type=hidden name=bankname size=20 max=40 value=payroll></td></tr><tr><td>Employee Name</td><td><input type=text name=checkname size=20 max=40 class=keyboardInput></td></tr></table>');
+                                    };
+
+                                    function cashform() {
+                                        dynacontent('extra', '<table cellpadding=0 bgcolor=\'#ffffff\'><tr><td width=200 style=\'text-align:right\'>Tendered:&nbsp;</td><td><input type=text name=tendered size=10 max=10 class=keyboardInput placeholder=Optional style=\'text-align:right;\' value=\'\'></td></tr></table>');
+                                    };
+
+                                    function ccform() {
+                                        dynacontent('extra', '<table cellpadding=0 bgcolor=\'#eeeeee\'><tr><td width=200 style=\'text-align:right\'>Authorization:&nbsp;</th><td><input type=text name=ccauth size=10 max=10 class=keyboardInput><tr><td style=\'text-align:right\'>Bank:&nbsp;</td><td><input type=text name=bankname size=20 max=40 class=keyboardInput></td></tr><tr><td style=\'text-align:right\'>CC Name:&nbsp;</td><td><input type=text name=checkname size=20 max=40 class=keyboardInput></td></tr></table>');
+                                    };
+
+                                    function dcform() {
+                                        dynacontent('extra', '<table cellpadding=0 bgcolor=\'#eeeeee\'><tr><td width=200 style=\'text-align:right\'>Authorization:&nbsp;</th><td><input type=text name=ccauth size=10 max=10 class=keyboardInput><tr><td style=\'text-align:right\'>Bank:&nbsp;</td><td><input type=text name=bankname size=20 max=40 class=keyboardInput></td></tr><tr><td style=\'text-align:right\'>DC Name:&nbsp;</td><td><input type=text name=checkname size=20 max=40 class=keyboardInput></td></tr></table>');
+                                    };
+                                </script>
+                                <table width="100%" cellpadding="5" cellspacing="0" border="0">
+                                    <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td bgcolor="#ffffff" width="150"><a
+                                                href="/juice4/index.juice?mode=login&amp;account=1140531" class="btn"><i
+                                                class="icon-user" style="font-size: 18px;"></i>&nbsp;&nbsp;Account</a>
+                                        </td>
+                                        <td>1140531<br>IGWE BENARD</td>
+                                        <td>25 ENUGU AGIDI STR ACHARA LAYOUT AWKUNANAW Enugu</td>
+                                        <td></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <input type="hidden" name="submode" value="cash"><input type="hidden" name="subsubmode"
+                                                                                        value="step4"><input
+                                    type="hidden" name="serialnumber" value="45028750185">
+                                <center>
+                                    <table>
+                                        <tbody>
+                                        <tr>
+                                            <th colspan="4">
+                                                <div class="pagetitle">Wallet Purchase</div>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th valign="top">Wallet Balance:</th>
+                                            <td valign="top"><input type="hidden" name="subsubsubmode"
+                                                                    value="wallet"><b>0.00</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:right;">Quick Pick:&nbsp;</td>
+                                            <td colspan="1">
+                                                <div class="btn-group"><input type="button" class="btn"
+                                                                              onclick="document.getElementById('amount').value='1000';"
+                                                                              value="1000"><input type="button"
+                                                                                                  class="btn"
+                                                                                                  onclick="document.getElementById('amount').value='1500';"
+                                                                                                  value="1500"><input
+                                                        type="button" class="btn"
+                                                        onclick="document.getElementById('amount').value='2000';"
+                                                        value="2000"><input type="button" class="btn"
+                                                                            onclick="document.getElementById('amount').value='3000';"
+                                                                            value="3000"><input type="button"
+                                                                                                class="btn"
+                                                                                                onclick="document.getElementById('amount').value='5000';"
+                                                                                                value="5000"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th valign="top" style="text-align:right;">Amount:&nbsp;</th>
+                                            <td valign="top"><input id="amount" type="text" name="amount" size="10"
+                                                                    max="15" value=""
+                                                                    style="background:#DDFFDD;font-size:x-large;font-weight:bold;color:#000000;text-align:right;height:40px;"
+                                                                    class="keyboardInput"
+                                                                    onkeydown="if (event.keyCode==13) this.form.submit();">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><span id="extra"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="hidden" name="currency" value="NGN"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>&nbsp;</td>
+                                            <td>
+                                                <table>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td><a class="btn"
+                                                               href="/juice4/index.juice?mode=login&amp;account=1140531&amp;z=1">&lt;-
+                                                            Back</a></td>
+                                                        <td>
+                                                            <button type="button" onclick="this.form.submit();"
+                                                                    class="btn btn-primary">Next -&gt;
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </center>
+                            </center>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endblock content %}
+

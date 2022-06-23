@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>CSV File to HTML Table Using AJAX jQuery</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta content=\"text/html;charset=utf-8\" http-equiv=\"Content-Type\" > 
+<meta content=\"utf-8\" http-equiv=\"encoding\" >
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css">
+@page { size: A4, margin: 0px }
+  .container{
+    background-color: #fff;
+    font-weight: 35px;
+    font-size: 24px;
+
+   *{
+    margin: 0;
+    padding: 0;
+   }
+
+  }
+  body{
+    background-color:#fff;
+  }
+
+
+    .checkboxes input{
+        margin: 0 0 0 20px;
+      }
+
+      .checkboxes input{
+            width: 20px; 
+            height: 20px; 
+        } 
+
+      
+</style>
+
+
+ </head>
+ <body>
+   <div class="container">
+   <div class="table-responsive">
+<h4 align="center"><img src="https://www.enugudisco.com/templates/kdsg2/images/s5_logo.png" width="156px" height="100px"> ENUGU ELECTRICITY DISTRIBUTION COMPANY</h4>
+
+<div class="container" style="size: 37px;">
+    <h2 align="center" style="font-size: 16px"></h2>
+     <h4 align="center"  style="font-size: 16px">APPLICATION FOR ELECTRICITY SUPPLY AND AGREEMENT FORM
+      (TO BE COMPLETED IN DUPLICATE BY THE APPLICANT AFTER STUDYING THE CONDITIONS
+AND REGULATIONS OF SUPPLY SPECIFIED OVERLEAF)</h4>
+<center><h5>Form ID - {{formid}}</center>
+</div>
+<br>
+    <h5 style="font-size: 19px;">CUSTOMER PERSONAL DATA</h5>
+    APPLICANT’S SURNAME: (MR/MRS/MISS/M/S)<input type="text" name="" value="{{a_surname}}" style="border-top: 2px; border-right: 0px; padding:3px; border-left: 0px; border-color: black" size="35px">
+    <br><br>
+    OTHER NAMES IN FULL:<input type="text" name="" value="{{a_other_name}}" style="border-top: 2px; border-right: 0px; padding:3px; border-left: 0px; border-color: black; border-right: 0px;" size="40px">
+    <br><br>
+    ADDRESS AT WHICH SUPPLY IS REQUIRED OR HOUSE NO:<input type="text" name="" value="{{a_address}}" style="border-top: 2px; padding:3px; border-left: 0px; border-right: 0px; border-color: black" size="26px">
+    
+    <br><br>
+    BUS STOP:<input type="text" name="" style="border-top: 2px; padding:3px; border-left: 0px; border-right: 0px; border-color: black" size="17px">
+    <br><br>
+    LANDMARK:<input type="text" name="" value="{{a_landmark}}" style="border-top: 2px; padding:3px; border-right: 0px; border-left: 0px; border-color: black" size="50px">
+    <br><br>
+    LGA:<input type="text" name="" value="{{a_lga}}" style="border-top: 2px; padding:3px; border-left: 0px; border-right: 0px; border-color: black" size="56px">
+    <br><br>
+    PIN CODE:<input type="text" name="" value="{{employer_pin}}" style="border-top: 2px; padding:3px; border-right: 0px; border-left: 0px; border-color: black" size="15px">
+
+
+<br><br>
+    <h5 style="font-size: 19px;">TYPE OF PREMISES</h5>
+    <div class="checkboxes">
+    <input type="checkbox"
+     {% if premise_type == 'duplex'%}
+checked=""
+      {% endif%}
+ name="" style="border-top: 2px; padding:3px; border-left: 0px; border-color: black" size="15px">Duplex
+      <input type="checkbox"
+           {% if premise_use == '3bedroom'%}
+checked=""
+      {% endif%}
+
+       name="" style="border-top: 2px; padding:3px; border-left: 0px; border-color: black" size="15px">3BD Room Flat
+      <input type="checkbox"
+       {% if premise_use == '2bedroombe'%}
+checked=""
+      {% endif%} name="" style="border-top: 2px; padding:3px; border-left: 0px; border-color: black" size="15px">2BD Room Flat
+     <input type="checkbox"
+     <input type="checkbox"
+       {% if premise_use == 'single'%}
+checked=""
+      {% endif%} name="" style="border-top: 2px; padding:3px; border-left: 0px; border-color: black" size="15px">Single Room
+      <input type="checkbox"
+      <input type="checkbox"
+       {% if premise_use == 'blockofflat'%}
+checked=""
+      {% endif%} name="" style="border-top: 2px; padding:3px; border-left: 0px; border-color: black" size="15px">Block of Flats
+     <input type="checkbox"
+     <input type="checkbox"
+       {% if premise_use == 'tenementhouse'%}
+checked=""
+      {% endif%} name="" style="border-top: 2px; padding:3px; border-left: 0px; border-color: black" size="15px">Tenement House
+     <input type="checkbox"
+     <input type="checkbox"
+       {% if premise_use == 'boysquarters'%}
+checked=""
+      {% endif%} name="" style="border-top: 2px; padding:3px; border-left: 0px; border-color: black" size="15px">Boys Qtrs
+      <input type="checkbox"
+      <input type="checkbox"
+       {% if premise_use == 'shop'%}
+checked=""
+      {% endif%} name="" style="border-top: 2px; padding:3px; border-left: 0px; border-color: black" size="15px">Shop
+     <input type="checkbox"
+     <input type="checkbox"
+       {% if premise_use == 'individual'%}
+checked=""
+      {% endif%} name="" style="border-top: 2px; padding:3px; border-left: 0px; border-color: black" size="15px">Individual
+  </div>
+<br>
+     Others (Please Specify):<input type="text" value={{a_o_premise_type}} name="" style="border-top: 2px; border-right: 0px; padding:3px; border-left: 0px; border-color: black" size="30px">
+
+<br><br>
+    <h5 style="font-size: 19px;">USE OF THE PREMISES</h5>
+<div class="checkboxes">
+  
+     <input type="checkbox"
+     {% if premise_use == 'residential'%}
+checked=""
+      {% endif%} name="" style="border-top: 2px; padding:3px; border-left: 0px; border-color: black" size="15px">Residential
+      <input type="checkbox"
+      {% if premise_use == 'commercial'%}
+checked=""
+      {% endif%} name="" style="border-top: 2px; padding:3px; border-left: 0px; border-color: black" size="15px">Commercial
+      <input type="checkbox"
+      {% if premise_use == 'industrial'%}
+checked=""
+      {% endif%} name="" style="border-top: 2px; padding:3px; border-left: 0px; border-color: black" size="15px">Industrial
+     <input type="checkbox"
+     {% if premise_use == 'streetLight'%}
+checked=""
+      {% endif%} name="" style="border-top: 2px; padding:3px; border-left: 0px; border-color: black" size="15px">Street Light
+     <br><br>
+  </div>Others (Please Specify):<input type="text" name="" style="border-top: 2px; border-right: 0px; padding:3px; border-left: 0px; border-color: black" size="30px">
+
+
+
+<br><br>
+    <h5 style="font-size: 17px;">PREVIOUS DETAILS (If applicable)</h5>
+    (A) CUSTOMER ADDRESS:<input type="text" value="{{prev_address}}" name="" style="border-top: 2px; border-right: 0px; padding:3px; border-left: 0px; border-color: black" size="33px">
+    <br><br>
+    (B) ACCOUNT No.: <input type="text" value="{{prev_acc_no}}" name="" style="border-top: 2px; border-right: 0px; padding:3px; border-left: 0px; border-color: black" size="39px">
+<br><br>
+    METER No.:<input type="text" name="" value="{{prev_meter_no}}" style="border-top: 2px; border-right: 0px; padding:3px; border-left: 0px; border-color: black" size="45px">
+    <br><br>
+    District:<input type="text" name="" value="{{district}}" style="border-top: 2px; padding:3px; border-left: 0px; border-right: 0px;border-color: black" size="46px">
+    <br><br>
+    NAME OF EMPLOYER/BUSINESS:<input type="text" value="{{employer_name}}" name="" style="border-top: 2px; padding:3px; border-left: 0px; border-color: black" size="40px">
+    <br><br>
+    ADDRESS OF EMPLOYER/BUSINESS:<input type="text" name="" value="{{employer_address}}" style="border-top: 2px; border-right: 0px; padding:3px; border-left: 0px; border-color: black" size="40px">
+    <br><br>
+    LANDMARK:<input type="text" name="" value="{{employer_landmark}}" style="border-top: 2px; border-right: 0px; padding:3px; border-left: 0px; border-color: black" size="40px">
+    <br><br>
+    LGA:<input type="text" name="" value="{{employer_lga}}" style="border-top: 2px; border-right: 0px; padding:3px; border-left: 0px; border-color: black" size="48px">
+    <br><br>
+    PIN CODE:<input type="text" value="{{employer_pin}}" name="" style="border-top: 2px; border-right: 0px; padding:3px; border-right: 0px; border-left: 0px; border-color: black" size="45px"> 
+    <br><br>
+    CONTACT TEL NO(s):
+<input type="text" name="" value="{{a_telephone}}" style="border-top: 2px; padding:3px; border-right: 0px; border-left: 0px; border-color: black" size="38px">
+<br><br>
+    Mobile NO(s):<input type="text" value="{{a_mobile}}" name="" style="border-top: 2px; border-right: 0px; padding:3px; border-left: 0px; border-color: black" size="41px">
+    <br><br>
+    EMAIL:<input type="text" value="{{a_email}}" name="" style="border-top: 2px; padding:3px; border-left: 0px; border-color: black" size="50px"> 
+    <div class="checkboxes">
+<br>
+  VALID MEANS OF IDENTIFICATION: <input type="checkbox"
+  {% if app_three_p_id == 'intlPass'%}
+checked=""
+      {% endif%} name="" style="border-top: 2px; padding:3px; border-left: 0px; border-color: black" size="15px"> International Passport
+      <input type="checkbox"
+      {% if app_three_p_id == 'drivers_license'%}
+checked=""
+      {% endif%} name="" style="border-top: 2px; padding:3px; border-left: 0px; border-color: black" size="15px">Driver’s License
+      <input type="checkbox"
+      {% if app_three_p_id == 'pvc'%}
+checked=""
+      {% endif%} name="" style="border-top: 2px; padding:3px; border-left: 0px; border-color: black" size="15px">PVC   
+  </div>
+  <br><br>
+   PERSONAL IDENTIFICATION NO. (International Passport, Driver’s License, PVC):<input type="text" value="{{app_three_p_id_num}}" name="" style="border-top: 2px; padding:3px; border-left: 0px; border-color: black" size="80px"> 
+<br><br> 
+
+<br><br>
+   NAME OF THE REGISTERED ELECTRICAL ENGINEER/ELECTRICAL CONTRACTOR:<input type="text" name="" style="border-top: 2px; padding:3px; border-left: 0px; border-color: black" size="75px"> 
+<br><br>
+    ADDRESS:<input type="text" name="" style="border-top: 2px; padding:3px; border-left: 0px; border-color: black" size="50px">
+    <br><br>
+    LICENSE NO:<input type="text" name="" style="border-top: 2px; padding:3px; border-left: 0px; border-right: 0px; border-color: black" size="50px">
+    <br><br>
+    CATEGORY:<input type="text" name="" style="border-top: 2px; padding:3px; border-left: 0px; border-right: 0px; border-color: black" size="39px"> 
+    <br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+   </div>
+   <div>
+  
+ </body>
+</html>

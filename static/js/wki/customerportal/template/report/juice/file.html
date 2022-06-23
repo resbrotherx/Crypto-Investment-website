@@ -1,0 +1,541 @@
+{% extends 'basek.html' %}
+{% load static %}
+{% block content %}
+     <div class="o_main">
+        <div class="o_main_content">
+            <div class="o_control_panel">
+                <div class="a_cp_top">
+                    <ol class="breadcrumb">
+                        <li class="active"></li>
+                    </ol>
+                    <div class="o_cp_searchview">
+                        <div class="o_searchview">
+                            <span class="o_searchview_more fa fa-search-minus" title="Advanced Search..."></span>
+                            <ul class="dropdown-menu o_searchview_autocomplete" role="menu" style="display: none;"></ul>
+                            <input class="o_searchview_input" placeholder="Search..." type="text"></div>
+                    </div>
+                </div>
+                <div class="a_cp_bottom">
+                    <div class="o_cp_buttons">
+                        <div class="o_list_buttons">
+
+
+                            <div class="btn-group o_dropdown">
+                                <button class="oe_select_columns btn btn-default btn-sm dropdown-toggle"
+                                        data-toggle="dropdown" id="select_columns" name="select_columns">
+                                    limit:
+                                    <span class="caret"></span>
+                                </button>
+
+                                <ul class="dropdown-menu" id="showcb" style="padding: 10px; display: none;">
+                                    <li>
+                                        <button class="oe_dropdown_btn btn btn-primary btn-block" id="apply"
+                                                name="apply">
+                                            Apply
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div class="btn-group o_dropdown">
+                                <button class="oe_select_columns btn btn-default btn-sm dropdown-toggle"
+                                        data-toggle="dropdown" id="select_columns" name="select_columns">
+                                    status:
+                                    <span class="caret"></span>
+                                </button>
+
+                                <ul class="dropdown-menu" id="showcb" style="padding: 10px; display: none;">
+                                    <li>
+                                        <button class="oe_dropdown_btn btn btn-primary btn-block" id="apply"
+                                                name="apply">
+                                            Apply
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <button accesskey="s" class="btn btn-primary btn-sm o_list_button_save" type="button">
+                                Save
+                            </button>
+                            <button accesskey="j" class="btn btn-default btn-sm o_list_button_discard" type="button">
+                                Discard
+                            </button>
+                        </div>
+                    </div>
+                    <div class="o_cp_sidebar">
+                        <div class="btn-group o_hidden">
+
+                            <div class="btn-group o_dropdown" style="display: none;">
+                                <button aria-expanded="false" class="o_dropdown_toggler_btn btn btn-sm dropdown-toggle"
+                                        data-toggle="dropdown">
+
+                                    Print <span class="caret"></span>
+                                </button>
+
+                                <ul class="dropdown-menu" role="menu">
+
+
+                                </ul>
+                            </div>
+
+                            <div class="btn-group o_dropdown">
+                                <button aria-expanded="false" class="o_dropdown_toggler_btn btn btn-sm dropdown-toggle"
+                                        data-toggle="dropdown">
+
+                                    Action <span class="caret"></span>
+                                </button>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+
+                                        <a data-index="0" data-section="other" href="#" target="_blank">
+                                            Export
+
+                                        </a>
+                                    </li>
+                                    <li>
+
+                                        <a data-index="1" data-section="other" href="#" target="_blank">
+                                            Delete
+
+                                        </a>
+                                    </li>
+                                    <li>
+
+                                        <a data-index="2" data-section="other" href="#" target="_blank">
+                                            Get Report
+
+                                        </a>
+                                    </li>
+                                    <li>
+
+                                        <a data-index="3" data-section="other" href="#" target="_blank">
+                                            Multi Approve
+
+                                        </a>
+                                    </li>
+                                    <li>
+
+                                        <a data-index="4" data-section="other" href="#" target="_blank">
+                                            Multi Invoicing
+
+                                        </a>
+                                    </li>
+                                    <li>
+
+                                        <a data-index="5" data-section="other" href="#" target="_blank">
+                                            SmartPower SMS Gateway
+
+                                        </a>
+                                    </li>
+                                    <li>
+
+                                        <a data-index="6" data-section="other" href="#" target="_blank">
+                                            EEDC SMS Gateway
+
+                                        </a>
+                                    </li>
+                                    <li>
+
+                                        <a data-index="7" data-section="other" href="#" target="_blank">
+                                            View logs
+
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="btn-group btn-group-sm o_cp_switch_buttons o_hidden"></div>
+                </div>
+            </div>
+            <div class="o_content">
+                <div class="o_view_manager_content">
+                    <div>
+                        <div class="table-responsive">
+                            <table class="o_list_view table table-condensed table-striped o_list_view_ungrouped">
+                                <thead>
+                                <tr>
+                                    <th width="1" class="o_list_record_selector">
+                                        <div class="o_checkbox"><input type="checkbox"><span></span></div>
+                                    </th>
+                                    <th class="o_column_sortable">
+                                        Account
+                                    </th>
+                                    <th class="o_column_sortable">OldAcct#</th>
+                                    <th class="o_column_sortable">Name</th>
+                                    <th class="o_column_sortable">Address</th>
+                                     <th class="o_column_sortable">City</th>
+                                    <th class="o_column_sortable">Meter</th>
+                                    <th class="o_column_sortable">Phone</th>
+                                    <th class="o_column_sortable">Location</th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody class="ui-sortable">
+                                <tr class="o_data_row">
+                                    
+                                    <td class="o_data_cell o_list_button">
+                                        <a href="">
+                                        <img src="{% static 'juicestatic/web/6.png' %}" style="padding:0 0 3 0; width:31;">
+                                        </a>
+                                    </td>
+                                    
+                                    <td class="o_data_cell"><a href="/juice/accountdetails" style="text-decoration: none;">  1090758</a></td>
+
+                                    <td class="o_data_cell">    59/14/04/0364-01</td>
+                                   
+                                    <td class="o_data_cell">MR EZEOKE GABRIEL CHUKWUEMEKA</td>
+                                    <td class="o_data_cell">10 PRINCE OKAM STREET MARYLAND</td>
+                                   
+                                    <td class="o_data_cell">NEW OWERRI</td>
+                                    <td class="o_data_cell">0101160403867</td>
+                                   
+                                    <td class="o_data_cell">08065586967</td>
+                                    <td class="o_data_cell">L00041638 33674</td>                                
+                                </tr>
+
+                                <tr class="o_data_row">
+                                    
+                                    <td class="o_data_cell o_list_button">
+                                        <a href="">
+                                        <img src="{% static 'juicestatic/web/6.png' %}" style="padding:0 0 3 0; width:31;">
+                                        </a>
+                                    </td>
+                                    
+                                    <td class="o_data_cell"><a href="/juice/accountdetails" style="text-decoration: none;">1090758</a></td>
+
+                                    <td class="o_data_cell"> 59/14/04/0364-01</td>
+                                   
+                                    <td class="o_data_cell">10 PRINCE OKAM STREET MARYLAND ENUGU SOUTH</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>                                
+                                </tr>
+                                  <tr class="o_data_row">
+                                    
+                                    <td class="o_data_cell o_list_button">
+                                        <a href="">
+                                        <img src="{% static 'juicestatic/web/6.png' %}" style="padding:0 0 3 0; width:31;">
+                                        </a>
+                                    </td>
+                                    
+                                    <td class="o_data_cell"><a href="/juice/accountdetails" style="text-decoration: none;">1090758</a></td>
+
+                                    <td class="o_data_cell"> 59/14/04/0364-01</td>
+                                   
+                                    <td class="o_data_cell">10 PRINCE OKAM STREET MARYLAND ENUGU SOUTH LGA</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>                                
+                                </tr>
+                                   <tr class="o_data_row">
+                                    
+                                    <td class="o_data_cell o_list_button">
+                                        <a href="">
+                                        <img src="{% static 'juicestatic/web/6.png' %}" style="padding:0 0 3 0; width:31;">
+                                        </a>
+                                    </td>
+                                    
+                                    <td class="o_data_cell"><a href="/juice/accountdetails" style="text-decoration: none;">1090758</a></td>
+
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">10 PRINCE OKAM STREET MARYLAND ENUGU SOUTH LGA</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>                                
+                                </tr>
+                                 <tr class="o_data_row">
+                                    
+                                    <td class="o_data_cell o_list_button">
+                                        <a href="">
+                                        <img src="{% static 'juicestatic/web/6.png' %}" style="padding:0 0 3 0; width:31;">
+                                        </a>
+                                    </td>
+                                    
+                                    <td class="o_data_cell"><a href="/juice/accountdetails" style="text-decoration: none;">1090758</a></td>
+
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>                                
+                                </tr>
+                                 <tr class="o_data_row">
+                                    
+                                    <td class="o_data_cell o_list_button">
+                                        <a href="">
+                                        <img src="{% static 'juicestatic/web/6.png' %}" style="padding:0 0 3 0; width:31;">
+                                        </a>
+                                    </td>
+                                    
+                                    <td class="o_data_cell"><a href="/juice/accountdetails" style="text-decoration: none;">1090758</a></td>
+
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>                                
+                                </tr>
+                                 <tr class="o_data_row">
+                                    
+                                    <td class="o_data_cell o_list_button">
+                                        <a href="">
+                                        <img src="{% static 'juicestatic/web/6.png' %}" style="padding:0 0 3 0; width:31;">
+                                        </a>
+                                    </td>
+                                    
+                                    <td class="o_data_cell"><a href="/juice/accountdetails" style="text-decoration: none;">ABA BARRACKS 11KV(ABA)</a></td>
+
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>                                
+                                </tr>
+                                 <tr class="o_data_row">
+                                    
+                                    <td class="o_data_cell o_list_button">
+                                        <a href="">
+                                        <img src="{% static 'juicestatic/web/6.png' %}" style="padding:0 0 3 0; width:31;">
+                                        </a>
+                                    </td>
+                                    
+                                    <td class="o_data_cell"><a href="/juice/accountdetails" style="text-decoration: none;">ABA BARRACKS 11KV(ABA)</a></td>
+
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>                                
+                                </tr>
+                                 <tr class="o_data_row">
+                                    
+                                    <td class="o_data_cell o_list_button">
+                                        <a href="">
+                                        <img src="{% static 'juicestatic/web/6.png' %}" style="padding:0 0 3 0; width:31;">
+                                        </a>
+                                    </td>
+                                    
+                                    <td class="o_data_cell"><a href="/juice/accountdetails" style="text-decoration: none;">ABA BARRACKS 11KV(ABA)</a></td>
+
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>                                
+                                </tr>
+                                 <tr class="o_data_row">
+                                    
+                                    <td class="o_data_cell o_list_button">
+                                        <a href="">
+                                        <img src="{% static 'juicestatic/web/6.png' %}" style="padding:0 0 3 0; width:31;">
+                                        </a>
+                                    </td>
+                                    
+                                    <td class="o_data_cell"><a href="/juice/accountdetails" style="text-decoration: none;">ABA BARRACKS 11KV(ABA)</a></td>
+
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>                                
+                                </tr>
+                                 <tr class="o_data_row">
+                                    
+                                    <td class="o_data_cell o_list_button">
+                                        <a href="">
+                                        <img src="{% static 'juicestatic/web/6.png' %}" style="padding:0 0 3 0; width:31;">
+                                        </a>
+                                    </td>
+                                    
+                                    <td class="o_data_cell"><a href="" style="text-decoration: none;">ABA BARRACKS 11KV(ABA)</a></td>
+
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>                                
+                                </tr>
+                                 <tr class="o_data_row">
+                                    
+                                    <td class="o_data_cell o_list_button">
+                                        <a href="">
+                                        <img src="{% static 'juicestatic/web/6.png' %}" style="padding:0 0 3 0; width:31;">
+                                        </a>
+                                    </td>
+                                    
+                                    <td class="o_data_cell"><a href="" style="text-decoration: none;">ABA BARRACKS 11KV(ABA)</a></td>
+
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>                                
+                                </tr>
+                                 <tr class="o_data_row">
+                                    
+                                    <td class="o_data_cell o_list_button">
+                                        <a href="">
+                                        <img src="{% static 'juicestatic/web/6.png' %}" style="padding:0 0 3 0; width:31;">
+                                        </a>
+                                    </td>
+                                    
+                                    <td class="o_data_cell"><a href="" style="text-decoration: none;">ABA BARRACKS 11KV(ABA)</a></td>
+
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>                                
+                                </tr>
+                                 <tr class="o_data_row">
+                                    
+                                    <td class="o_data_cell o_list_button">
+                                        <a href="">
+                                        <img src="{% static 'juicestatic/web/6.png' %}" style="padding:0 0 3 0; width:31;">
+                                        </a>
+                                    </td>
+                                    
+                                    <td class="o_data_cell"><a href="" style="text-decoration: none;">ABA BARRACKS 11KV(ABA)</a></td>
+
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>                                
+                                </tr>
+                                 <tr class="o_data_row">
+                                    
+                                    <td class="o_data_cell o_list_button">
+                                        <a href="">
+                                        <img src="{% static 'juicestatic/web/6.png' %}" style="padding:0 0 3 0; width:31;">
+                                        </a>
+                                    </td>
+                                    
+                                    <td class="o_data_cell"><a href="" style="text-decoration: none;">ABA BARRACKS 11KV(ABA)</a></td>
+
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>                                
+                                </tr>
+                                 <tr class="o_data_row">
+                                    
+                                    <td class="o_data_cell o_list_button">
+                                        <a href="">
+                                        <img src="{% static 'juicestatic/web/6.png' %}" style="padding:0 0 3 0; width:31;">
+                                        </a>
+                                    </td>
+                                    
+                                    <td class="o_data_cell"><a href="" style="text-decoration: none;">ABA BARRACKS 11KV(ABA)</a></td>
+
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                   
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>
+                                    <td class="o_data_cell">ABA BARRACKS 11KV(ABA)</td>                                
+                                </tr>
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    {% endblock content %}
+

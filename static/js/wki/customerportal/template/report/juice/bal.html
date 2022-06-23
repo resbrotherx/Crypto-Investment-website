@@ -1,0 +1,717 @@
+{% extends 'basek.html' %}
+{% load static %}
+{% block content %}
+    <div class="o_main">
+        <div class="o_main_content">
+
+
+            <div class="o_content">
+                <div class="o_view_manager_content">
+                    <div>
+                        <div class="o_form_view o_form_readonly">
+                            <div class="o_form_sheet_bg">
+
+                                <div class="o_form_sheet">
+
+
+                                    <div class="o_group">
+                                        <table class="o_group o_inner_group o_group_col_6">
+                                            <tbody>
+                                            <tr>
+                                                <td colspan="2" style="width: 100%;">
+                                                    <div class="o_horizontal_separator">Billing</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="o_td_label" style="margin-right: 23px;"><label
+                                                        class="o_form_label"
+                                                        for="o_field_input_2001"><a href="/juice/invoiceview"><img src="{% static 'juicestatic/web/invoices.ico' %}"
+                                                                                                 width="22px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 17px;">Invoice Creation</span></a></label>
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2002"><a href=""><img
+                                                        src="{% static 'juicestatic/web/discon.png' %}" width="21px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 17px;">Manual Disconnect Control</span></a></label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2002"><a href=""><img
+                                                        src="{% static 'juicestatic/web/print.jpg' %}" width="22px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 17px;">Manage Printing</span></a></label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2002"><a href=""><img
+                                                        src="{% static 'juicestatic/web/calender.png' %}" width="21px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 17px;">Manage Billing Schedules</span></a></label>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <table class="o_group o_inner_group o_group_col_6">
+                                            <tbody>
+                                            <tr>
+                                                <td colspan="2" style="width: 100%;">
+                                                    <div class="o_horizontal_separator">Customer</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2003"><a href="/juice/newconnection"><img
+                                                        src="{% static 'juicestatic/web/add.png' %}" width="21px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 17px;">New Customer Wizard</span></a></label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2004"><a href=""><img
+                                                        src="{% static 'juicestatic/web/pepul.jpg' %}" width="21px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 17px;">Manage Master Accounts</span></a></label></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2005"><a href=""><img
+                                                        src="{% static 'juicestatic/web/upload.png' %}" width="20px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 17px;">Manage Master Accounts</span></a></label></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+
+                                          <table class="o_group o_inner_group o_group_col_6">
+                                           <tbody>
+                                            <tr>
+                                                <td colspan="2" style="width: 100%;">
+                                                    <div class="o_horizontal_separator">Customer Payments</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2003"><a href=""><img
+                                                        src="{% static 'juicestatic/web/add.png' %}" width="21px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 17px;">Batch Payments</span></a></label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2004"><a href=""><img
+                                                        src="{% static 'juicestatic/web/pepul.jpg' %}" width="21px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 17px;">Manual Batch Payments</span></a></label></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+
+
+                                          <table class="o_group o_inner_group o_group_col_6">
+                                           <tbody>
+                                            <tr>
+                                                <td colspan="2" style="width: 100%;">
+                                                    <div class="o_horizontal_separator">Licensing</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2003"><a href=""><img
+                                                        src="{% static 'juicestatic/web/add.png' %}" width="21px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 17px;">  Manage Licensing</span></a></label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2004"><img
+                                                        src="{% static 'juicestatic/web/pepul.jpg' %}" width="21px;"> <span
+                                                        style="margin-left: 6px;  font-size: 17px;">Licenses 500000</span></label></td>
+                                            </tr>
+                                            
+                                              <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2004"><img
+                                                        src="{% static 'juicestatic/web/pepul.jpg' %}" width="21px;"> <span
+                                                        style="margin-left: 6px; font-size: 17px;">Expires 2021-06-01</span></label></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+
+                                    <div class="o_group">
+                                        <table class="o_group o_inner_group o_group_col_6">
+                                            <tbody>
+                                            <tr>
+                                                <td colspan="2" style="width: 100%;">
+                                                    <div class="o_horizontal_separator">Engineering</div>
+                                                </td>
+                                            </tr>
+                                             <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2005"><input type="text"> <button><img src="{% static 'juicestatic/web/s.png' %}" width="20px"></button></label></td>
+                                            </tr>
+                                            <br>
+                                            <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2005"><a href=""><img
+                                                        src="{% static 'juicestatic/web/academy.png' %}" width="20px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 17px;">Manage Degree Days</span></a></label></td>
+                                            </tr>
+                                            <br>
+                                            <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_1986">AMI</label>
+                                                </td>
+                                                <td style="width: 100%;"><a class="o_form_uri o_field_widget"
+                                                                            href=""
+                                                                            name="transformer_id"
+                                                                            id="o_field_input_1986"><img
+                                                        src="{% static 'juicestatic/web/setting.png' %}" width="20px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 18px;"><b>AMI Control Groups</b></span></a>
+
+                                                        <br>
+
+                                                        <a class="o_form_uri o_field_widget"
+                                                                            href=""
+                                                                            name="transformer_id"
+                                                                            id="o_field_input_1986"><img
+                                                        src="{% static 'juicestatic/web/setting.png' %}" width="20px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 18px;"><b>Meter AMI Mgmt</b></span></a>
+
+
+                                                        <br>
+                                    <!------------------------------------------dont use this one --------------------------------------->
+                                                        <a class="o_form_uri o_field_widget"
+                                                                            href=""
+                                                                            name="transformer_id"
+                                                                            id="o_field_input_1986"><img
+                                                        src="" width="20px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 18px;"><b></b></span></a>
+                                    <!------------------------------------------ end dont use this one --------------------------------------->
+
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="o_td_label"><label class="o_form_label o_form_label_empty"
+                                                                              for="o_field_input_1987">Location</label></td>
+
+
+
+
+                                                 <td style="width: 100%;"><a class="o_form_uri o_field_widget"
+                                                                            href=""
+                                                                            name="transformer_id"
+                                                                            id="o_field_input_1986"><img
+                                                        src="{% static 'juicestatic/web/add.png' %}" width="18px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 18px;"><b>Add new location</b></span></a>
+
+
+                                                        <br>
+
+                                                        <a class="o_form_uri o_field_widget"
+                                                                            href=""
+                                                                            name="transformer_id"
+                                                                            id="o_field_input_1986"><img
+                                                        src="{% static 'juicestatic/web/search.png' %}" width="20px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 18px;"><b>Search locations</b></span></a>
+
+
+
+                                                        <br>
+                                    <!------------------------------------------dont use this one --------------------------------------->
+                                                        <a class="o_form_uri o_field_widget"
+                                                                            href=""
+                                                                            name="transformer_id"
+                                                                            id="o_field_input_1986"><img
+                                                        src="" width="20px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 18px;"><b></b></span></a>
+                                    <!------------------------------------------ end dont use this one --------------------------------------->
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="o_td_label"><label class="o_form_label o_form_label_empty"
+                                                                              for="o_field_input_1988">Meter</label>
+                                                </td>
+                                                
+                                                 <td style="width: 100%;"><a class="o_form_uri o_field_widget"
+                                                                            href=""
+                                                                            name="transformer_id"
+                                                                            id="o_field_input_1986"><img
+                                                        src="{% static 'juicestatic/web/add.png' %}" width="18px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 18px;"><b>Batch Add Meters</b></span></a>
+
+
+                                                        <br>
+
+                                                        <a class="o_form_uri o_field_widget"
+                                                                            href=""
+                                                                            name="transformer_id"
+                                                                            id="o_field_input_1986"><img
+                                                        src="{% static 'juicestatic/web/add.png' %}" width="18px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 18px;"><b>Add new meter</b></span></a>
+
+                                                        
+
+                                                        <br>
+
+
+
+                                                        <a class="o_form_uri o_field_widget"
+                                                                            href=""
+                                                                            name="transformer_id"
+                                                                            id="o_field_input_1986"><img
+                                                        src="{% static 'juicestatic/web/upload.png' %}" width="18px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 18px;"><b>Nedisys File Meter Import</b></span></a>
+
+
+                                                        <br>
+
+                                                        <a class="o_form_uri o_field_widget"
+                                                                            href=""
+                                                                            name="transformer_id"
+                                                                            id="o_field_input_1986"><img
+                                                        src="{% static 'juicestatic/web/search.png' %}" width="20px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 18px;"><b>Search meters</b></span></a>
+
+                                                        
+
+                                                        <br>
+                                    <!------------------------------------------dont use this one --------------------------------------->
+                                                        <a class="o_form_uri o_field_widget"
+                                                                            href=""
+                                                                            name="transformer_id"
+                                                                            id="o_field_input_1986"><img
+                                                        src="" width="20px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 18px;"><b></b></span></a>
+                                    <!------------------------------------------ end dont use this one --------------------------------------->
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="o_td_label"><label class="o_form_label o_readonly_modifier"
+                                                                              for="o_field_input_1989">Module</label></td>
+
+
+
+
+
+                                                 <td style="width: 100%;"><a class="o_form_uri o_field_widget"
+                                                                            href=""
+                                                                            name="transformer_id"
+                                                                            id="o_field_input_1986"><img
+                                                        src="{% static 'juicestatic/web/add.png' %}" width="18px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 18px;"><b>Add new Module</b></span></a>
+
+
+                                                        <br>
+
+                                                        <a class="o_form_uri o_field_widget"
+                                                                            href=""
+                                                                            name="transformer_id"
+                                                                            id="o_field_input_1986"><img
+                                                        src="{% static 'juicestatic/web/search.png' %}" width="20px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 18px;"><b>Search Modules</b></span></a>
+
+
+
+                                                        <br>
+                                    <!------------------------------------------dont use this one --------------------------------------->
+                                                        <a class="o_form_uri o_field_widget"
+                                                                            href=""
+                                                                            name="transformer_id"
+                                                                            id="o_field_input_1986"><img
+                                                        src="" width="20px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 18px;"><b></b></span></a>
+                                    <!------------------------------------------ end dont use this one --------------------------------------->
+
+                                                </td>
+
+
+
+
+
+                                            </tr>
+                                            <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_1990">Readings</label></td>
+                                               
+
+                                                 <td style="width: 100%;"><a class="o_form_uri o_field_widget"
+                                                                            href=""
+                                                                            name="transformer_id"
+                                                                            id="o_field_input_1986"><img
+                                                        src="{% static 'juicestatic/web/download.png' %}" width="20px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 18px;"><b>VEE / Suspect Meter Readings</b></span></a>
+
+
+                                                        <br>
+                                    <!------------------------------------------dont use this one --------------------------------------->
+                                                        <a class="o_form_uri o_field_widget"
+                                                                            href=""
+                                                                            name="transformer_id"
+                                                                            id="o_field_input_1986"><img
+                                                        src="" width="20px;"> <span
+                                                        style="margin-left: 6px; color: blue;font-size: 18px;"></span></a>
+                                    <!------------------------------------------ end dont use this one --------------------------------------->
+
+                                                </td>
+
+
+
+                                            </tr>
+                                            <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_1991">Service
+                                                    Center</label></td>
+                                               
+
+                                                 <td style="width: 100%;"><a class="o_form_uri o_field_widget"
+                                                                            href=""
+                                                                            name="transformer_id"
+                                                                            id="o_field_input_1986"><img
+                                                        src="{% static 'juicestatic/web/random.png' %}" width="20px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 18px;"><b>Batch Create SGC change tokens</b></span></a>
+
+
+                                                        <br>
+                                    <!------------------------------------------dont use this one --------------------------------------->
+                                                        <a class="o_form_uri o_field_widget"
+                                                                            href=""
+                                                                            name="transformer_id"
+                                                                            id="o_field_input_1986"><img
+                                                        src="" width="20px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 18px;"></span></a>
+                                    <!------------------------------------------ end dont use this one --------------------------------------->
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_1992">Transformer</label></td>
+                                                
+                                                 <td style="width: 100%;"><a class="o_form_uri o_field_widget"
+                                                                            href=""
+                                                                            name="transformer_id"
+                                                                            id="o_field_input_1986"><img
+                                                        src="{% static 'juicestatic/web/add.png' %}" width="18px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 18px;"><b>Add new Transformer</b></span></a>
+
+
+                                                        <br>
+
+                                                        <a class="o_form_uri o_field_widget"
+                                                                            href=""
+                                                                            name="transformer_id"
+                                                                            id="o_field_input_1986"><img
+                                                        src="{% static 'juicestatic/web/search.png' %}" width="20px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 18px;"><b>Search Transformer</b></span></a>
+
+
+
+                                                        <br>
+                                    <!------------------------------------------dont use this one --------------------------------------->
+                                                        <a class="o_form_uri o_field_widget"
+                                                                            href=""
+                                                                            name="transformer_id"
+                                                                            id="o_field_input_1986"><img
+                                                        src="" width="20px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 17px;"></span></a>
+                                    <!------------------------------------------ end dont use this one --------------------------------------->
+
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <table class="o_group o_inner_group o_group_col_6">
+                                         <tbody>
+                                            <tr>
+                                                <td colspan="2" style="width: 100%;">
+                                                    <div class="o_horizontal_separator">Financials</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2003"><a href=""><img
+                                                        src="{% static 'juicestatic/web/add.png' %}" width="21px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 17px;">Bulk Account Adjustments</span></a></label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2004"><a href=""><img
+                                                        src="{% static 'juicestatic/web/pepul.jpg' %}" width="21px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 17px;">Manage Currencies</span></a></label></td>
+                                            </tr>
+
+                                             <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2003"><a href=""><img
+                                                        src="{% static 'juicestatic/web/add.png' %}" width="21px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 17px;">GovNum Tax Numbers</span></a></label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2004"><a href=""><img
+                                                        src="{% static 'juicestatic/web/pepul.jpg' %}" width="21px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 17px;">Activate Juice Cards</span></a></label></td>
+                                            </tr>
+                                             <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2003"><a href=""><img
+                                                        src="{% static 'juicestatic/web/add.png' %}" width="21px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 17px;">Manage KVA Fixed Charges</span></a></label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2004"><a href=""><img
+                                                        src="{% static 'juicestatic/web/pepul.jpg' %}" width="21px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 17px;">Tariff Groups</span></a></label></td>
+                                            </tr>
+
+                                             <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2003"><a href=""><img
+                                                        src="{% static 'juicestatic/web/add.png' %}" width="21px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 17px;">Tariff Groups</span></a></label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2004"><a href=""><img
+                                                        src="{% static 'juicestatic/web/pepul.jpg' %}" width="21px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 17px;">Tariff Groups</span></a></label></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2004"><a href=""><img
+                                                        src="{% static 'juicestatic/web/pepul.jpg' %}" width="21px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 17px;">Tariff Groups</span></a></label></td>
+                                            </tr>
+
+                                             <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2003"><a href=""><img
+                                                        src="{% static 'juicestatic/web/add.png' %}" width="21px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 17px;">Manage Tariffs</span></a></label>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+
+
+
+                                          <table class="o_group o_inner_group o_group_col_6">
+                                           <tbody>
+                                            <tr>
+                                                <td colspan="2" style="width: 100%;">
+                                                    <div class="o_horizontal_separator">My Account</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2003"><a href=""><img
+                                                        src="{% static 'juicestatic/web/add.png' %}" width="21px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 17px;">Drawer Balance and Batch</span></a></label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2004"><a href=""><img
+                                                        src="{% static 'juicestatic/web/pepul.jpg' %}" width="21px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 17px;">Configuration</span></a></label></td>
+                                            </tr>
+                                              <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2004"><a href=""><img
+                                                        src="{% static 'juicestatic/web/pepul.jpg' %}" width="21px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 17px;">Change Password</span></a></label></td>
+                                            </tr>
+                                             <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2004"><a href=""><img
+                                                        src="{% static 'juicestatic/web/pepul.jpg' %}" width="21px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 17px;">Link Yubikey to System Account</span></a></label></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                          <table class="o_group o_inner_group o_group_col_6">
+                                           <tbody>
+                                            <tr>
+                                                <td colspan="2" style="width: 100%;">
+                                                    <div class="o_horizontal_separator">Vendors</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2003"><a href=""><img
+                                                        src="{% static 'juicestatic/web/add.png' %}" width="21px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 17px;">Manage Vendors</span></a></label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2004"><a href=""><img
+                                                        src="{% static 'juicestatic/web/pepul.jpg' %}" width="21px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 17px;">Accept Vendor/CSR Payments</span></a></label></td>
+                                            </tr>
+                                            
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+
+
+
+
+
+
+                                    <div class="o_group">
+                                        <table class="o_group o_inner_group o_group_col_6">
+                                            <tbody>
+                                            <tr>
+                                                <td colspan="2" style="width: 100%;">
+                                                    <div class="o_horizontal_separator">System Users</div>
+                                                </td>
+                                            </tr>
+                                             <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2005"><input type="text"> <button><img src="{% static 'juicestatic/web/s.png' %}" width="20px"></button></label></td>
+                                            </tr>
+                                            <br>
+                                            <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_1986">User</label>
+                                                </td>
+                                                <td style="width: 100%;"><a class="o_form_uri o_field_widget"
+                                                                            href=""
+                                                                            name="transformer_id"
+                                                                            id="o_field_input_1986"><img
+                                                        src="{% static 'juicestatic/web/setting.png' %}" width="20px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 18px;"><b>Search System Users</b></span></a>
+
+                                                        <br>
+
+                                                        <a class="o_form_uri o_field_widget"
+                                                                            href=""
+                                                                            name="transformer_id"
+                                                                            id="o_field_input_1986"><img
+                                                        src="{% static 'juicestatic/web/setting.png' %}" width="20px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 18px;"><b>Add System User: Login</b></span></a>
+
+
+                                                        <br>
+                                    <!------------------------------------------dont use this one --------------------------------------->
+                                                        <a class="o_form_uri o_field_widget"
+                                                                            href=""
+                                                                            name="transformer_id"
+                                                                            id="o_field_input_1986"><img
+                                                        src="" width="20px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 18px;"><b></b></span></a>
+                                    <!------------------------------------------ end dont use this one --------------------------------------->
+
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="o_td_label"><label class="o_form_label o_form_label_empty"
+                                                                              for="o_field_input_1987">Vendor</label></td>
+
+
+
+
+                                                 <td style="width: 100%;"><a class="o_form_uri o_field_widget"
+                                                                            href=""
+                                                                            name="transformer_id"
+                                                                            id="o_field_input_1986"><img
+                                                        src="{% static 'juicestatic/web/add.png' %}" width="18px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 18px;"><b>Vendor Creation Wizard</b></span></a>
+
+
+                                                        <br>
+
+                                                        <a class="o_form_uri o_field_widget"
+                                                                            href=""
+                                                                            name="transformer_id"
+                                                                            id="o_field_input_1986"><img
+                                                        src="{% static 'juicestatic/web/search.png' %}" width="20px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 18px;"><b>Search Vendors</b></span></a>
+
+
+
+                                                        <br>
+                                    <!------------------------------------------dont use this one --------------------------------------->
+                                                        <a class="o_form_uri o_field_widget"
+                                                                            href=""
+                                                                            name="transformer_id"
+                                                                            id="o_field_input_1986"><img
+                                                        src="" width="20px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 18px;"><b></b></span></a>
+                                    <!------------------------------------------ end dont use this one --------------------------------------->
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                
+                                            </tbody>
+                                        </table>
+
+
+
+                                          <table class="o_group o_inner_group o_group_col_6">
+                                           <tbody>
+                                            <tr>
+                                                <td colspan="2" style="width: 100%;">
+                                                    <div class="o_horizontal_separator">Vendor Management</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2003"><a href=""><img
+                                                        src="{% static 'juicestatic/web/add.png' %}" width="21px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 17px;">Manage Vendor Group</span></a></label>
+                                                </td>
+                                    <!--         </tr>
+                                            <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2004"><a href=""><img
+                                                        src="{% static 'juicestatic/web/pepul.jpg' %}" width="21px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 17px;">Configuration</span></a></label></td>
+                                            </tr>
+                                              <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2004"><a href=""><img
+                                                        src="{% static 'juicestatic/web/pepul.jpg' %}" width="21px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 17px;">Change Password</span></a></label></td>
+                                            </tr>
+                                             <tr>
+                                                <td class="o_td_label"><label class="o_form_label"
+                                                                              for="o_field_input_2004"><a href=""><img
+                                                        src="{% static 'juicestatic/web/pepul.jpg' %}" width="21px;"> <span
+                                                        style="margin-left: 6px; color: blue; font-size: 17px;">Link Yubikey to System Account</span></a></label></td>
+                                            </tr> -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ {% endblock content %}
+
+
+</body></html>
+
+</body>
+</html>

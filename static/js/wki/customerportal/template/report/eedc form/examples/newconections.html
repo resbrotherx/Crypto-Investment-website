@@ -1,0 +1,393 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Landlord Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Include SmartWizard CSS -->
+    {% load static %}
+    <link href="{% static 'dist/css/smart_wizard.css' %}" rel="stylesheet" type="text/css" />
+
+
+    <link href="{% static 'dist/css/smart_wizard_theme_dots.css' %}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+                <a class="navbar-brand" href="#">EEDC</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                   
+                  </ul>
+                </div>
+              </nav>
+
+              
+        <div class="jumbotron"  style="background: url('{% static 'img/bgImg.svg' %}'); background-size: cover; background-repeat: no-repeat;">
+                <h3 style="font-weight: bold;">NEW SERVICE CONNECTION</h3>
+            </div>
+
+    <div class="col-md-8 ml-auto mr-auto" style="margin-top: -80px;">
+        <!-- SmartWizard html -->
+       <div class="card card-shadow">
+            <div id="smartwizard" class="p-3">
+            <ul>
+                <li><a href="#step-1">Step 1<br /><small>LandLord</small></a></li>
+            </ul>
+
+            <div class="card-body">
+                <div id="step-1" class="">                 
+                    <div class="p-4">
+                        <p style="text-align: center; font-weight: bold;"> Customer Name is {{name}}</p>
+                        
+                                                <h6 style="text-align: center; font-weight: bold;">New Service Connection - Technical Feasibility Form</h6>
+                        <form class="ui form">
+ <div class="row mt-2">
+
+                                                
+                                                <div class="col-md-6 form-group"><label>DISTRICT..</label>
+                                                <select class="custom-select form-group input" dat-name="">
+                                                    <option>Flat</option>
+                                                    <option>Complex</option>
+                                                    <option>Hall</option></select></div>
+                                                    
+                                                <div class="col-md-6 form-group"><label>SERVICE CENTER</label>
+                                                <select class="custom-select form-group input" dat-name="">
+                                                    <option>Domestic</option>
+                                                    <option>House Shop</option>
+                                                    <option>Business</option></select>
+                                                </div>
+
+                                            
+                                                <div class="col-md-6 form-group"><label>FLAT NO..</label>
+                                                <select class="custom-select form-group input" dat-name="">
+                                                    <option>Flat</option>
+                                                    <option>Complex</option>
+                                                    <option>Hall</option></select></div>
+                                                    
+                                                <div class="col-md-6 form-group"><label>STREET</label>
+                                                <select class="custom-select form-group input" dat-name="">
+                                                    <option>Domestic</option>
+                                                    <option>House Shop</option>
+                                                    <option>Business</option></select>
+                                                </div>
+
+                                                
+                                                <div class="col-md-6 form-group"><label>TOWN..</label>
+                                                <select class="custom-select form-group input" dat-name="">
+                                                    <option>Flat</option>
+                                                    <option>Complex</option>
+                                                    <option>Hall</option></select></div>
+                                                    
+                                                <div class="col-md-6 form-group"><label>CITY</label>
+                                                <select class="custom-select form-group input" dat-name="">
+                                                    <option>Domestic</option>
+                                                    <option>House Shop</option>
+                                                    <option>Business</option></select>
+                                                </div>
+
+                                           
+                                                <div class="col-md-6 form-group"><label>STATE..</label>
+                                                <select class="custom-select form-group input" dat-name="">
+                                                    <option>Electrified</option>
+                                                    <option>Unelectrified</option></select></div>
+                                                    
+                                      
+
+                                             <div class="col-md-6 form-group">
+                                            <label for="form-subcomponent-shorthand-input-first-name">PHONE...</label>
+                                            <div class="ui fluid input">
+                                                <input class="form-control input" id="form-subcomponent-shorthand-input-first-name" placeholder="Business Bar Type..." type="text" data-name="app_three_emp_biz">
+                                            </div>
+                                        </div>
+</div>
+<h6 style="text-align: center; font-weight: bold;">House detailes</h6>
+<BR>
+<div class="row mt-2">
+
+
+                                                <div class="col-md-6 form-group"><label>Type of house..</label>
+                                                <select class="custom-select form-group input" dat-name="">
+                                                    <option>Flat</option>
+                                                    <option>Complex</option>
+                                                    <option>Hall</option></select></div>
+                                                    
+                                                <div class="col-md-6 form-group"><label>Use of Building</label>
+                                                <select class="custom-select form-group input" dat-name="">
+                                                    <option>Domestic</option>
+                                                    <option>House Shop</option>
+                                                    <option>Business</option></select>
+                                                </div>
+                                           
+
+                                           
+                                                <div class="col-md-6 form-group"><label>Area..</label>
+                                                <select class="custom-select form-group input" dat-name="">
+                                                    <option>Electrified</option>
+                                                    <option>Unelectrified</option></select></div>
+                                                    
+                                                <div class="col-md-6 form-group"><label>Type of Meter</label>
+                                                <select class="custom-select form-group input" dat-name="">
+                                                    <option>Single Phase</option>
+                                                    <option>Three Phase Whole Current</option>
+                                                    <option>Three Phase CT Operation</option></select>
+                                                </div>
+                                      
+                                                <div class="col-md-6 form-group"><label>Connect Through..</label>
+                                                <select class="custom-select form-group input" dat-name="">
+                                                    <option>Bus Bar Connection</option>
+                                                    <option>Overhead Conductor</option>
+                                                    <option>Underground Line</option>
+                                                    <option>AB Cable</option>
+                                                    </select></div>
+                                                    
+                                                <div class="col-md-6 form-group"><label>Applicable Tariff Catagory</label>
+                                                <select class="custom-select form-group input" dat-name="">
+                                                    <option>Domestic</option>
+                                                    <option>Defence</option>
+                                                    <option>Commercial</option>
+                                                    <option>Railway Station</option>
+                                                    <option>Idustrial</option>
+                                                    <option>Agriculture</option>
+                                                    <option>Pace of worship</option>
+                                                    <option>Educational</option>
+                                                    <option>Government</option>
+                                                     <option>Others (Spacify) </option>
+                                                    </select>
+                                                </div>
+
+                                        <div class="col-md-6 form-group">
+                                            <label for="form-subcomponent-shorthand-input-first-name">Bus Bar Type...</label>
+                                            <div class="ui fluid input">
+                                                <input class="form-control input" id="form-subcomponent-shorthand-input-first-name" placeholder="Business Bar Type..." type="text" data-name="app_three_emp_biz">
+                                            </div>
+                                        </div>
+
+                                         <div class="col-md-6 form-group">
+                                            <label for="form-subcomponent-shorthand-input-first-name">Bus Bar No...</label>
+                                            <div class="ui fluid input">
+                                                <input class="form-control input" id="form-subcomponent-shorthand-input-first-name" placeholder="Business Bar Number..." type="text" data-name="app_three_emp_biz">
+                                            </div>
+                                        </div>
+</div>
+<br>
+                                        <center>
+                                                <h6>Electricity in the Neighbourhood</h6>
+                                                </center>
+                                                <br>
+                                                <div class="row mt-2">
+                                               
+
+                                            
+                                                    <div class="col-md-6 form-group">
+                                                        <label>Electricity in Neighbourhood....</label>
+                                                            <select class="custom-select form-control appli">
+                                                                <option>Same Premise:</option>
+                                                                <option>Left Adjoinning</option>
+                                                                <option>Right Adjoinning</option>
+                                                               </select>
+                                                           </div>
+                                                           
+                                                           <div class="col-md-3 form-group">
+                                                               <label for="form-subcomponent-shorthand-input-last-name">Account No:</label>
+                                                               <div class="ui fluid input">
+                                                                   <input class="form-control number" id="form-subcomponent-shorthand-input-last-name" placeholder="Number" type="text"></div>
+                                                               </div>
+                                                               
+                                                               <div class="col-md-2 form-group">
+                                                                   <label for="form-subcomponent-shorthand-input-last-name">Meter No:</label>
+                                                                   <div class="ui fluid input">
+                                                                       <input class="form-control watt" id="form-subcomponent-shorthand-input-last-name" placeholder="Watts" type="text">
+                                                                   </div>
+                                                               </div>
+                                                               
+                                                           </div>   
+</div>
+
+<div class="row mt-2">
+
+                                          <div class="col-md-6 form-group">
+                                            <label for="form-subcomponent-shorthand-input-first-name">Resourse Substation Name (132/33)...</label>
+                                            <div class="ui fluid input">
+                                                <input class="form-control input" id="form-subcomponent-shorthand-input-first-name" placeholder="Resourse Substation Name" type="text" data-name="app_three_emp_biz">
+                                            </div>
+                                        </div>
+
+                                         <div class="col-md-6 form-group">
+                                            <label for="form-subcomponent-shorthand-input-first-name">Feeder Name (33kva)...</label>
+                                            <div class="ui fluid input">
+                                                <input class="form-control input" id="form-subcomponent-shorthand-input-first-name" placeholder="Business Bar Number..." type="text" data-name="app_three_emp_biz">
+                                            </div>
+                                        </div>
+
+
+                                         <div class="col-md-6 form-group">
+                                            <label for="form-subcomponent-shorthand-input-first-name">Substation Name (33/11)...</label>
+                                            <div class="ui fluid input">
+                                                <input class="form-control input" id="form-subcomponent-shorthand-input-first-name" placeholder="Resourse Substation Name" type="text" data-name="app_three_emp_biz">
+                                            </div>
+                                        </div>
+
+                                         <div class="col-md-6 form-group">
+                                            <label for="form-subcomponent-shorthand-input-first-name">Feeder Name (11kva)...</label>
+                                            <div class="ui fluid input">
+                                                <input class="form-control input" id="form-subcomponent-shorthand-input-first-name" placeholder="Business Bar Number..." type="text" data-name="app_three_emp_biz">
+                                            </div>
+                                        </div>
+
+
+                                         <div class="col-md-6 form-group">
+                                            <label for="form-subcomponent-shorthand-input-first-name">DTR Name/Location/Capacity (in Kva)...</label>
+                                            <div class="ui fluid input">
+                                                <input class="form-control input" id="form-subcomponent-shorthand-input-first-name" placeholder="Resourse Substation Name" type="text" data-name="app_three_emp_biz">
+                                            </div>
+                                        </div>
+
+                                         <div class="col-md-6 form-group">
+                                            <label for="form-subcomponent-shorthand-input-first-name">Distance from Existing pole (Approx. in Meters)...</label>
+                                            <div class="ui fluid input">
+                                                <input class="form-control input" id="form-subcomponent-shorthand-input-first-name" placeholder="Business Bar Number..." type="text" data-name="app_three_emp_biz">
+                                            </div>
+                                        </div>
+
+
+
+
+                                                    <div class="col-md-6 form-group">
+                                                        <label>   Whether the power Supply is Available on proposed Unite....</label>
+                                                            <select class="custom-select form-control appli">
+                                                                <option>Yes (add Customer Account no/Arrear):</option>
+                                                                <option>NO</option>
+                                                               </select>
+                                                           </div>
+                                                           
+                                                           <div class="col-md-3 form-group">
+                                                               <label for="form-subcomponent-shorthand-input-last-name">Customer Account No</label>
+                                                               <div class="ui fluid input">
+                                                                   <input class="form-control number" id="form-subcomponent-shorthand-input-last-name" placeholder="Number" type="text"></div>
+                                                               </div>
+                                                               
+                                                               <div class="col-md-2 form-group">
+                                                                   <label for="form-subcomponent-shorthand-input-last-name">Arrear amount</label>
+                                                                   <div class="ui fluid input">
+                                                                       <input class="form-control watt" id="form-subcomponent-shorthand-input-last-name" placeholder="Watts" type="text">
+                                                                   </div>
+                                                               </div>
+                                                               
+                                                           </div>
+
+                                </div>
+
+
+
+
+
+
+
+                                    
+                                        <hr>
+                                        <input type="hidden" id="new" value="../success?formid={{formid}}" >
+                                            <div class="col-md-6 form-group"><button new="Home" data-ajax='../../add/' sweetalert type="button" class="submit btn btn-info ">Submit</button></div>
+                  
+                                    </form></div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+       </div>
+
+    </div>
+
+    <!-- Include jQuery -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
+    <!-- Include SmartWizard JavaScript source -->
+    <script type="text/javascript" src="{% static 'dist/js/jquery.smartWizard.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'ajaxsend.js' %}"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            // Step show event
+            // $("#smartwizard").on("showStep", function(e, anchorObject, stepNumber, stepDirection, stepPosition) {
+            //    //alert("You are on step "+stepNumber+" now");
+            //    if(stepPosition === 'first'){
+            //        $("#prev-btn").addClass('disabled');
+            //    }else if(stepPosition === 'final'){
+            //        $("#next-btn").addClass('disabled');
+            //    }else{
+            //        $("#prev-btn").removeClass('disabled');
+            //        $("#next-btn").removeClass('disabled');
+            //    }
+            // });
+
+            // Toolbar extra buttons
+            var btnFinish = $('<button></button>').text('Finish')
+                                             .addClass('btn btn-info')
+                                             .on('click', function(){ alert('Finish Clicked'); });
+            var btnCancel = $('<button></button>').text('Cancel')
+                                             .addClass('btn btn-danger')
+                                             .on('click', function(){ $('#smartwizard').smartWizard("reset"); });
+
+
+            // Smart Wizard
+            $('#smartwizard').smartWizard({
+                    selected: 0,
+                    theme: 'dots',
+                    transitionEffect:'fade',
+                    showStepURLhash: true,
+                    toolbarSettings: {toolbarPosition: 'end',
+                                      toolbarButtonPosition: 'end',
+                                      toolbarExtraButtons: []
+                                    }
+            });
+
+
+            // External Button Events
+            $("#reset-btn").on("click", function() {
+                // Reset wizard
+                $('#smartwizard').smartWizard("reset");
+                return true;
+            });
+
+            // $("#prev-btn").on("click", function() {
+            //     // Navigate previous
+            //     $('#smartwizard').smartWizard("prev");
+            //     return false;
+            // });
+
+            // $("#next-btn").on("click", function() {
+            //     // Navigate next
+            //     $('#smartwizard').smartWizard("next");
+            //     return false;
+            // });
+
+       
+        });
+    </script>
+</body>
+</html>

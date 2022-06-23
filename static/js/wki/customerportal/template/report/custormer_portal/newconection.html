@@ -1,0 +1,265 @@
+{% extends 'report/custormer_portal/base.html' %}
+
+
+
+{% block content %}
+<div class="wrapper-content">
+  <div class="row  align-items-end  customer-profile-cover">
+    <figure class="background"><img src="../img/normal.png" alt="Social cover image"> </figure>
+    
+  </div>
+  <br>
+  <br>
+  <div class="container">
+   <!-- <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#profile" role="tab">Profile</a> </li>
+      <li class="nav-item"> <a class="nav-link " data-toggle="tab" href="#orders" role="tab">Orders</a> </li>
+      <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#messages" role="tab">Messages</a> </li>
+      <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#settings" role="tab">Settings</a> </li>
+    </ul>
+    
+     <!-- Tab panes -->
+    <div class="tab-content">
+      <div class="tab-pane active" id="profile" role="tabpanel">
+        <div class="row">
+         
+          <div class="col-sm-16">
+            <h3 class="mt-2 text-center"  >New Consuption</h3>
+            <hr>
+          </div>
+          
+          <form class="col-sm-16">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group row">
+                  <div class="col-lg-8 col-md-8">
+                    <label>Account Number</label>
+                    <input type="text" class="form-control" placeholder="">
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <label>Triff Class</label>
+                    <input type="text" class="form-control" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-lg-8 col-md-8">
+                    <label>District</label>
+                    <input type="email" class="form-control" placeholder="">
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <label>Old account</label>
+                    <input type="text" class="form-control" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-lg-8 col-md-8">
+                    <div class="row">
+                      <div class="col-lg-8">
+                        <label>Category</label>
+                        <select class="form-control " data-live-search="true" tabindex="-1" aria-hidden="true">
+                          <option value="AF">MD</option>
+                          <option value="AX">Non MD</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="row">
+                      <div class="col-lg-8">
+                        <label>Metring Type</label>
+                        <select class="form-control" data-live-search="true" tabindex="-1" aria-hidden="true">
+                          <option value="AL">Postpaid</option>
+                          <option value="AK">Prepaid</option>
+                          <option value="AK">Non-Metered</option>
+                        </select>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            <div class="mb-2 row">
+              <div class="col-lg-16">
+                <hr>
+                <button type="button" class="btn btn-primary">SAVE</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="tab-pane " id="orders" role="tabpanel">
+        <div class="alert alert-danger" >
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+          <h4 class="alert-heading">Oopss!</h4>
+          <p>You have something missed, Please fillup required fields to procceed further. Read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content. </p>
+        </div>
+      </div>
+      <div class="tab-pane " id="messages" role="tabpanel">
+        <div class="alert alert-info" >
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+          <h4 class="alert-heading">Well done!</h4>
+          <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-8 col-sm-16">
+            <div class="list-unstyled media-list" style="max-height:800px">
+              <div class="media active new"> <span class="message_userpic"><img class="d-flex" src="../img/user-header.png" alt="Generic user image"> <span class="user-status bg-success "></span></span>
+                <div class="media-body">
+                  <h6 class="mt-0 mb-1">Adminux Welcome </h6>
+                  <p>2:00 pm, 20 January, 2017</p>
+                  <p class="description ">This is awesome product and, I am very happy with delivery &amp; product packaging. </p>
+                </div>
+              </div>
+              <div class="media new"> <span class="message_userpic"><img class="d-flex" src="../img/user-header.png" alt="Generic user image"> <span class="user-status bg-success "></span></span>
+                <div class="media-body">
+                  <h6 class="mt-0 mb-1">Anchal Sharma<small class="text-danger pull-right"><i class="fa fa-flag"></i></small></h6>
+                  <p>2:00 pm, 20 January, 2017</p>
+                  <p class="description ">This is awesome product and, I am very happy with delivery &amp; product packaging. </p>
+                </div>
+              </div>
+              <div class="media new"> <span class="message_userpic"><img class="d-flex" src="../img/user-header.png" alt="Generic user image"> <span class="user-status bg-success "></span></span>
+                <div class="media-body">
+                  <h6 class="mt-0 mb-1">Maxartkiller <small class="text-success pull-right"><i class="fa fa-flag"></i></small></h6>
+                  <p>2:00 pm, 20 January, 2017</p>
+                  <p class="description ">This is awesome product and, I am very happy with delivery &amp; product packaging..</p>
+                </div>
+              </div>
+              <div class="media new"> <span class="message_userpic"><img class="d-flex" src="../img/user-header.png" alt="Generic user image"> <span class="user-status bg-success "></span></span>
+                <div class="media-body">
+                  <h6 class="mt-0 mb-1">Adminux Welcome <small class="text-warning pull-right"><i class="fa fa-flag"></i></small></h6>
+                  <p>2:00 pm, 20 January, 2017</p>
+                  <p class="description ">This is awesome product and, I am very happy with delivery &amp; product packaging. </p>
+                </div>
+              </div>
+              <div class="media"> <span class="message_userpic"><img class="d-flex" src="../img/user-header.png" alt="Generic user image"> <span class="user-status bg-success "></span></span>
+                <div class="media-body">
+                  <h6 class="mt-0 mb-1">Anchal Sharma <small class="text-primary pull-right"><i class="fa fa-tag"></i></small></h6>
+                  <p>2:00 pm, 20 January, 2017</p>
+                  <p class="description ">This is awesome product and, I am very happy with delivery &amp; product packaging. </p>
+                </div>
+              </div>
+              <div class="media"> <span class="message_userpic"><img class="d-flex" src="../img/user-header.png" alt="Generic user image"> <span class="user-status bg-success "></span></span>
+                <div class="media-body">
+                  <h6 class="mt-0 mb-1">Maxartkiller <small class="text-danger pull-right"><i class="fa fa-tag"></i></small></h6>
+                  <p>2:00 pm, 20 January, 2017</p>
+                  <p class="description ">This is awesome product and, I am very happy with delivery &amp; product packaging..</p>
+                </div>
+              </div>
+              <div class="media"> <span class="message_userpic"><img class="d-flex" src="../img/user-header.png" alt="Generic user image"> <span class="user-status bg-success "></span></span>
+                <div class="media-body">
+                  <h6 class="mt-0 mb-1">Adminux Welcome </h6>
+                  <p>2:00 pm, 20 January, 2017</p>
+                  <p class="description ">This is awesome product and, I am very happy with delivery &amp; product packaging. </p>
+                </div>
+              </div>
+              <div class="media"> <span class="message_userpic"><img class="d-flex" src="../img/user-header.png" alt="Generic user image"> <span class="user-status bg-success "></span></span>
+                <div class="media-body">
+                  <h6 class="mt-0 mb-1">Anchal Sharma</h6>
+                  <p>2:00 pm, 20 January, 2017</p>
+                  <p class="description ">This is awesome product and, I am very happy with delivery &amp; product packaging. </p>
+                </div>
+              </div>
+              <div class="media"> <span class="message_userpic"><img class="d-flex" src="../img/user-header.png" alt="Generic user image"> <span class="user-status bg-success "></span></span>
+                <div class="media-body"> <span class="mt-0 mb-1">Maxartkiller</span>
+                  <p>2:00 pm, 20 January, 2017</p>
+                  <p class="description ">This is awesome product and, I am very happy with delivery &amp; product packaging..</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col  pb-2 hidden-md-down">
+            <div class="col p0" style="max-height:800px; overflow-y:auto">
+              <div class="options-mail">
+                <ul class="nav nav-pills pull-left">
+                  <li class="nav-item">
+                    <button class="btn btn-sm btn-link "><i class="fa fa-reply"></i> Reply</button>
+                  </li>
+                  <li class="nav-item">
+                    <button class="btn btn-sm btn-link "><i class="fa fa-reply-all"></i> Reply All</button>
+                  </li>
+                  <li class="nav-item">
+                    <button class="btn btn-sm btn-link "><i class="fa fa-forward"></i> Forward</button>
+                  </li>
+                  <li class="nav-item">
+                    <button class="btn btn-sm btn-link "><i class="fa fa-trash"></i> Delete</button>
+                  </li>
+                </ul>
+                <ul class="nav nav-pills pull-right">
+                  <li class="nav-item">
+                    <button class="btn btn-sm btn-outline-primary "><i class="fa fa-chevron-left"></i></button>
+                  </li>
+                  <li class="nav-item">
+                    <button class="btn btn-sm btn-outline-primary ml-2"><i class="fa fa-chevron-right"></i></button>
+                  </li>
+                </ul>
+              </div>
+              <div class="clearfix"></div>
+              <h3 class="mt-2">Adminux Welcome</h3>
+              <div class="list-unstyled comment-list">
+                <div class="media "> <span class="message_userpic"><img class="d-flex" src="../img/user-header.png" alt="Generic user image"> <span class="user-status bg-success "></span></span>
+                  <div class="media-body">
+                    <h6 class="mt-0 mb-1">Maxartkiller<small class="pull-right">2:00 pm, 20 January, 2017</small></h6>
+                    <p class="description mb-0">info@maxartkiller.in </p>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend Lorem <br>
+                ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend <br>
+                <br>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend <br>
+                <br>
+                Thanks,<br>
+                <b>Lucky Sans</b></p>
+              <div class="row m-0">
+                <figure class="responsive-img col-lg-4 col-md-8"> <a href="../img/project_pic3.jpg" rel="gallery-2" class="swipebox" title="My Caption"><img src="../img/project_pic3.jpg" alt="post picture"></a> </figure>
+                <figure class="responsive-img col-lg-4 col-md-8"> <a href="../img/project_pic1.jpg" rel="gallery-2" class="swipebox" title="My Caption"><img src="../img/project_pic1.jpg" alt="post picture"></a> </figure>
+                <figure class="responsive-img col-lg-4 col-md-8"> <a href="../img/project_pic2.jpg" rel="gallery-2" class="swipebox" title="My Caption"><img src="../img/project_pic2.jpg" alt="post picture"></a> </figure>
+              </div>
+              <br>
+              <hr>
+              <h2 class="page_subtitles">Quick Reply <small><a href="#" class="pull-right">More options</a></small></h2>
+              <textarea class="form-control dark-input" rows="4" placeholder="Write your message here"></textarea>
+              <br>
+              <button class="btn btn-primary">Send</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="settings" role="tabpanel">
+        <div class="alert alert-warning" >
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+          <h4 class="alert-heading">Well done!</h4>
+          <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+        </div>
+        4 </div>
+    </div>
+  </div>
+ {% endblock %}
+<!-- jQuery first, then Tether, then Bootstrap JS. -->
+
+<script src="../js/jquery-2.1.1.min.js" type="text/javascript"></script>
+
+<script src="../../../../cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script> 
+
+<script src="../vendor/bootstrap4beta/js/bootstrap.min.js" type="text/javascript"></script> 
+
+<!--Cookie js for theme chooser and applying it --> 
+<script src="../vendor/cookie/jquery.cookie.js"  type="text/javascript"></script> 
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug --> <script src="../js/ie10-viewport-bug-workaround.js"></script> 
+
+<!-- Circular chart progress js --> 
+<script src="../vendor/cicular_progress/circle-progress.min.js" type="text/javascript"></script> 
+
+
+<!--sparklines js--> 
+<script type="text/javascript" src="../vendor/sparklines/jquery.sparkline.min.js"></script> 
+
+<!-- custome template js --> 
+<script src="../js/adminux.js" type="text/javascript"></script>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html class=" ">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+      <title>Report ENUGUDISCO</title>
+      <link type="image/x-icon" rel="shortcut icon" href="http://74.208.168.47:8069/web/image/res.company/1/debrand_favicon/">
+      {% load static %}
+      <!-- Include SmartWizard CSS -->
+      <link type="text/css" rel="stylesheet" href="{% static 'juicestatic/web/cont/patrick.css' %}">
+      <link type="text/css" rel="stylesheet" href="{% static 'juicestatic/web/cont/patricko.css' %}">
+      <link type="text/css" rel="stylesheet" href="{% static 'juicestatic/web/cont/patrick1.css' %}">
+      <link type="text/css" rel="stylesheet" href="{% static 'juicestatic/web/cont/patrick2.css' %}">
+      <link type="text/css" rel="stylesheet" href="{% static 'juicestatic/web/cont/patrick3.css' %}">
+      <!--           <link type="text/css" rel="stylesheet" href="./report2_files/web.assets_backend.0.css">
+         <link type="text/css" rel="stylesheet" href="./report2_files/web.assets_backend.1.css"> -->
+      <script type="text/javascript" src="{% static 'ajaxsend.js' %}"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+      <meta http-equiv="cleartype" content="on">
+      <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black">
+      <link rel="stylesheet" type="text/css" href="chrome-extension://fleenceagaplaefnklabikkmocalkcpo/assets/fonts/MyFontsWebfontsKit.css">
+      <script type="text/javascript" src="./report2_files/en_US"></script>
+   </head>
+   <body class="o_web_client modal-open" style="zoom: 1; background-color: #fff;">
+      <div class="a_shell">
+         <div class="a_panes">
+            <div class="a_shell_pane left sm">
+            </div>
+         </div>
+         <div class="a_overlay"></div>
+      </div>
+      <div class="o_notification_manager"></div>
+      <div class="o_loading"></div>
+      <div class="modal-backdrop  in"></div>
+      <div tabindex="-1" data-backdrop="static" role="dialog" aria-hidden="false" class="modal o_technical_modal in" id="modal_11" style="display: block;">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title">Pdf Report<span class="o_subtitle text-muted small"> - Download Record</span></h4>
+               </div>
+
+            <form method="POST" action="/pdf_reports/">
+               <div class="o_dialog_warning modal-body">
+                  <div class="o_form_sheet">
+                     <div class="o_group">
+                        <table class="o_group o_inner_group o_group_col_6">
+                           <tbody>
+                              <tr> {% csrf_token %}
+                                 <td class="o_td_label"><label class="o_form_label" for="o_field_input_918">SmartPower Account</label></td>
+                                 <td style="width: 100%;"><input class="o_field_char o_field_widget o_input" name="account" type="text" placeholder="" id="o_field_input_918"style="width: 100%;"></td>
+                              </tr>
+                              <tr>
+                                 <td class="o_td_label"><label class="o_form_label" for="o_field_input_919">Start Date</label></td>
+                                 <td style="width: 100%;">
+                                    <div class="o_datepicker o_field_date o_field_widget" name="start_date">
+                                       <input class="o_datepicker_input o_input" type="date" name="start_date" placeholder="" id="o_field_input_919">
+                                       <span class="o_datepicker_button"></span>
+                                    </div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td class="o_td_label"><label class="o_form_label" for="o_field_input_920">End Date</label></td>
+                                 <td style="width: 100%;">
+                                    <div class="o_datepicker o_field_date o_field_widget" name="end_date">
+                                       <input class="o_datepicker_input o_input" type="date" name="end_date" placeholder="" id="o_field_input_920">
+                                       <span class="o_datepicker_button"></span>
+                                    </div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td class="o_td_label"><label class="o_form_label" for="o_field_input_921">District</label></td>
+                                 <td style="width: 100%;">
+                                    <div class="o_field_widget o_field_many2one o_with_button" name="district">
+                                       <div class="o_input_dropdown">
+                                          <input class="o_input ui-autocomplete-input" type="text" autocomplete="off" id="o_field_input_921">
+                                          <span class="o_dropdown_button" draggable="false"></span>
+                                       </div>
+                                       <button class="fa fa-external-link btn btn-default o_external_button" draggable="false" tabindex="-1" type="button" style="display: inline-block;"></button>
+                                    </div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td class="o_td_label"><label class="o_form_label" for="o_field_input_922">Month</label></td>
+                                 <td style="width: 100%;">
+                                    <select class="o_input o_field_widget" name="month" id="o_field_input_922">
+                                       <option value="false"></option>
+                                       <option value="1">January</option>
+                                       <option value="2">February</option>
+                                       <option value="3">March</option>
+                                       <option value="4">April</option>
+                                       <option value="5">May</option>
+                                       <option value="6">June</option>
+                                       <option value="7">July</option>
+                                       <option value="8">August</option>
+                                       <option value="9">September</option>
+                                       <option value="10">October</option>
+                                       <option value="11">November</option>
+                                       <option value="12">December</option>
+                                    </select>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                        <table class="o_group o_inner_group o_group_col_6">
+                           <tbody>
+                              <tr>
+                                 <td class="o_td_label"><label class="o_form_label" for="o_field_input_923">Report Type</label></td>
+                                 <td style="width: 100%;">
+                                    <select class="o_input o_field_widget" name="report_type" id="o_field_input_923">
+                                       <option value="false"></option>
+                                       <option value="&quot;cus_history&quot;">Customer History</option>
+                                       <option value="&quot;cus_history2&quot;">Customer History(pdf)</option>
+                                       <option value="&quot;bill_dump&quot;">Detailed Bill Dump</option>
+                                       <option value="&quot;min_bill_dump&quot;">Minimum Bill Dump</option>
+                                       <option value="&quot;payment&quot;">Payments</option>
+                                       <option value="&quot;account&quot;">Account without payments</option>
+                                       <option value="&quot;tariff&quot;">Payments by tariff</option>
+                                       <option value="&quot;month_tariff&quot;">Monthly Sales by Tariff</option>
+                                       <option value="&quot;marketer_report&quot;">Marketer Performance</option>
+                                       <option value="&quot;feeder_report&quot;">Viable Feeder Report</option>
+                                       <option value="&quot;new_customer&quot;">New Application</option>
+                                       <option value="&quot;arrears&quot;">Arrears</option>
+                                       <option value="&quot;credit&quot;">Customers On Credit</option>
+                                       <option value="&quot;customers&quot;">Customers Dump</option>
+                                       <option value="&quot;feeder_bill&quot;">Feeder Wise-Billing Report</option>
+                                       <option value="&quot;adj_dump&quot;">Adjustment Report</option>
+                                    <!--    <option value="0"></option>
+                                       <option value="1">Customer History</option>
+                                       <option value="2">Customer History(pdf)</option>
+                                       <option value="3">Detailed Bill Dump</option> -->
+                                    </select>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td class="o_td_label"><label class="o_form_label" for="o_field_input_924">File Name</label></td>
+                                 <td style="width: 100%;"><input class="o_field_char o_field_widget o_input" name="filename" type="text" placeholder="" id="o_field_input_924"></td>
+                              </tr>
+                              <tr>
+                                 <td class="o_td_label"><label class="o_form_label o_required_modifier" for="o_field_input_925">Year</label></td>
+                                 <td style="width: 100%;"><input class="o_field_integer o_field_number o_field_widget o_input o_required_modifier" name="year" type="text" placeholder="" id="o_field_input_925"></td>
+                              </tr>
+                              <tr>
+                                 <td class="o_td_label"><label class="o_form_label" for="o_field_input_926">Use District?</label></td>
+                                 <td style="width: 100%;">
+                                    <div class="o_field_boolean o_field_widget o_checkbox" name="use_district"><input type="checkbox" id="o_field_input_926"><span></span></div>
+                                 </td>
+                              </tr> --><!-- 
+                              <tr>
+                                 <td class="o_td_label"><label class="o_form_label o_readonly_modifier" for="o_field_input_927">Download</label></td>
+                                 <td style="width: 100%;">
+                                    <div class="o_form_uri o_field_widget o_readonly_modifier"><button type="button" class="o_binary_preview" aria-hidden="true"><i class="fa fa-file-text-o"></i></button><a class="o_form_uri" href="javascript:void(0)" name="file_download" style="cursor: pointer;"><span class="fa fa-download"></span> 2019-08-01_2021-04-26_cus_history2_1625060491.152952.pdf</a></div>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+               <div class="modal-footer">
+                  <center><button class="btn btn-sm btn-primary" type="submit"><span>search</span></button></center>
+               </div>
+ {% for n in rec %}
+{{n}}
+ {% endfor %}
+</form>
+            </div>
+         </div>
+      </div>
+
+     
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+   </body>
+</html>

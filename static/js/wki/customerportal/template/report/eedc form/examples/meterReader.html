@@ -1,0 +1,709 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Smart Wizard - a JavaScript jQuery Step Wizard plugin</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Include SmartWizard CSS -->
+    <link href="../dist/css/smart_wizard.css" rel="stylesheet" type="text/css" />
+
+
+    <link href="../dist/css/smart_wizard_theme_dots.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+                <a class="navbar-brand" href="#">EEDC</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                   
+                  </ul>
+                </div>
+              </nav>
+
+
+        <div class="jumbotron"  style="background: url('img/bgImg.svg'); background-size: cover; background-repeat: no-repeat;">
+                <h3 class="text-white" style="font-weight: bold;">Meter Reader Profile</h3>
+            </div>
+
+    <div class="col-md-8 ml-auto mr-auto" style="margin-top: -80px;">
+        <!-- SmartWizard html -->
+       <div class="card card-shadow">
+            <div id="smartwizard" class="p-3">
+            <ul>
+                <li><a href="#step-1">Step 1<br /><small>Bio Data</small></a></li>
+                <li><a href="#step-2">Step 2<br /><small>Acceptance</small></a></li>
+            </ul>
+
+            <div class="card-body">
+                <div id="step-1" class="">
+                
+                    <div class="row">
+                          <div class="pl-4 pr-4">
+                              <form class="ui form">
+                                  <h6 class="text-uppercase mb-2">To be completed by Commercial Officer</h6>
+                                      
+                                      <div class="Appliance">
+                                          <div class="row">
+                                              <div class="col-md-6">
+                                                <div class="row">
+                                                        <div class="col-md-10 form-group">
+                                                                <label>Type of Application</label>
+                                                              <select class=" form-group custom-select">
+                                                                  <option>New Service</option>
+                                                                  <option>Additional loan/Reproduction</option>
+                                                                  <option>Change of Customer</option>
+                                                                  <option>Additional Meter</option>
+                                                                  <option>Change of Tariff</option>
+                                                                  <option>Conversion from 1 phase to 3 phase to MD Meter</option>
+                                                                  <option>Is Property Earthed</option>
+                                                                  <option>Planning Permission (New property)</option>
+                                                              </select>
+                                                          </div>
+                                                          
+                                                          <div class="col-md-2 form-group">
+                                                              <label for="form-subcomponent-shorthand-input-last-name">Tick</label>
+                                                              <div class="ui fluid input">
+                                                                  <input id="form-subcomponent-shorthand-input-last-name" placeholder="Tick" type="checkbox">
+                                                              </div>
+                                                          </div>
+                                                </div>
+
+                                            </div>
+
+
+                                                <div class="col-md-6">
+                                        <div class="row">
+                                                <div class="col-md-10 form-group">
+                                                    <label>Type of Application</label>
+                                                  <select class=" form-group custom-select">
+                                                      <option>New Service</option>
+                                                      <option>Additional loan/Reproduction</option>
+                                                      <option>Change of Customer</option>
+                                                      <option>Additional Meter</option>
+                                                      <option>Change of Tariff</option>
+                                                      <option>Conversion from 1 phase to 3 phase to MD Meter</option>
+                                                      <option>Is Property Earthed</option>
+                                                      <option>Planning Permission (New property)</option>
+                                                  </select>
+                                              </div>
+                                              
+                                              <div class="col-md-2 form-group">
+                                                  <label for="form-subcomponent-shorthand-input-last-name">Tick</label>
+                                                  <div class="ui fluid input">
+                                                      <input id="form-subcomponent-shorthand-input-last-name" placeholder="Tick" type="checkbox">
+                                                  </div>
+                                              </div>
+                                          </div>
+                                                    </div>
+
+
+                                                    <div class="col-md-6">
+                                                            <div class="row">
+                                                                    <div class="col-md-10 form-group">
+                                                                            <label>Type of Application</label>
+                                                                          <select class=" form-group custom-select">
+                                                                              <option>New Service</option>
+                                                                              <option>Additional loan/Reproduction</option>
+                                                                              <option>Change of Customer</option>
+                                                                              <option>Additional Meter</option>
+                                                                              <option>Change of Tariff</option>
+                                                                              <option>Conversion from 1 phase to 3 phase to MD Meter</option>
+                                                                              <option>Is Property Earthed</option>
+                                                                              <option>Planning Permission (New property)</option>
+                                                                          </select>
+                                                                      </div>
+                                                                      
+                                                                      <div class="col-md-2 form-group">
+                                                                          <label for="form-subcomponent-shorthand-input-last-name">Tick</label>
+                                                                          <div class="ui fluid input">
+                                                                              <input id="form-subcomponent-shorthand-input-last-name" placeholder="Tick" type="checkbox">
+                                                                          </div>
+                                                                      </div>
+                                                            </div>
+            
+                                                        </div>
+            
+            
+                                                            <div class="col-md-6">
+                                                    <div class="row">
+                                                            <div class="col-md-10 form-group">
+                                                                <label>Type of Application</label>
+                                                              <select class=" form-group custom-select">
+                                                                  <option>New Service</option>
+                                                                  <option>Additional loan/Reproduction</option>
+                                                                  <option>Change of Customer</option>
+                                                                  <option>Additional Meter</option>
+                                                                  <option>Change of Tariff</option>
+                                                                  <option>Conversion from 1 phase to 3 phase to MD Meter</option>
+                                                                  <option>Is Property Earthed</option>
+                                                                  <option>Planning Permission (New property)</option>
+                                                              </select>
+                                                          </div>
+                                                          
+                                                          <div class="col-md-2 form-group">
+                                                              <label for="form-subcomponent-shorthand-input-last-name">Tick</label>
+                                                              <div class="ui fluid input">
+                                                                  <input id="form-subcomponent-shorthand-input-last-name" placeholder="Tick" type="checkbox">
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                                </div>
+            
+
+                                                                
+                                                                <div class="col-md-6">
+                                                                        <div class="row">
+                                                                                <div class="col-md-10 form-group">
+                                                                                        <label>Type of Application</label>
+                                                                                      <select class=" form-group custom-select">
+                                                                                          <option>New Service</option>
+                                                                                          <option>Additional loan/Reproduction</option>
+                                                                                          <option>Change of Customer</option>
+                                                                                          <option>Additional Meter</option>
+                                                                                          <option>Change of Tariff</option>
+                                                                                          <option>Conversion from 1 phase to 3 phase to MD Meter</option>
+                                                                                          <option>Is Property Earthed</option>
+                                                                                          <option>Planning Permission (New property)</option>
+                                                                                      </select>
+                                                                                  </div>
+                                                                                  
+                                                                                  <div class="col-md-2 form-group">
+                                                                                      <label for="form-subcomponent-shorthand-input-last-name">Tick</label>
+                                                                                      <div class="ui fluid input">
+                                                                                          <input id="form-subcomponent-shorthand-input-last-name" placeholder="Tick" type="checkbox">
+                                                                                      </div>
+                                                                                  </div>
+                                                                        </div>
+                        
+                                                                    </div>
+                        
+                        
+                                                                        <div class="col-md-6">
+                                                                <div class="row">
+                                                                        <div class="col-md-10 form-group">
+                                                                            <label>Type of Application</label>
+                                                                          <select class=" form-group custom-select">
+                                                                              <option>New Service</option>
+                                                                              <option>Additional loan/Reproduction</option>
+                                                                              <option>Change of Customer</option>
+                                                                              <option>Additional Meter</option>
+                                                                              <option>Change of Tariff</option>
+                                                                              <option>Conversion from 1 phase to 3 phase to MD Meter</option>
+                                                                              <option>Is Property Earthed</option>
+                                                                              <option>Planning Permission (New property)</option>
+                                                                          </select>
+                                                                      </div>
+                                                                      
+                                                                      <div class="col-md-2 form-group">
+                                                                          <label for="form-subcomponent-shorthand-input-last-name">Tick</label>
+                                                                          <div class="ui fluid input">
+                                                                              <input id="form-subcomponent-shorthand-input-last-name" placeholder="Tick" type="checkbox">
+                                                                          </div>
+                                                                      </div>
+                                                                  </div>
+                                                                            </div>
+                        
+
+                                                                            
+
+                                                                            <div class="col-md-6">
+                                                                                    <div class="row">
+                                                                                            <div class="col-md-10 form-group">
+                                                                                                    <label>Type of Application</label>
+                                                                                                  <select class=" form-group custom-select">
+                                                                                                      <option>New Service</option>
+                                                                                                      <option>Additional loan/Reproduction</option>
+                                                                                                      <option>Change of Customer</option>
+                                                                                                      <option>Additional Meter</option>
+                                                                                                      <option>Change of Tariff</option>
+                                                                                                      <option>Conversion from 1 phase to 3 phase to MD Meter</option>
+                                                                                                      <option>Is Property Earthed</option>
+                                                                                                      <option>Planning Permission (New property)</option>
+                                                                                                  </select>
+                                                                                              </div>
+                                                                                              
+                                                                                              <div class="col-md-2 form-group">
+                                                                                                  <label for="form-subcomponent-shorthand-input-last-name">Tick</label>
+                                                                                                  <div class="ui fluid input">
+                                                                                                      <input id="form-subcomponent-shorthand-input-last-name" placeholder="Tick" type="checkbox">
+                                                                                                  </div>
+                                                                                              </div>
+                                                                                    </div>
+                                    
+                                                                                </div>
+                                    
+                                    
+                                                                                    <div class="col-md-6">
+                                                                            <div class="row">
+                                                                                    <div class="col-md-10 form-group">
+                                                                                        <label>Type of Application</label>
+                                                                                      <select class=" form-group custom-select">
+                                                                                          <option>New Service</option>
+                                                                                          <option>Additional loan/Reproduction</option>
+                                                                                          <option>Change of Customer</option>
+                                                                                          <option>Additional Meter</option>
+                                                                                          <option>Change of Tariff</option>
+                                                                                          <option>Conversion from 1 phase to 3 phase to MD Meter</option>
+                                                                                          <option>Is Property Earthed</option>
+                                                                                          <option>Planning Permission (New property)</option>
+                                                                                      </select>
+                                                                                  </div>
+                                                                                  
+                                                                                  <div class="col-md-2 form-group">
+                                                                                      <label for="form-subcomponent-shorthand-input-last-name">Tick</label>
+                                                                                      <div class="ui fluid input">
+                                                                                          <input id="form-subcomponent-shorthand-input-last-name" placeholder="Tick" type="checkbox">
+                                                                                      </div>
+                                                                                  </div>
+                                                                              </div>
+                                                                                        </div>
+                                    
+                                    
+
+                                          
+                                        </div>
+
+
+                                       
+                                           
+                                    </div>
+                               
+                                    <div class="row mt-2">
+                                        <div class="col-md-6 form-group">
+                                            <label>Existing Load</label>
+                                            <div class="ui right labeled input">
+                                                <input class="form-control" class="form-control" placeholder="Amount" type="text">
+                                                <div class="ui label">KWH</div></div>
+                                            </div>
+                                            
+                                            <div class="col-md-6 form-group">
+                                                <label>Additional/Reduction Load</label>
+                                                <div class="ui right labeled input">
+                                                    <input class="form-control" class="form-control" placeholder="Amount" type="text">
+                                                    <div class="ui label">KWH</div>
+                                                </div></div>
+                                                
+                                                <div class="col-md-6 form-group">
+                                                    <label>Total Load</label>
+                                                    <div class="ui right labeled input">
+                                                        <input class="form-control" class="form-control" placeholder="Amount" type="text">
+                                                        <div class="ui label">KWH</div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+
+                                            <div class="row mt-2">
+                                                <div class="col-md-6 form-group">
+                                                    <label>CUSTOMERS PREFERENCE/PREFERRED METHOD OF PAYMENT</label>
+                                                    <select class=" form-group custom-select">
+                                                        <option>Cheque</option>
+                                                        <option>ATM</option>
+                                                        <option>POS</option>
+                                                        <option>Online</option>
+                                                        <option>Cash Deposit</option>
+                                                    </select>
+                                                </div>
+                                                
+                                                <div class="col-md-6 form-group">
+                                                    <label>PREFERRED METHOD OF RECEIVING BILLS: BILLS DELIVERY TO THE HOUSE</label>
+                                                    <select class="form-group custom-select">
+                                                        <option>Bills delivery to house</option>
+                                                        <option>Bills sent by Email</option>
+                                                        <option>Bills sent by SMS</option>
+                                                        <option>PVC</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6 form-group">
+                                                    <label >Customer Identification No.</label>
+                                                    <div class="ui fluid input">
+                                                        <input class="form-control" placeholder="Customer Identification No." type="text">
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-md-6 form-group">
+                                                    <label >GPS coordinate</label>
+                                                    <div class="ui fluid input">
+                                                        <input class="form-control"  placeholder="GPS coordinate" type="text">
+                                                    </div></div>
+                                                </div>
+                                                
+                                                <div class="row">
+                                                    <div class="col-md-6 form-group">
+                                                        <label>Remark/ Recommendation</label>
+                                                        <textarea class="form-control" placeholder="Remark/ Recommendation"></textarea>
+                                                    </div>
+                                                    
+                                                    <div class="col-md-6 form-group">
+                                                        <label >Original of this application received by</label>
+                                                        <div class="ui fluid input">
+                                                            <input class="form-control"  placeholder="GPS coordinate" type="text">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="row">
+                                                    <div class="col-md-6 form-group">
+                                                        <label >Designation</label>
+                                                        <div class="ui fluid input">
+                                                            <input class="form-control" placeholder="Designation" type="text">
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="col-md-6 form-group">
+                                                        <label >Date</label>
+                                                        <div class="ui fluid input">
+                                                            <input class="form-control" class="form-control"  placeholder="Date" type="date">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <br><br>
+                                                
+                                                <h6>TO BE COMPLETED BY METER SUPERVISOR</h6>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col-md-6 form-group">
+                                                        <label >Meter No.</label>
+                                                        <div class="ui fluid input">
+                                                            <input class="form-control" class="form-control"  placeholder="Meter No." type="text">
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="col-md-6 form-group">
+                                                        <label >Account No.</label>
+                                                        <div class="ui fluid input">
+                                                            <input class="form-control" class="form-control"  placeholder="Account No." type="date">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="row">
+                                                    <div class="col-md-6 form-group">
+                                                        <label >METER READING ON THE LAST BILL</label>
+                                                        <div class="ui fluid input">
+                                                            <input class="form-control" class="form-control"  placeholder="METER READING ON THE LAST BILL" type="text"></div></div><div class="col-md-6 form-group"><label >FINAL METER READING ON (DATE):</label><div class="ui fluid input"><input class="form-control" class="form-control"  placeholder="FINAL METER READING ON (DATE):" type="date"></div></div><div class="col-md-6 form-group"><label >Final METER READING</label><div class="ui fluid input"><input class="form-control" class="form-control"  placeholder="Final meter reading " type="text"></div></div></div><div class="row"><div class="col-md-6 form-group"><label >Name</label><div class="ui fluid input"><input class="form-control" class="form-control"  placeholder="Name" type="date"></div></div><div class="col-md-6 form-group"><label >Designation</label><div class="ui fluid input"><input class="form-control" class="form-control"  placeholder="Designation" type="text"></div></div></div>
+                                                            
+                                                            <h6 class="text-uppercase mt-3">To be completed by credit control section</h6>
+                                                            <hr>
+                                                            
+                                                            <div class="row">
+                                                                <div class="col-md-6 form-group">
+                                                                    <label>The latest amount on bill is</label>
+                                                                    <div class="ui right labeled input">
+                                                                        <input class="form-control" class="form-control" placeholder="Amount" type="text">
+                                                                        <div class="ui label">Month</div></div></div><div class="col-md-6 form-group">
+                                                                            <label>Amount paid</label>
+                                                                            <div class="ui right labeled input">
+                                                                                <input class="form-control" class="form-control" placeholder="Amount" type="text">
+                                                                                <div class="ui label">Amount</div></div></div></div>
+                                                                                
+                                                                                <div class="row"><div class="col-md-6 form-group"><label>The Outstanding bill is #</label><div class="ui right labeled input"><input class="form-control" class="form-control" placeholder="Amount" type="text"><div class="ui label">Month</div></div></div><div class="col-md-6 form-group"><label>Final Bill as per part (b) above is #</label><div class="ui right labeled input"><input class="form-control" class="form-control" placeholder="Amount" type="text"><div class="ui label">Amount</div></div></div></div><div class="row"><div class="col-md-6 form-group"><label>The total now due of #</label><div class="ui right labeled input"><input class="form-control" class="form-control" placeholder="Amount" type="text"><div class="ui label">Month</div></div></div><div class="col-md-6 form-group"><label>Final Vide eedc machine receipt no.</label><div class="ui right labeled input"><input class="form-control" class="form-control" placeholder="Amount" type="text"><div class="ui label">Amount</div></div></div></div><div class="row"><div class="col-md-6 form-group"><label>Was settled on</label><div class="ui right labeled input"><input class="form-control" class="form-control" type="date" placeholder="Amount"><div class="ui label">Month</div></div></div><div class="col-md-6 form-group"><label>Final Vide eedc machine receipt no</label><div class="ui right labeled input"><input class="form-control" class="form-control" placeholder="Amount" type="text"><div class="ui label">Amount</div></div></div><div class="col-md-6 form-group"><label>of</label><div class="ui right labeled input"><input class="form-control" class="form-control" placeholder="Amount" type="text"><div class="ui label">Amount</div></div></div></div><div class="row"><div class="col-md-6 form-group"><label>#</label><div class="ui right labeled input"><input class="form-control" class="form-control" placeholder="Amount" type="text"><div class="ui label">Month</div></div></div><div class="col-md-6 form-group"><label>Has not been select but transferred to the account of</label><div class="ui right labeled input"><input class="form-control" class="form-control" placeholder="Amount" type="text"><div class="ui label">Amount</div></div></div></div><div class="row"><div class="col-md-6 form-group"><label>Account No.</label><div class="ui right labeled input"><input class="form-control" class="form-control" placeholder="Amount" type="text"></div></div><div class="col-md-6 form-group"><label>Meter No.</label><div class="ui right labeled input"><input class="form-control" class="form-control" placeholder="Amount" type="text"></div></div></div><div class="row"><div class="col-md-6 form-group"><label>Name</label><div class="ui right labeled input"><input class="form-control" class="form-control" placeholder="Amount" type="text"></div></div><div class="col-md-6 form-group"><label>Address</label><div class="ui right labeled input"><input class="form-control" class="form-control" placeholder="Amount" type="text"></div></div></div>
+                                                                                
+                                                                                
+                                                                                <h6 class="mt-3">THE APPLICATION IS HEREBY CLEARED FOR FURTHER PROCESSING</h6>
+                                                                                
+                                                                                <div class="row">
+                                                                                    <div class="col-md-6 form-group">
+                                                                                        <label>Date</label>
+                                                                                        <div class="ui right labeled input">
+                                                                                            <input class="form-control" class="form-control" type="date" placeholder="Amount">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                  
+                                                                        
+                                                                        <h6 class="mt-3 text-uppercase">Final Approval</h6><h6>Checked By:</h6><div class="row"><div class="col-md-6 form-group"><label>Name</label><div class="ui right labeled input"><input class="form-control" class="form-control" placeholder="Amount" type="text"><div class="ui label">Amount</div></div></div>
+                                                                        
+                                                                        <div class="col-md-6 form-group">
+                                                                            <label>Designation</label>
+                                                                            <div class="ui right labeled input">
+                                                                                <input class="form-control" class="form-control" placeholder="Designation" type="text">
+                                                                            </div></div>
+                                                                            
+                                                                            <div class="col-md-6 form-group"><label>Date</label><div class="ui right labeled input"><input class="form-control" class="form-control" type="date" placeholder="Amount"></div></div></div><h6>Approved By:</h6><div class="row"><div class="col-md-6 form-group"><label>Name</label><div class="ui right labeled input"><input class="form-control" class="form-control" placeholder="Amount" type="text"><div class="ui label">Amount</div></div></div><div class="col-md-6 form-group"><label>Designation</label><div class="ui right labeled input"><input class="form-control" class="form-control" placeholder="Amount" type="text"></div></div><div class="col-md-6 form-group"><label>Date</label><div class="ui right labeled input"><input class="form-control" class="form-control" type="date" placeholder="Amount"></div></div></div></form></div>
+                    </div>
+                </div>
+
+
+
+
+                <div id="step-2" class="">
+
+                    <div>
+                        <div class="pl-4 pr-4">
+                            <form class="ui form">
+                                <div class="field">
+                                    <label>Name</label>
+                                    <div class="ui right labeled input">
+                                        <div class="ui label">I/We</div>
+                                        <input class="form-control" placeholder="Name" type="text">
+                                    </div>
+                                </div>
+                                
+                                <p>hereby request that Electricity will be supplied in accordance 
+                                    with the Electricity Power Sector Reform Act 2005of the Federal 
+                                    Government of Nigeria and all the relevant Codes and Regulations 
+                                    as approved by the Nigerian Electricity Regulatory Commission (NERC).
+                                </p>
+                                
+                                <br>
+                                
+                                <p>The EEDC (thereinafter called “The Operator”) will supply Electricity
+                                     subject to the following terms and conditions.
+                                </p>
+                                
+                                <br><br>
+                                
+                                <p>
+                                    <h5>SYSTEM OF SUPPLY</h5>
+                                    The Operator’s system is alternating Current at a frequency of 50 Hertz. 
+                                    The medium Voltage will be either 230 Volts single phase or 400 Volts
+                                     three phase.
+                                </p>
+                                     
+                                <p>
+                                    <h5>INSTALLATIONS</h5>
+                                    Wiring installation shall be executed to the satisfaction of the Operator 
+                                    which will inspect and/or test installation.
+                                </p>
+                                
+                                <p>
+                                    <h5>SERVICE LINE</h5>
+                                    The nature and location of service lines and other supply facilities shall 
+                                    be determined by the Operator. The Operator shall be at liberty at any time 
+                                    to take branch services off the service lines whether on the customer premises 
+                                    or not, for the purpose of supplying electricity to any other premises. 
+                                    The customer shall obtain all facilities required by the Operator for the 
+                                    installation of the service line including the necessary Right of Way over 
+                                    his own and/or adjacent property which the Operator may require. Any service 
+                                    line or other facilities provided by or donated by a consumer shall be treated 
+                                    in line with the Investment in Networks Regulation by the Commission.
+                                </p>
+                                
+                                <p>
+                                    <h5>ACCESS TO PREMISES</h5>
+                                    The customer shall give the Operator all reasonable and necessary access to the 
+                                    customer’s premises for the purpose of connecting, disconnecting, inspecting, 
+                                    testing, altering, replacing, maintaining or removing any service line, meter 
+                                    and/or other apparatus or any part thereto and for reading the meter. The 
+                                    Operator’s official will produce the Operator identity card, upon demand. 
+                                    The Customers shall pay a fee for each special meter reading made on request.
+                                </p>
+                                
+                                <p>
+                                    <h5>ADDITIONAL EQUIPMENT</h5>After the installation referred to in schedule 
+                                    2.1 hereof has been tested and passed by the Operator, the customer shall not 
+                                    have any additional equipment connected to his installation without submitting 
+                                    an application form EEDC 74 to the Operator giving at least seven days notice 
+                                    of his intention to do so, and he shall not use such additional equipment until 
+                                    the installation has been re-tested and passed by the Operator. Neglect of this
+                                     precaution may cause interruption of supply and damage to EEDC Equipment. A 
+                                     penalty may be imposed for default.
+                                </p>
+                                
+                                <p>
+                                    <h5>TESTING AND ACCURACY OF METERS</h5>
+                                    Should the customer or the Operator gives notice disputing the accuracy of a meter, 
+                                    such meter shall be tested by the Nigerian Electricity Management Services Agency (NEMSA). 
+                                    If the Customer considers his meter inaccurate, his notice to that effect shall be 
+                                    accompanied by a deposit to cover the cost of the test. In the event of the meter
+                                     having an error exceeding the line of error as may be allowed by the regulation in 
+                                     force, the amount payable for electricity charge for the period for which the customer 
+                                     is charged on the last invoice rendered prior to the notice of dispute shall be 
+                                     determined in line with the provisions of NERC’s Regulation on Meter Reading, Billing, 
+                                     Cash Collection and Credit Management
+                                </p>
+                                
+                                <p>
+                                    <h5>DISCONTINUANCE OF SUPPLY</h5>
+                                    Not less than seven days notice in writing must be given to the Operator by the Customer 
+                                    or landlord before vacating the premises. In default of such notice the Customer shall 
+                                    be liable to the Operator for all accounts arising until such notice is received or 
+                                    until the Operator accepts an application for the supply to the same installation from 
+                                    another Customer.<br>The Operator reserves the right to discontinue supply of electricity 
+                                    for purposes of safety, when other Customers are being connected or when the Operator’s 
+                                    mains or equipment are being tested, repaired, or in cases of unavoidable interruption 
+                                    due to fire, flood, tempest, accident and breakdown of machinery.
+                                </p>
+                                
+                                <p>
+                                    <h5>PAYMENT FOR ELECTRICITY SUPPLY</h5>
+                                    From the date supply is made available, the Customer must pay monthly for all 
+                                    electricity billed in accordance with the applicable rate. Official Receipts are 
+                                    issued by the Operator for all payment made to it. Customers are advised on each 
+                                    occasion to check that the amount on their receipt corresponds with the sum paid.
+                                </p>
+                                
+                                <p>
+                                    <h5>SPECIAL NOTE:</h5>
+                                    Whenever any customer of electricity supplied by the Operator leaves the premises 
+                                    where such electricity has been supplied to him without paying the charges for
+                                     electricity or meter rental due to him, the Operator shall be entitled to recover
+                                      from the Landlord in accordance with Clause 3.9
+                                </p>
+                                
+                                <p>
+                                    <h5>RESPONSIBILITY FOR EEDC APPARATUS</h5>
+                                    The Customer shall ensure the safety against damage or destruction by fire and shall
+                                     be solely responsible for the safe custody of the meter and other apparatus belonging 
+                                     to the Operator that were installed at his premises and shall not damage, alter, 
+                                     remove the same or obliterate or remove any marks, words, or numbers thereon, or 
+                                     permit any such damage. <br><br>The Customer shall make good any such damage or 
+                                     reimburse the Operator to the extent of any loss the Operator may sustain by reason 
+                                     of any breach of these conditions and regulations. The customer shall give notice to 
+                                     the Operator of any breakdown, failure, loss, injury, or damage to the meter or any 
+                                     apparatus belonging to the Operator installed in his premises.
+                                </p>
+                                
+                                <p>
+                                    <h5>NON-LIABILITY OF OPERATOR</h5>
+                                    The Operator will not be responsible for any loss or damage occasioned to any
+                                     person or Property whether belonging to the customer or not arising out of any defects
+                                      in or accident to the wiring installation or by the use of the electricity supplied 
+                                      or any apparatus that belongs to the Operator or through any default arising on the 
+                                      Operator’s system or for any cause beyond their control. This provision is subject to
+                                       the operator putting in place all safety measures to ensure a duty of care in the 
+                                       discharge of its responsibility to the customer.
+                                </p>
+                                
+                                <p>
+                                    <h5>THE IMPROPER USE OF SUPPLY</h5>
+                                    If the customer makes use of the supply in such a way as to interfere with the general 
+                                    distribution of the electricity, immediate steps shall be taken to remedy the defect 
+                                    complained of or supply discontinued.
+                                </p>
+                                    
+                                <p>
+                                    <h5>BREACH OF AGREEMENT</h5>
+                                    If the customer shall neglect or refuse to pay the electricity supplied in accordance 
+                                    with these conditions and regulations, or become subject under the bankruptcy laws or 
+                                    enter into liquidation, or suffer execution to be made on his effects or commit any
+                                     other breach of this agreement, the Operator may terminate this agreement and/or 
+                                     discontinue the supply ofelectricity and/or remove the apparatus belonging to them 
+                                     subject to the provisions of NERC’s Regulation on Connection and Disconnection of 
+                                     Electricity Services.
+                                </p>
+                                     
+                                <p>
+                                    <h5>REVISION OF CONDITIONS OF SUPPLY.</h5>
+                                    The Operator may from time to time, on giving notice to the customer in writing or by public notice
+                                     amend or alter any of the above conditions of supply or their scale of charges and such amendment 
+                                     or alterations shall take effect from the date specified in the said notice as approved by NERC.</p>
+                                     
+                                     <p>The customer and the operator also hereby agree to abide by and exhaust all administrative 
+                                         remedies as contained in the NERC Customer Complaint Handling and Procedures Regulations 
+                                         before resorting to any other dispute resolution or adjudicatory process.</p>
+                                        
+                            </form></div>
+                    </div>
+                </div>
+               
+
+             
+            </div>
+        </div>
+
+       </div>
+
+    </div>
+
+    <!-- Include jQuery -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- Include SmartWizard JavaScript source -->
+    <script type="text/javascript" src="../dist/js/jquery.smartWizard.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            // Step show event
+            $("#smartwizard").on("showStep", function(e, anchorObject, stepNumber, stepDirection, stepPosition) {
+               //alert("You are on step "+stepNumber+" now");
+               if(stepPosition === 'first'){
+                   $("#prev-btn").addClass('disabled');
+               }else if(stepPosition === 'final'){
+                   $("#next-btn").addClass('disabled');
+               }else{
+                   $("#prev-btn").removeClass('disabled');
+                   $("#next-btn").removeClass('disabled');
+               }
+            });
+
+            // Toolbar extra buttons
+            var btnFinish = $('<button></button>').text('Finish')
+                                             .addClass('btn btn-info')
+                                             .on('click', function(){ alert('Finish Clicked'); });
+            var btnCancel = $('<button></button>').text('Cancel')
+                                             .addClass('btn btn-danger')
+                                             .on('click', function(){ $('#smartwizard').smartWizard("reset"); });
+
+
+            // Smart Wizard
+            $('#smartwizard').smartWizard({
+                    selected: 0,
+                    theme: 'dots',
+                    transitionEffect:'fade',
+                    showStepURLhash: true,
+                    toolbarSettings: {toolbarPosition: 'end',
+                                      toolbarButtonPosition: 'end',
+                                      toolbarExtraButtons: [btnFinish, btnCancel]
+                                    }
+            });
+
+
+            // External Button Events
+            $("#reset-btn").on("click", function() {
+                // Reset wizard
+                $('#smartwizard').smartWizard("reset");
+                return true;
+            });
+
+            $("#prev-btn").on("click", function() {
+                // Navigate previous
+                $('#smartwizard').smartWizard("prev");
+                return true;
+            });
+
+            $("#next-btn").on("click", function() {
+                // Navigate next
+                $('#smartwizard').smartWizard("next");
+                return true;
+            });
+
+            $("#theme_selector").on("change", function() {
+                // Change theme
+                $('#smartwizard').smartWizard("theme", $(this).val());
+                return true;
+            });
+
+            // Set selected theme on page refresh
+            $("#theme_selector").change();
+        });
+    </script>
+</body>
+</html>

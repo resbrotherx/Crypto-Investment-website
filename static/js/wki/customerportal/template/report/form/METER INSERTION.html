@@ -1,0 +1,216 @@
+<!DOCTYPE htmL> 
+    <HTML>
+<title></title>
+
+
+
+
+      <body class=fullwidth>
+  <link href="/static/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <!-- Main Style CSS -->
+    
+      <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/form.css">
+
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container register">
+                <div class="row">
+                    <div class="col-md-3 register-left">
+                        <img src="/static/logo.jpg" alt=""/>
+                        <h2>S/N</h2>
+                        <p>!</p>
+                        <input type="hidden" id="new" value="success.html" >
+                        <button type="button" class="submit" data-ajax='../add/' new="success.html" sweetalert>submit</button><br/>
+                    </div>
+                    <div class="col-md-9 register-right">
+                        <ul >
+                            <li class="nav-item">                                       
+                                                     
+                  <nav>
+
+            <ul class="menu">
+             
+                <li>
+
+                <!-- First Tier Drop Down -->
+                <a href="METER INSERTION.html">M.I</a>
+                <input type="checkbox" id="drop-2"/>
+               <ul> <li><a href="Assign BCODES TO MKTERS.html">Assign BCODES TO MKTERS (A.B.T.M)</a>
+                          <ul>
+                                <li><a href="Inactive schedule.html">Inactive schedule (I.S)</a></li>
+                                 <li><a href="Change of lar.html">Change of lar (C.O.L)</a></li>
+                               <li><a href="DECREASE IN CONSUMPTION.html">Decrease in consumption (D.I.C)</a></li>
+                                 <li><a href="CAPTURING.html">capturing</a></li>
+                                <li><a href="DUPLICATED ACCOUNTS.html">Duplicated Accounts (D.A)</a></li>
+                               <li><a href="Correction of Address.html">Correction of Address (C.O.A)</a></li>
+                            <li><a href="SUSPENSION FOR OTHER REASONS.html">Suspension For Other Reasons (S.F.O.R)</a></li>
+                              <li><a href="SUSPENSION ON DNP.html">Suspension On DNP (S.O.D)</a></li>
+
+                        </ul>
+                 </li>
+                    
+                    
+                 <li><a href="SCHEDULE OF TARRIF RECLASIFICATION.HTML">Tarrif Reclass (T.R)</a>
+                    
+                     <ul>
+                                <li><a href="REACTIVATION FOR OTHER REASONS.html">Reactivation For Other Reasons (R.F.O.R)</a></li>
+                               <li><a href="METER INSERTION.html">Meter Insertion (M.I)</a></li>
+                                 <li><a href="AVAILABILITY.FAULT FORM.html">Availability. Fault Form (A.F.F)</a></li>
+                                <li><a href="TRANSFORMER MAINTENACE.html">Transformer Maintenace (T.M)</a></li>
+                               <li><a href="NEW TRANSFORMER CAPTURE.html">New Transformer Capture (N.T.C)</a></li>
+
+                        </ul>
+                 </li>
+                    
+                 <li><a href="INACTIVE DUE TO T FAILURE.html">Inactive due to t failure (I.D.T.T.F)</a>
+                    
+                    <ul>
+                                <li><a href="TRANSFORMER.BOOK.ALLIGNEMENT.html">Transformer. Book.Alligment (T.B.A)</a></li>
+                               <li><a href="Sheet1.html">Sheet1</a></li>
+                                 <li><a href="Sheet2.html">Sheet2</a></li>
+                                <li><a href="METER READING CORRECTN.html">Meter Reading Correctn (M.R.C)</a></li>
+                               <li><a href="TRANSFORMER.BOOK.ALLIGNEMEN (2).HTML">Transformer.Book.Allignement (T.B.A) (2)</a></li>
+                     </ul>
+                    
+                    
+                    
+                    
+                </li>
+                    
+                <li><a href="CERTIFIED CORRECTION OF CUSTOMERS NAME.html">Correction of Name (C.O.N)</a>
+                    
+                     <ul>
+                                <li><a href="INTER RECODE.htmL">Inter Recode (I.R)</a></li>
+                               <li><a href="Correction of Phone number).html">Correction of Phone number (C.O.P.N)</a></li>
+                                 <li><a href="Sheet3.html">Sheet3</a></li>
+                              
+                     </ul>
+                </li>
+                    
+                    <li><a href="Transfer of code.html">transfer of code (T.O.C)</a></li>
+                    <li><a href="Unmetaring.html">Unmetering</a></li>
+                     <li><a href="REACTIVATION DNP.html">Reactivation DNP (R.D)</a></li>
+                   <!-- <li>
+                       
+                    <!-- Second Tier Drop Down        
+                    <label for="drop-3" class="toggle"></label>
+                    <a href="#">Reactivation DNP</a>         
+                    <input type="checkbox" id="drop-3"/>
+
+                    <ul>
+                        <li><a href="#">Change of lar</a></li>
+                        <li><a href="#">Decrease in construction </a></li>
+                        <li><a href="#">capturing</a></li>
+                        <li><a href="#">Duplicated Accounts</a></li>
+                        <li><a href="#">Correction of Address</a></li>
+                        <li><a href="#">capturingr</a></li>
+                    </ul>
+                    </li>-->
+                </ul>
+                </li>
+            </ul>
+        </nav>
+                                        </a>
+                            </li>
+                            
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h3 class="register-heading">CERTIFIED METER INSERTION SCHEDULE</h3>
+                                <CENTER>
+                                <div class="row register-form">
+                                    <div class="col-md-6">
+                                          <div class="form-group">
+                                              {% csrf_token %}
+                                            <input type="hidden" data-name="table" class="input" value="meter_insertion">
+                                            <input type="TEXT" class="form-control input" required="" data-name="district_name" placeholder="DISTRICT NAME *" value="" />
+                                        </div>
+                                        
+                                          <div class="form-group">
+                                            <input type="TEXT" class="form-control input" required="" data-name="service_center" placeholder="SERVICE CENTRE *" value="" />
+                                        </div>
+
+                                         <div class="form-group">
+                                            <input type="text" class="form-control" required="" data-name="customer_name" placeholder="CUSTOMER NAME *" value=""/>
+                                        </div>
+                                         <div class="form-group">
+                                            <input type="address" class="form-control" required="" data-name="address" placeholder="ADDRESS *" value=""/>
+                                        </div>
+                                        
+                                         <div class="form-group">
+                                            <input type="NUMBER" class="form-control" required="" data-name="phone_no" placeholder="TELEPHONE NO *" value=""/>
+                                        </div>
+                                              <div class="form-group">
+                                            <input type="EMAIL" class="form-control" required="" data-name="email" placeholder="EMAIL ADDRESSS *" value=""/>
+                                        </div>
+                                         <div class="form-group">
+                                            <input type="NUMBER" class="form-control" required="" data-name="account_no" placeholder="ACCOUNT NO *" value=""/>
+                                        </div>
+                                        
+                                         <div class="form-group">
+                                            <input type="text" class="form-control" required="" data-name="tariff" placeholder="TARIFF *" value=""/>
+                                        </div>
+                                        
+                                      
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" required="" data-name="nature_of_meter" placeholder="NATURE OF METER: STATE WHETHER NEW/FAIRLY USED *" value=""/>
+                                        </div>
+                                       
+                                         <div class="form-group">
+                                            <input type="text" class="form-control" required="" data-name="meter_num" placeholder="METER NUMBER *" value=""/>
+                                        </div>
+                                         <div class="form-group">
+                                            <input type="text" class="form-control" required="" data-name="date_of_meter_install" placeholder="DATE OF METER INSTALLATION *" value=""/>
+                                        </div>
+                                        
+                                         <div class="form-group">
+                                            <input type="text" class="form-control" required="" data-name="commision_date" placeholder="COMMISION DATE *" value=""/>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" required="" data-name="meter_reading" placeholder="METER READING ON COMMISION DATE *" value=""/>
+                                        </div>
+                                        
+                                         <div class="form-group">
+                                            <input type="text" class="form-control" required="" data-name="multiplier" placeholder="MULTIPLIER *" value=""/>
+                                        </div>
+                                       
+                                         <div class="form-group">
+                                            <input type="text" class="form-control" required="" data-name="other_comment" placeholder="OTHER COMMENTS *" value=""/>
+                                        </div>
+                                        </div>
+                                 
+                                      <!--  <div class="form-group">
+                                            <div class="maxl">
+                                                <label class="radio inline"> 
+                                                    <input type="radio" name="gender" value="male" checked>
+                                                    <span> Male </span> 
+                                                </label>
+                                                <label class="radio inline"> 
+                                                    <input type="radio" name="gender" value="female">
+                                                    <span>Female </span> 
+                                                </label>
+                                            </div>
+                                        </div>-->
+                                    </div>
+                                       </CENTER>
+                       
+                                </div>
+                            </div>
+                       
+                        </div>
+          
+     
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script type="text/javascript" src="/static/ajaxsend.js"></script>
+              
+</body>
+        </HTML>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+<head>
+    <meta charset="utf-8">
+    <title>GEOMETRIC</title>
+    <link rel="icon" href="{% static 'assets/images/favicon.html' %}" type="image/png" sizes="16x16">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700%7CMontserrat:300,400,500%7CRoboto" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}"> <!-- Resource style -->
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.theme.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/ionicons.min.css' %}"> <!-- Resource style -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Navbar Section -->
+      <nav class="navbar navbar-expand-md navbar-light navbar-alt bg-light fixed-top no-border">
+        <div class="container">
+          <a class="navbar-brand" href="#"><img src="{% static 'img/geom1.png' %}" height="70"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto navbar-right">
+              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#main">Home</a></li>
+              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#main">Login</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav><!-- Navbar End -->
+
+
+      <div id="main" class="main">
+        <div class="home home-2"><!-- Hero Section-->
+          <div class="container-m">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="hero-content wow fadeIn">
+                  <div class="hero-content-inner">
+                    <h1>G E O M E T R I C New connection form</h1>
+                    <p>Apply for a new meter connection to your house easily from the comfort of
+                    your home, after the forms have been filled meters operators come and take an
+                    appliance inventory of your apartment.</p>
+                    <a class="btn-action btn-white" href="/customerform">Start Now </a>
+                  </div>
+                </div>
+              </div>
+             <!--  <div class="col-md-6">
+                <div class="hero-form">
+                  <form id="contactForm" data-toggle="validator" class="shake" method="get" action="/customerform/landlord">
+                    <h2 class="display-4" style="font-weight: 300; font-size: 1.9em;"><b>access landlord form</b></h2>
+                    <br/>
+                   <div class="row">
+                       <div class="form-group col-sm-12">
+                           <label for="name" class="h4">Application ID*</label>
+                           {% csrf_token %}
+                           <input type="text" class="form-control" id="name" placeholder="Application ID" required data-error="Name is required" name="formid">
+                           <div class="help-block with-errors"></div>
+                       </div>
+                    
+                     </div>
+                     <button type="submit" id="form-submit" class="btn-action">Begin </button>
+                     <div id="msgSubmit" class="h3 text-center hidden"></div>
+                     <div class="clearfix"></div>
+                   </form>
+                </div>
+              </div>
+ -->
+              <div class="col-md-12">
+                <div class="hero-form">
+                  <form id="contactForm" data-toggle="validator" class="shake" method="get" action="/customerform/download">
+                    <h2 class="display-4" style="font-weight: 300; font-size: 1.9em;"><b>download form</b></h2>
+                    <br/>
+                   <div class="row">
+                       <div class="form-group col-sm-12">
+                           <label for="name" class="h4">Application ID*</label>
+                           {% csrf_token %}
+                           <input type="text" class="form-control" id="name" placeholder="Application ID" required data-error="Name is required" name="formid">
+                           <div class="help-block with-errors"></div>
+                       </div>
+                    
+                     </div>
+                     <button type="submit" id="form-submit" class="btn-action">Begin </button>
+                     <div id="msgSubmit" class="h3 text-center hidden"></div>
+                     <div class="clearfix"></div>
+                   </form>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div><!-- Hero End -->
+
+
+              <div class="col-md-12">
+                <div class="hero-form">
+                  <form id="contactForm" data-toggle="validator" class="shake" method="get" action="/customerform/declaration">
+                    <h2 class="display-4" style="font-weight: 300; font-size: 1.9em;"><b>Technical Feasibility Form</b></h2>
+                    <br/>
+                   <div class="row">
+                       <div class="form-group col-sm-12">
+                           <label for="name" class="h4">Application ID*</label>
+                           {% csrf_token %}
+                           <input type="text" class="form-control" id="name" placeholder="Application ID" required data-error="Name is required" name="formid">
+                           <div class="help-block with-errors"></div>
+                       </div>
+                    
+                     </div>
+                     <button type="submit" id="form-submit" class="btn-action">Begin </button>
+                     <div id="msgSubmit" class="h3 text-center hidden"></div>
+                     <div class="clearfix"></div>
+                   </form>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div><!-- Hero End -->
+
+
+        <div id="services" class="lbl-services">
+          <div class="container">
+            <div class="row justify-center">
+              <div class="col-md-8">
+                <div class="service-intro wow fadeInDown text-center">
+                 <h1>New Connection form</h1>
+                 <p>
+                   Get a new meter connection in your building, filling the forms and action would be taken.
+                </p>
+                </div>
+              </div>
+            </div>
+            <div class="lbl_cards">
+                <div class="card_single">
+                  <div class="card-icon">
+                    <div class="card-img">
+                      <img src="{% static 'assets/icons/p1.png' %}" width="50" alt="Feature">
+                    </div>
+                  </div>
+                  <div class="card-text">
+                    <h3>Fill the form</h3>
+                    <p>FIll your home address, and home details</p>
+                  </div>
+                </div>
+                <div class="card_single card2">
+                  <div class="card-icon">
+                    <div class="card-img">
+                      <img src="{% static 'assets/icons/p3.png' %}" width="50" alt="Feature">
+                    </div>
+                  </div>
+                  <div class="card-text">
+                    <h3>Get a Declaration</h3>
+                    <p>Get an appliance Declaration of all items in your apartment.</p>
+                  </div>
+                </div>
+                <div class="card_single card3">
+                  <div class="card-icon">
+                    <div class="card-img">
+                      <img src="{% static 'assets/icons/p6.png' %}" width="50" alt="Feature">
+                    </div>
+                  </div>
+                  <div class="card-text">
+                    <h3>Get your Meter Installed</h3>
+                    <p>Get your meter delivered and Installed in your apartment.</p>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+
+
+  
+        <!-- Call to Action Section -->
+
+        <div class="yd_cta_box">
+          <div class="cta_box">
+            <div class="cta_box_inner">
+              <div class="container">
+                <div class="col-lg-8 col-xs-12">
+                  <h2>G E O M E T R I C New connection form</h2>
+                  <h4>Apply for a new meter connection to your house easily from the comfort of
+                    your home, after the forms have been filled meters operators come and take an
+                    appliance inventory of your apartment.
+                  </h4>
+                  <a class="btn-action" href="/customerform">Start Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- Faq Section -->
+        <div id="faqs" class="yd_faqs">
+          <div class="container">
+              <div class="col-md-10 offset-md-1">
+                <div class="faq_intro">
+                  <div class="faq_inner">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Few questions customers ask.</p>
+       
+                  </div>
+                </div>
+                <div id="accordion">
+                  <div class="card mb-0">
+                    <div class="card-header collapsed" data-toggle="collapse" href="#collapseOne">
+                      <a class="card-title">How do I find my meter No?</a>
+                    </div>
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                      <div class="card-body">
+                        <p>It will be on the meter after installation.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card mb-0">
+                    <div class="card-header collapsed" data-toggle="collapse" href="#collapseTwo">
+                      <a class="card-title">Does this mean my meter would come faster? </a>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                      <div class="card-body">
+                        <p>Seamlessly.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+          <div class="container">
+            <div class="row text-center">
+              <div class="col-lg-2 col-md-3 col-sm-12">
+                <div class="footer-logo">
+                  <h2><img src="{% static 'img/geom1.png' %}" height="70"></h2>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                
+              </div>
+              <div class="col-lg-4 col-md-3 col-sm-12">
+                <div class="footer-links">
+                  <ul>
+                    <li><a href="#main"> <img class="img-fluid" src="{% static 'assets/icons/li.png' %}" alt="Icon"> </a> </li>
+                    <li><a href="#main"> <img class="img-fluid" src="{% static 'assets/icons/tw.png' %}" alt="Icon"> </a> </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Scroll To Top -->
+              <a id="back-top" class="back-to-top js-scroll-trigger" href="#main"></a>
+            <!-- Scroll To Top Ends-->
+          </div>
+        </div>
+
+      </div> <!-- Main -->
+    </div><!-- Wrapper -->
+
+
+    <!-- Jquery and Js Plugins -->
+    <script src="{% static 'assets/js/jquery-2.1.1.js' %}"></script>
+    <script src="{% static 'assets/js/popper.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins.js' %}"></script>
+    <script src="{% static 'assets/js/menu.js' %}"></script>
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+  </body>
+
+<!-- Mirrored from ydirection.com/Ura/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Nov 2019 12:40:28 GMT -->
+</html>

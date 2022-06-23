@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> SELECT DISTRICT</title>
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.1.2/tailwind.min.css">
+  <style type="text/css">
+    body {
+  background: #f2f2f2;
+}
+
+select {
+  box-shadow: 0px !important;
+}
+  </style>
+</head>
+<body>
+<div class="w-full max-w-md mt-5 ml-auto mr-auto">
+  
+  
+  <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" action="/marketers/" method="post">
+     
+    <div class="mb-5 text-center">
+       <img class=" ml-auto mr-auto mb-3" src="{% static 'img/geom2.png' %}" style="height: 85px;"/>
+       {% csrf_token %}
+   <b>Choose A District To Proceed</b>
+      </div>
+  
+    
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+        District
+      </label>
+      <select name="district" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="district" type="text" placeholder="District">
+        {% for dis in district %}
+        <option value="{{dis.name}}">{{dis.name}}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+        Month
+      </label>
+      <select name="month" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="district" type="text" placeholder="District">        
+        <option value="1">January</option>
+        <option value="2">Febuary</option>
+        <option value="3">March</option>
+        <option value="4">April</option>
+        <option value="5">May</option>
+        <option value="6">June</option>
+        <option value="7">July</option>
+        <option value="8">August</option>
+        <option value="9">September</option>
+        <option value="10">October</option>
+        <option value="11">November</option>
+        <option value="12">December</option>
+      </select>
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+        Year
+      </label>
+      <select name="year" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="district" type="text" placeholder="District">        
+        <option value="2018">2018</option>
+        <option value="2019">2019</option>
+        <option value="2020">2020</option>
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+        <option value="2023">2023</option>
+        <option value="2024">2024</option>        
+      </select>
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+        Select Category
+      </label>
+      <select name="category" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="district" type="text" placeholder="District">        
+        <option value="MD">MD</option>
+        <option value="NON-MD">NON-MD</option>        
+      </select>
+    </div>
+    
+    <div class="flex items-center justify-between">
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+        Search
+      </button>
+   
+    </div>
+  </form>
+
+</div>
+
+
+
+<div class="mb-4">
+
+  
+<div class="bg-white shadow-md rounded ">
+ <!--  <table class="table-responsive">
+  <thead>
+    <tr>
+      <th class="w-1/2 px-4 py-2">S/N</th>
+      <th class="w-1/4 px-4 py-2">Account No</th>
+      <th class="w-1/4 px-4 py-2">Meter No.</th>
+          <th class="w-1/4 px-4 py-2">Customer Name</th>
+          <th class="w-1/4 px-4 py-2">Address</th>
+          <th class="w-1/4 px-4 py-2">Marketers Name</th>
+          <th class="w-1/4 px-4 py-2">Balance</th>
+      
+          <th class="w-1/4 px-4 py-2">Last Pay Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="border px-4 py-2">1</td>
+      <td class="border px-4 py-2">2772TGS77777</td>
+      <td class="border px-4 py-2">2772TGS77777</td>
+            <td class="border px-4 py-2">Igwe Uche</td>
+            <td class="border px-4 py-2">27, Chinese Street</td>
+            <td class="border px-4 py-2">Confidence Leo</td>
+            <td class="border px-4 py-2">23,000 naira</td>
+            <td class="border px-4 py-2">27/Nov/19</td>
+    </tr>
+   
+ 
+  </tbody>
+</table> -->
+  </div>
+  
+  
+  
+  
+  </div>
+</body>
+</html>
