@@ -53,11 +53,16 @@ def DashboardView(request):
 	# return HttpResponse('this what it showed ' + str(public_key))
 	res2 = requests.get('https://coinmarketcap.com/currencies/bitcoin/')
 	res3 = requests.get('https://coinmarketcap.com/currencies/ethereum/')
-	soup2 = bs4.BeautifulSoup(res2.text, 'xml')
-	soup3 = bs4.BeautifulSoup(res3.text, 'xml')
-	live_price = soup2.find_all('div', {'class': 'priceValue '})
-	live_price3 = soup3.find_all('div', {'class': 'priceValue '})
-	live_bitcoin_price = live_price[0].getText()	
+	soup2 = bs4.BeautifulSoup(res2.content, "html.parser")
+	# suo = bs4.BeautifulSoup(res2.content, "html.parser")
+	# live_pric = suo.find('div', {'class': 'priceValue'})
+	# return HttpResponse(live_pric)	
+	soup3 = bs4.BeautifulSoup(res3.content, "html.parser")
+	live_price = soup2.find_all('div', {'class': 'priceValue'})
+	
+	live_price3 = soup3.find_all('div', {'class': 'priceValue'})
+	live_bitcoin_price = live_price[0].getText()
+	
 	live_bitcoin_price1 = live_price[0].getText()
 	live_bitcoin_price3 = live_price3[0].getText()	
 	live_bitcoin_price31 = live_price3[0].getText()
@@ -269,13 +274,13 @@ def transaction_first(request):
 
 # Create your views here.
 def index(request, *args, **kwargs):
-	# code = str(kwargs.get('ref_code'))
-	# try:
-	# 	referal = Referal.objects.get(code=code)
-	# 	request.session['ref_profile']= referal.id
-	# 	print('id', referal.id)
-	# except:
-	# 	pass
+	code = str(kwargs.get('ref_code'))
+	try:
+		referal = Referal.objects.get(code=code)
+		request.session['ref_profile']= referal.id
+		print('id', referal.id)
+	except:
+		pass
 	# print(request.session.get_expiry_date())
 	# data = ipapi.location(output='json')
 
@@ -375,7 +380,6 @@ def referal(request):
 	post = Referal.objects.all()
 	user_post = None
 	if request.user == None:
-
 		user_post = post
 	else:
 		user_post = Referal.objects.filter(user=request.user)

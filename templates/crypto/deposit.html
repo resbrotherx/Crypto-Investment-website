@@ -254,7 +254,8 @@
 								   <th class="text-end">Image Prof</th>
 								   <th class="text-end">Amount</th>
 								   <th class="text-end">Payment Method</th>
-								   <th class="text-end">Date / Time</th>
+								   <th class="text-end">Created Date/Time</th>
+								  <!--  <th class="text-end">Date / Time</th> -->
 								   <th class="text-end">Status</th>
 								</tr>
 							   </thead>
@@ -271,7 +272,8 @@
 								   
 								   <td class="text-end"><span>$</span> {{post.amount}}</td>
 								   <td class="text-end"><span></span> {{post.currency}}</td>
-								   <td class="text-end"><span></span>{{post.created_date}}</td>
+								   <td class="text-end"><span></span>{{post.created_dated}}</td>
+								   <!-- <td class="text-end"><span></span>{{post.created_date}}</td> -->
 								   {% if post.status == 'confirmed' %}
 								   <td class="text-end"><span class="label label-success">{{post.status}}</span></td>
 								   {% elif post.status == 'declind' %}

@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from .utils import generate_ref_code
-
+from django.utils import timezone
 from django.contrib.auth.models import AbstractUser
 from uuid import uuid4
 from uuid import UUID
@@ -115,6 +115,7 @@ class Deposit_history(models.Model):
 	currency = models.CharField(max_length=400)
 	status = models.CharField(max_length=400, choices=STATUS_CHOICES, default='awaiting')
 	created_date = models.DateTimeField(auto_now=True)
+	created_dated = models.DateTimeField(default=timezone.now)
 	amount = models.CharField(max_length=400)
 
 	def __str__(self):
@@ -130,6 +131,7 @@ class Withdraw_request(models.Model):
 	withdrew_from = models.CharField(max_length=300, default='choose')
 	userwallet = models.CharField(max_length=500)
 	created_date = models.DateTimeField(auto_now=True)
+	created_dated = models.DateTimeField(default=timezone.now)
 	status = models.CharField(max_length=400, choices=STATUS_CHOICES, default='awaiting')
 
 	def __str__(self):
@@ -156,7 +158,8 @@ class Membership(models.Model):
 		('Platinum', 'Platinum'),
 		('Gold', 'Gold'),
 		('Silver', 'Silver'),
-		('Basic', 'Basic')
+		('Basic', 'Basic'),
+		('Speacial','Speacial')
 	)
 
 	slug = models.SlugField(null=True, blank=True)
@@ -164,6 +167,7 @@ class Membership(models.Model):
 	duration = models.PositiveIntegerField(default=7)
 	price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
 	price2 = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
+	created_dated = models.DateTimeField(default=timezone.now)
  
 	def __str__(self):
 	   return self.membership_type
@@ -182,6 +186,7 @@ class UserMembership(models.Model):
 	statuse = models.CharField(choices=USER_DORATION, default='Inactive', max_length=30)
 	amount = models.FloatField(default=0.00)
 	item_created_date = models.DateTimeField(auto_now=True)
+	item_created_dated = models.DateTimeField(default=timezone.now)
 	appruved = models.BooleanField(default=False)
 
 	def __str__(self):

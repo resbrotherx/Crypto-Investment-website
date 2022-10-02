@@ -112,7 +112,7 @@
                    <th class="text-end">DAILY ROI</th>
                    <th class="text-end">USD AMOUNT</th>
                    <th class="text-end">PACKAGE </th>
-                   <th class="text-end">Date / Time</th>
+                   <th class="text-end">Created Date/Time</th>
                 </tr>
                  </thead>
                  <tbody>
@@ -125,7 +125,7 @@
                
                    <td class="text-end"><span>$</span> {{pk.amount}}</td>
                    <td class="text-end"><span></span> {{pk.membership}} Plan</td>
-                   <td class="text-end"><span></span>{{pk.item_created_date}}</td>
+                   <td class="text-end"><span></span>{{pk.item_created_dated}}</td>
                    {% if pk.statuse == 'Active' %}
                    <td class="text-end"><span class="label"  style="background-color: green;">{{pk.statuse}}</span></td>
                    {% elif pk.statuse == 'Inactive' %}
@@ -169,7 +169,7 @@
                    <!-- <th class="text-end">DAILY ROI</th> -->
                    <th class="text-end">USD AMOUNT</th>
                    <th class="text-end">PACKAGE </th>
-                   <th class="text-end">Date / Time</th>
+                   <th class="text-end">Created Date/Time</th>
                    <th class="text-end">INVESTMENT STATUS</th>
                 </tr>
                  </thead>
@@ -183,7 +183,7 @@
                
                    <td class="text-end"><span>$</span> {{pk.amount}}</td>
                    <td class="text-end"><span></span> {{pk.membership}} Plan</td>
-                   <td class="text-end"><span></span>{{pk.item_created_date}}</td>
+                   <td class="text-end"><span></span>{{pk.item_created_dated}}</td>
                    {% if pk.statuse == 'Active' %}
                    <td class="text-end"><span class="label"  style="background-color: green;">{{pk.statuse}}</span></td>
                    {% elif pk.statuse == 'Inactive' %}
